@@ -5,10 +5,10 @@
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>BRIDGE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="signup.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-    <link rel="stylesheet" type="text/css" href="step1.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
 
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -456,7 +456,7 @@
                           </div>
                   <ul class="list-inline pull-right">
                     <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                    <li><a href="thinks.php"><button type="button" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button></a></li>
+                    <li><a href="thanks.php"><button type="button" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button></a></li>
                     
                   </ul>
               </div>
