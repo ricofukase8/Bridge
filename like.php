@@ -13,10 +13,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="assets/css/home/bootstrap.min.css"/>
+	<link rel="stylesheet" href="assets/css/home/owl.carousel.css"/>
+	<link rel="stylesheet" href="assets/css/home/style.css"/>
 
 	<!-- Tabs -->
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -53,9 +52,9 @@
 					<a href="#portfolioModal1" class="site-btn header-btn" data-toggle="modal" >MYPAGE</a></a>
 					<nav class="main-menu">
 						<ul>
-							<li><a href="index.html">HOME</a></li>
-							<li><a href="blog.html">EDIT</a></li>
-							<li><a href="index.php">LOG OUT</a></li>
+							<li><a href="home.php">HOME</a></li>
+							<li><a href="signup.php">EDIT</a></li>
+							<li><a href="main.php">LOG OUT</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -66,7 +65,7 @@
 
 
 	<!-- Hero section -->
-	<section class="hero-section-1 set-bg" data-setbg="bridgemain.png">
+	<section class="hero-section-1 set-bg" data-setbg="assets/img/bridgemain.png">
 		<div class="container">
 			<div class="hero-text text-white">
 			<!-- <div class="search-warp"> -->
@@ -104,7 +103,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/1.jpg">
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/1.jpg">
             			</div>
             			<a class="ci-text-link" data-toggle="modal" href="#portfolioModal1">
 						<div class="ci-text">
@@ -118,7 +117,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/2.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/2.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal2">
 						<div class="ci-text">
 							<h5>萩原カズマ</h5>
@@ -131,7 +130,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/3.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/3.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal3">
 						<div class="ci-text" href="#portfolio-modal1">
 							<h5>伊藤公平</h5>
@@ -144,7 +143,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/4.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/4.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal4">
 						<div class="ci-text">
 							<h5>大月えりか</h5>
@@ -157,7 +156,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/5.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/5.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal5">
 						<div class="ci-text">
 							<h5>萩原カズマ</h5>
@@ -170,7 +169,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/6.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/6.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal6">
 						<div class="ci-text">
 							<h5>伊藤公平</h5>
@@ -275,7 +274,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">大月　エリカ</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/1.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/1.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -313,7 +312,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">萩原　カズマ</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/2.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/2.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -351,7 +350,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">伊藤　公平</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/3.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/3.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -389,7 +388,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">大月　エリカ</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/4.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/4.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -427,7 +426,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">萩原　カズマ</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/5.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/5.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -465,7 +464,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">伊藤　公平</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/6.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/6.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -490,10 +489,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/mixitup.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/mixitup.min.js"></script>
+	<script src="assets/js/circle-progress.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/main.js"></script>
 </html>

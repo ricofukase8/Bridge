@@ -23,7 +23,7 @@ div,a {
   text-align: center;
 }
 .parallax-bg {
-  background-image: url('bridgemain.png');
+  background-image: url('../../img/bridgemain.png');
   font-family: 'Montserrat Subrayada', sans-serif;
   height: 500px;
   background-attachment: fixed;

@@ -53,9 +53,9 @@
 					<a href="#portfolioModal1" class="site-btn header-btn" data-toggle="modal" >MYPAGE</a></a>
 					<nav class="main-menu">
 						<ul>
-							<li><a href="courses.html">LIKE</a></li>
-							<li><a href="blog.html">EDIT</a></li>
-							<li><a href="index.php">LOG OUT</a></li>
+							<li><a href="like.php">LIKE</a></li>
+							<li><a href="signup.php">EDIT</a></li>
+							<li><a href="main.php">LOG OUT</a></li>
 						</ul>
 					</nav>
 				</div>
