@@ -13,10 +13,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-size-awesome.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="assets/css/home/bootstrap.min.css"/>
+	<link rel="stylesheet" href="assets/css/home/font-awesome.min.css"/>
+	<link rel="stylesheet" href="assets/css/home/owl.carousel.css"/>
+	<link rel="stylesheet" href="assets/css/home/style.css"/>
 
 	<!-- Tabs -->
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -67,7 +67,7 @@
 
 
 	<!-- Hero section -->
-	<section class="hero-section set-bg" data-setbg="bridgemain.png">
+	<section class="hero-section set-bg" data-setbg="assets/img/bridgemain.png">
 		<div class="container">
 			<div class="hero-text text-white">
 			<!-- <div class="search-warp"> -->
@@ -514,10 +514,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/mixitup.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/mixitup.min.js"></script>
+	<script src="assets/js/circle-progress.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/main.js"></script>
 </html>
