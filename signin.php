@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title>BRIDGE</title>
-    <link rel="stylesheet" type="text/css" href="signup.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body >
