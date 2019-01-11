@@ -14,7 +14,6 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/home/bootstrap.min.css"/>
-	<link rel="stylesheet" href="assets/css/home/font-awesome.min.css"/>
 	<link rel="stylesheet" href="assets/css/home/owl.carousel.css"/>
 	<link rel="stylesheet" href="assets/css/home/style.css"/>
 
@@ -128,7 +127,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/1.jpg">
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/1.jpg">
             			</div>
             			<a class="ci-text-link" data-toggle="modal" href="#portfolioModal1">
 						<div class="ci-text">
@@ -142,7 +141,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/2.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/2.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal2">
 						<div class="ci-text">
 							<h5>萩原カズマ</h5>
@@ -155,7 +154,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/3.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/3.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal3">
 						<div class="ci-text" href="#portfolio-modal1">
 							<h5>伊藤公平</h5>
@@ -168,7 +167,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/4.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/4.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal4">
 						<div class="ci-text">
 							<h5>大月えりか</h5>
@@ -181,7 +180,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/5.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/5.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal5">
 						<div class="ci-text">
 							<h5>萩原カズマ</h5>
@@ -194,7 +193,7 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/6.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/6.jpg"></div>
 						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal6">
 						<div class="ci-text">
 							<h5>伊藤公平</h5>
@@ -299,7 +298,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">大月　エリカ</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/1.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/1.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -337,7 +336,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">萩原　カズマ</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/2.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/2.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -375,7 +374,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">伊藤　公平</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/3.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/3.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -413,7 +412,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">大月　エリカ</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/4.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/4.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -451,7 +450,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">萩原　カズマ</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/5.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/5.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
@@ -489,7 +488,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">伊藤　公平</h2>
-                  <img class="img-fluid d-block mx-auto" src="img/categories/6.jpg" alt="">
+                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/6.jpg" alt="">
                   <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
