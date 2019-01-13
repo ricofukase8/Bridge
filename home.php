@@ -14,8 +14,11 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/home/bootstrap.min.css"/>
+	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
 	<link rel="stylesheet" href="assets/css/home/owl.carousel.css"/>
 	<link rel="stylesheet" href="assets/css/home/style.css"/>
+	
+
 
 	<!-- Tabs -->
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -69,8 +72,8 @@
 	<section class="hero-section set-bg" data-setbg="assets/img/bridgemain.png">
 		<div class="container">
 			<div class="hero-text text-white">
-			<!-- <div class="search-warp"> -->
-				<!-- <div class="section-title text-white">
+			<!-- <div class="search-warp">
+				<div class="section-title text-white">
 					<h2>SERCH</h2>
 				</div> -->
 				<div class="row">

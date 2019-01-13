@@ -1,3 +1,9 @@
+<?php 
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +11,9 @@
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>BRIDGE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/edit.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
 
     <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
 
@@ -17,14 +24,8 @@
     
 </head>
 <body>
-  <div id="top" class="jumbotron">
-    <div class="container">
-      <h1 class="title">BRIDGE</h1>
-      <p class="subtitle">-NexSeed-</p>
-    </div>
-  </div>
-  
-
+ 
+  <?php include('navbar.php'); ?>
   <div class="container">
 	  <div class="row">
 	    <section>
