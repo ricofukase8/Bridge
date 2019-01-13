@@ -7,16 +7,16 @@
         <span class="icon-bar"></span> 
       </button> 
         <div class="navbar-brand  navbar-brand-centered">
-        <h1 id="title">BRIDGE</h1>
-          <p id="subtitle">-nexseed-</p>
+        <h3 id="title">BRIDGE</h3>
+          <p id="subtitle">-NexSeed-</p>
         </div>
     </div>
     <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">LIKE</a></li>
-        <li><a href="#">EDIT</a></li>
-        <li><a href="#">LOGOUT</a></li>
-        <li><a href="#">MYPAGE</a></li>
+        <li><a href="like.php">LIKE</a></li>
+        <li><a href="main.php">LOGOUT</a></li>
+        <li><a href="home.php">HOME</a></li>
+        <!-- <li><a href="#portfolioModal1" class="site-btn header-btn" data-toggle="modal">MYPAGE</a></li> -->
       </ul>
     </div>
   </div>

@@ -1,8 +1,11 @@
+body {
+    background: #f8f8f8 !important;
+}
 
 
        .wizard {
     margin: 20px auto;
-    background: #fff;
+    background: #f8f8f8;
 }
 
     .wizard .nav-tabs {

@@ -53,7 +53,7 @@
 					<nav class="main-menu">
 						<ul>
 							<li><a href="home.php">HOME</a></li>
-							<li><a href="signup.php">EDIT</a></li>
+							<li><a href="edit.php">EDIT</a></li>
 							<li><a href="main.php">LOG OUT</a></li>
 						</ul>
 					</nav>
@@ -189,57 +189,12 @@
 
 
 	<!-- footer section -->
-	<footer class="footer-section spad pb-0">
+	<footer class="footer-section spad pb-0" style="padding-top: 50px">
 		<div class="footer-top">
 			<div class="footer-warp">
-				<div class="row">
-					<div class="widget-item">
-						<h4>Contact Info</h4>
-						<ul class="contact-list">
-							<li>1481 Creekside Lane <br>Avila Beach, CA 931</li>
-							<li>+53 345 7953 32453</li>
-							<li>yourmail@gmail.com</li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Engeneering</h4>
-						<ul>
-							<li><a href="">Applied Studies</a></li>
-							<li><a href="">Computer Engeneering</a></li>
-							<li><a href="">Software Engeneering</a></li>
-							<li><a href="">Informational Engeneering</a></li>
-							<li><a href="">System Engeneering</a></li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Graphic Design</h4>
-						<ul>
-							<li><a href="">Applied Studies</a></li>
-							<li><a href="">Computer Engeneering</a></li>
-							<li><a href="">Software Engeneering</a></li>
-							<li><a href="">Informational Engeneering</a></li>
-							<li><a href="">System Engeneering</a></li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Development</h4>
-						<ul>
-							<li><a href="">Applied Studies</a></li>
-							<li><a href="">Computer Engeneering</a></li>
-							<li><a href="">Software Engeneering</a></li>
-							<li><a href="">Informational Engeneering</a></li>
-							<li><a href="">System Engeneering</a></li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Newsletter</h4>
-						<form class="footer-newslatter">
-							<input type="email" placeholder="E-mail">
-							<button class="site-btn">Subscribe</button>
-							<p>*We don’t spam</p>
-						</form>
-					</div>
-				</div>
+				<a href="like.php">
+					<h3 style="color: #474747">☝︎TOP</h3>
+				</a>
 			</div>
 		</div>
 		<div class="footer-bottom">
