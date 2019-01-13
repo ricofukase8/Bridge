@@ -1,24 +1,4 @@
- #top{
-    height: 150px;
-    padding-top: 20px;
-    /*background: url(haikei.png) no-repeat center;*/
-    background-size: cover;
-    color: #00AFE5;
-    text-align: center;
- }
 
-.title{
-    font-size: 35px !important;
-    font-weight: bolder !important;
-}
-
-.subtitle{
-    font-weight: bolder !important;
-}
-
-.glyphicon-folder-open:before{
-    background-image: url(pen.png) no-repeat center !important;
-}
 
        .wizard {
     margin: 20px auto;
@@ -34,7 +14,7 @@
 
     .wizard > div.wizard-inner {
         position: relative;
-        /*margin-top: 180px;*/
+        margin-top: 180px;
     }
 
 .connecting-line {

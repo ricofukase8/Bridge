@@ -1,0 +1,58 @@
+.navbar {
+    margin-bottom: 0;
+    /*background-color: #1abc9c;*/
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    background-image: url(assets/img/bridgemain.png);
+    background-size: cover;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important ;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #00AFE5 !important;
+    /*background-color: #00AFE5 !important;*/
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #00AFE5 ;
+}
+
+.navbar-brand-centered {
+    /*position: absolute;*/
+    left: 50%;
+    display: block;
+    width: 160px;
+    /*text-align: left;*/
+    background-color: transparent;
+}
+.navbar>.container .navbar-brand-centered, 
+.navbar>.container-fluid .navbar-brand-centered {
+    margin-left: -80px;
+    padding-top: 38px;
+    color: #00AFE5 !important;
+}
+
+#title{
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+#subtitle{
+    padding-left: 10px;
+}
+
+#navbar{
+    height: 150px;
+}
+
+#myNavbar{
+    margin-top: 55px;
+}
