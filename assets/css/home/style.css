@@ -94,14 +94,15 @@ textarea:focus {
 	font-style: italic;
 }
 
-a:hover {
+#link:hover {
 	color: #00AFE5;
 }
 
-a:hover,
-a:focus {
+#link:hover,
+#link:focus {
 	text-decoration: none;
 	outline: none;
+	color: #00AFE5 !important;
 }
 
 ul,
