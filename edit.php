@@ -261,18 +261,18 @@
 
                               <select id="year" name="input_course">
                                 <option value="" selected="selected">-</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
                               </select>月~
 
                               <select id="year" name="input_year">
@@ -312,18 +312,18 @@
 
                               <select id="year" name="input_course">
                                 <option value="" selected="selected">-</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
                               </select>月
                             </div>
                           </div>
@@ -332,8 +332,8 @@
                               <label for="job_status">現在働いている</label>
                             </div>
                             <div class="col-75">
-                              <input class="radio-career" type="radio" id="carrer" name="input_job_status" value="Yes">Yes &emsp;
-                              <input class="radio-career" type="radio" id="carrer" name="carrer" value="No">No
+                              <input class="radio-career" type="radio" id="job_status" name="input_job_status" value="Yes">Yes &emsp;
+                              <input class="radio-career" type="radio" id="job_status" name="input_job_status" value="No">No
                             </div>
                           </div>
                             <div class="row">
@@ -349,8 +349,8 @@
                               <label for="job_offer">求人の有無</label>
                             </div>
                             <div class="col-75">
-                              <input class="radio-career" type="radio" id="carrer" name="input_job_offer" value="Yes">Yes &emsp;
-                              <input class="radio-career" type="radio" id="carrer" name="input_job_offer" value="No">No
+                              <input class="radio-career" type="radio" id="job_offer" name="input_job_offer" value="Yes">Yes &emsp;
+                              <input class="radio-career" type="radio" id="job_offer" name="input_job_offer" value="No">No
                             </div>
                           </div>
                           <div class="row">
@@ -418,8 +418,8 @@
                               <label for="portfolio_status">開発環境</label>
                             </div>
                             <div class="col-75">
-                               <input class="radio-career" type="radio" id="carrer" name="input_portfolio_status" value="Yes">チーム開発 &emsp;
-                                      <input class="radio-career" type="radio" id="carrer" name="input_portfolio_status" value="No">個人開発
+                               <input class="radio-career" type="radio" id="portfolio_status" name="input_portfolio_status" value="team">チーム開発 &emsp;
+                                      <input class="radio-career" type="radio" id="portfolio_status" name="input_portfolio_status" value="private">個人開発
                             </div>
                           </div>
                           <div class="row">

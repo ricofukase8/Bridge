@@ -52,9 +52,9 @@
 					<a href="#portfolioModal1" class="site-btn header-btn" data-toggle="modal" >MYPAGE</a></a>
 					<nav class="main-menu">
 						<ul>
-							<li><a href="home.php">HOME</a></li>
-							<li><a href="edit.php">EDIT</a></li>
-							<li><a href="main.php">LOG OUT</a></li>
+							<li><a href="home.php" id="link">HOME</a></li>
+							<li><a href="edit.php" id="link">EDIT</a></li>
+							<li><a href="main.php" id="link">LOG OUT</a></li>
 						</ul>
 					</nav>
 				</div>

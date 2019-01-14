@@ -17,7 +17,7 @@
     
 </head>
 <body>
-  <div id="top" class="jumbotron">
+  <div id="top" class="jumbotron" style="background-image: url(assets/img/bridgemain.png);">
     <div class="container">
       <h1 class="title">BRIDGE</h1>
       <p class="subtitle">-NexSeed-</p>
@@ -256,7 +256,7 @@
                                   <option value="2028">2028</option>
                                   <option value="2029">2029</option>
                                   <option value="2030">2030</option>
-                              </select>年　&thinsp;
+                              </select>年&thinsp;
 
                               <select id="year" name="input_course">
                                 <option value="" selected="selected">-</option>
@@ -331,8 +331,8 @@
                               <label for="job_status">現在働いている</label>
                             </div>
                             <div class="col-75">
-                              <input class="radio-career" type="radio" id="carrer" name="input_job_status" value="Yes">Yes &emsp;
-                              <input class="radio-career" type="radio" id="carrer" name="carrer" value="No">No
+                              <input class="radio-career" type="radio" id="job_status" name="input_job_status" value="Yes">Yes &emsp;
+                              <input class="radio-career" type="radio" id="job_status" name="input_job_status" value="No">No
                             </div>
                           </div>
                             <div class="row">
@@ -348,8 +348,8 @@
                               <label for="job_offer">求人の有無</label>
                             </div>
                             <div class="col-75">
-                              <input class="radio-career" type="radio" id="carrer" name="input_job_offer" value="Yes">Yes &emsp;
-                              <input class="radio-career" type="radio" id="carrer" name="input_job_offer" value="No">No
+                              <input class="radio-career" type="radio" id="job_offer" name="input_job_offer" value="Yes">Yes &emsp;
+                              <input class="radio-career" type="radio" id="job_offer" name="input_job_offer" value="No">No
                             </div>
                           </div>
                           <div class="row">
@@ -417,8 +417,8 @@
                               <label for="portfolio_status">開発環境</label>
                             </div>
                             <div class="col-75">
-                               <input class="radio-career" type="radio" id="carrer" name="input_portfolio_status" value="Yes">チーム開発 &emsp;
-                                      <input class="radio-career" type="radio" id="carrer" name="input_portfolio_status" value="No">個人開発
+                               <input class="radio-career" type="radio" id="portfolio_status" name="input_portfolio_status" value="Yes">チーム開発 &emsp;
+                                      <input class="radio-career" type="radio" id="portfolio_status" name="input_portfolio_status" value="No">個人開発
                             </div>
                           </div>
                           <div class="row">
