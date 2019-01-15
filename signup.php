@@ -123,21 +123,15 @@
                         <label for="batchnumber">batch number</label>
                       </div>
                       <div class="col-75">
-                        <select id="batch number" name="input_batch_number">
-                          <option value="" selected="selected">選択してください</option>
-                          <option value="batch48">batch48</option>
-                          <option value="batch48">batch48</option>
-                          <option value="batch48">batch48</option>
-                          <option value="batch48">batch48</option>
-                        </select>
+                        <input type="tel" id="batchnumber" name="input_batchnumber" placeholder="Your batchnumber..">
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="priod">在籍期間</label>
+                        <label for="period">在籍期間</label>
                       </div>
                       <div class="col-75">
-                        <select id="priod" name="input_priod">
+                        <select id="period" name="input_period">
                           <option value="" selected="selected">選択してください</option>
                           <option value="">1ヶ月未満</option>
                           <option value="">1ヶ月~2ヶ月</option>
@@ -161,10 +155,10 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                       <label for="Plofile">Profile<br>(卒業後の予定等)</label>
+                       <label for="plofile">Profile<br>(卒業後の予定等)</label>
                       </div>
                       <div class="col-75">
-                        <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+                        <textarea id="plofile" name="subject" placeholder="Write something.."></textarea>
                       </div>
                     </div>
                     <div class="row">
@@ -197,8 +191,8 @@
                               <label for="career">職歴</label>
                             </div>
                             <div class="col-75">
-                              <input class="radio-career" type="radio" id="career" name="career" value="Yes">Yes &emsp;
-                              <input class="radio-career" type="radio" id="career" name="career" value="No">No
+                              <input class="radio-career" type="radio" id="career-yes" name="career" value="Yes">Yes &emsp;
+                              <input class="radio-career" type="radio" id="career-no" name="career" value="No">No
                             </div>
                           </div>
 
@@ -223,7 +217,7 @@
                               <label for="carrer_period">在籍期間</label>
                             </div>
                             <div class="col-75">
-                              <select id="select_box" name="input_career_year">
+                              <select id="select_box_year" name="input_career_year">
                                   <option value="" selected="selected">-</option>
                                   <option value="2000">2000</option>
                                   <option value="2001">2001</option>
@@ -258,7 +252,7 @@
                                   <option value="2030">2030</option>
                               </select>年&thinsp;
 
-                              <select id="select_box" name="input_career_month">
+                              <select id="select_box_month" name="input_career_month">
                                 <option value="" selected="selected">-</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -274,7 +268,7 @@
                                 <option value="12">12</option>
                               </select>月~
 
-                              <select id="select_box" name="input_career_year_end">
+                              <select id="select_box_year_end" name="input_career_year_end">
                                   <option value="" selected="selected">-</option>
                                   <option value="2000">2000</option>
                                   <option value="2001">2001</option>
@@ -309,7 +303,7 @@
                                   <option value="2030">2030</option>
                               </select>年　&thinsp;
 
-                              <select id="select_box" name="input_career_month_end">
+                              <select id="select_box_month_end" name="input_career_month_end">
                                 <option value="" selected="selected">-</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -331,8 +325,8 @@
                               <label for="job_status">現在働いている</label>
                             </div>
                             <div class="col-75">
-                              <input class="radio-career" type="radio" id="job_status" name="input_job_status" value="Yes">Yes &emsp;
-                              <input class="radio-career" type="radio" id="job_status" name="input_job_status" value="No">No
+                              <input class="radio-career" type="radio" id="job_status_yes" name="input_job_status" value="Yes">Yes &emsp;
+                              <input class="radio-career" type="radio" id="job_status_no" name="input_job_status" value="No">No
                             </div>
                           </div>
                             <div class="row">
@@ -340,7 +334,7 @@
                                 <label for="job_contents">仕事内容</label>
                               </div>
                               <div class="col-75">
-                               <textarea id="subject" name="input_job_content" placeholder="Write your job contents..."></textarea>
+                               <textarea id="job_contents" name="input_job_content" placeholder="Write your job contents..."></textarea>
                               </div>
                             </div>
                           <div class="row">
@@ -348,8 +342,8 @@
                               <label for="job_offer">求人の有無</label>
                             </div>
                             <div class="col-75">
-                              <input class="radio-career" type="radio" id="job_offer" name="input_job_offer" value="Yes">Yes &emsp;
-                              <input class="radio-career" type="radio" id="job_offer" name="input_job_offer" value="No">No
+                              <input class="radio-career" type="radio" id="job_offer_yes" name="input_job_offer" value="Yes">Yes &emsp;
+                              <input class="radio-career" type="radio" id="job_offer_no" name="input_job_offer" value="No">No
                             </div>
                           </div>
                           <div class="row">
@@ -357,7 +351,7 @@
                               <label for="job_offer_comments">求人情報</label>
                             </div>
                             <div class="col-75">
-                              <textarea id="subject" name="input_job_offer_comments" placeholder="Write job offer contents..."></textarea>
+                              <textarea id="job_offer_comments" name="input_job_offer_comments" placeholder="Write job offer contents..."></textarea>
                             </div>
                           </div>
                           <div class="row">
@@ -409,7 +403,7 @@
                               <label for="portfolio_name">サービス名</label>
                             </div>
                             <div class="col-75">
-                              <input type="text" id="portfolio" name="input_portfolio_name" placeholder="Your Portfolio Name..">
+                              <input type="text" id="portfolio_name" name="input_portfolio_name" placeholder="Your Portfolio Name..">
                             </div>
                           </div>
                           <div class="row">
@@ -417,16 +411,16 @@
                               <label for="portfolio_status">開発環境</label>
                             </div>
                             <div class="col-75">
-                               <input class="radio-career" type="radio" id="portfolio_status" name="input_portfolio_status" value="Yes">チーム開発 &emsp;
-                                      <input class="radio-career" type="radio" id="portfolio_status" name="input_portfolio_status" value="No">個人開発
+                               <input class="radio-career" type="radio" id="portfolio_status_yes" name="input_portfolio_status" value="Yes">チーム開発 &emsp;
+                                      <input class="radio-career" type="radio" id="portfolio_status_no" name="input_portfolio_status" value="No">個人開発
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="portfolio_name">ポートフォリオコメント</label>
+                              <label for="portfolio_contents">ポートフォリオコメント</label>
                             </div>
                             <div class="col-75">
-                              <textarea id="subject" name="subject" placeholder="Write something about Portfolio.."></textarea>
+                              <textarea id="portfolio_contents" name="input_portfolio_contents" placeholder="Write something about Portfolio.."></textarea>
                             </div>
                           </div>
                         <!-- </form> -->
@@ -452,7 +446,7 @@
                         <!-- <form action="/action_page.php"> -->
                           <div class="row">
                       <div class="col-25">
-                        <label for="name">name</label>
+                        <label for="name" id="result_name">name</label>
                       </div>
                       <div class="col-75">
                       <p class="lead">name</p>
@@ -460,7 +454,7 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="email">email</label>
+                        <label for="email" id="result_email">email</label>
                       </div>
                       <div class="col-75">
                         <p class="lead">email</p>
@@ -468,7 +462,7 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="password">password</label>
+                        <label for="password" id="result_password">password</label>
                     </div>
                       <div class="col-75">
                         <p class="lead">●●●●●●●●</p>
@@ -476,15 +470,15 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="img_name">プロフィール画像</label>
+                        <label for="img_name" id="result_img_name">プロフィール画像</label>
                       </div>
                       <div class="col-75">
-                        <img src= ../user_profile_img/../assets/img/categories/1.jpg class="img-responsive img-thumbnail">
+                        <img src="assets/img/categories/1.jpg" class="img-responsive img-thumbnail">
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="status">ステータス</label>
+                        <label for="status" id="result_status">ステータス</label>
                       </div>
                       <div class="col-75">
                         <p class="lead">status</p>
@@ -492,7 +486,7 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="batchnumber">batch number</label>
+                        <label for="batchnumber" id="result_batchnumber">batch number</label>
                       </div>
                       <div class="col-75">
                         <p class="lead">batch48</p>
@@ -500,7 +494,7 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="priod">在籍期間</label>
+                        <label for="period" id="result_period">在籍期間</label>
                       </div>
                       <div class="col-75">
                         <p class="lead">○ヶ月〜○ヶ月</p>
@@ -508,7 +502,7 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="course">コース</label>
+                        <label for="course" id="result_course">コース</label>
                       </div>
                       <div class="col-75">
                         <p class="lead">course</p>
@@ -516,7 +510,7 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                       <label for="Plofile">Profile<br>(卒業後の予定等)</label>
+                       <label for="plofile" id="result_profile">Profile<br>(卒業後の予定等)</label>
                       </div>
                       <div class="col-75">
                         <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -529,7 +523,7 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="facebook">FaceBookアカウント</label>
+                        <label for="facebook" id="result_facebook">FaceBookアカウント</label>
                       </div>
                       <div class="col-75">
                         <p class="lead">FBaccountURL</p>
@@ -537,7 +531,7 @@
                     </div>
                     <div class="row">
                             <div class="col-25">
-                              <label for="career">職歴</label>
+                              <label for="career" id="result_career">職歴</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">Yes or No</p>
@@ -546,7 +540,7 @@
 
                           <div class="row">
                             <div class="col-25">
-                              <label for="company_name">会社名</label>
+                              <label for="company_name" id="result_company_name">会社名</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">company name</p>
@@ -554,7 +548,7 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="managerial">役職</label>
+                              <label for="managerial" id="result_managerial">役職</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">position</p>
@@ -562,7 +556,7 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="carrer_period">在籍期間</label>
+                              <label for="carrer_period" id="result_career_period">在籍期間</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">0000年00月〜0000年00月</p>
@@ -570,7 +564,7 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="job_status">現在働いている</label>
+                              <label for="job_status" id="result_job_status">現在働いている</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">Yes or No</p>
@@ -578,7 +572,7 @@
                           </div>
                             <div class="row">
                               <div class="col-25">
-                                <label for="job_contents">仕事内容</label>
+                                <label for="job_contents" id="result_job_contents">仕事内容</label>
                               </div>
                               <div class="col-75">
                                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -591,7 +585,7 @@
                             </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="job_offer">求人の有無</label>
+                              <label for="job_offer" id="result_job_offer">求人の有無</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">Yes or No</p>
@@ -599,7 +593,7 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="job_offer_comments">求人情報</label>
+                              <label for="job_offer_comments" id="result_job_offer_comments">求人情報</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -612,7 +606,7 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="advice">相談に乗れること</label>
+                              <label for="advice" id="result_advice">相談に乗れること</label>
                             </div>
                             <div class="col-75">
                               <label class="advice_check" for="advice1">就活相談</label>
@@ -623,7 +617,7 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="portfolio">ポートフォリオURL<br>(Git URLでも構いません)</label>
+                              <label for="portfolio" id="result_portfolio">ポートフォリオURL<br>(Git URLでも構いません)</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">PortfolioURL</p>
@@ -631,7 +625,7 @@
                           </div> 
                           <div class="row">
                             <div class="col-25">
-                              <label for="portfolio_name">サービス名</label>
+                              <label for="portfolio_name" id="result_portfolio_name">サービス名</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">service name</p>
@@ -639,7 +633,7 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="portfolio_status">開発環境</label>
+                              <label for="portfolio_status" id="result_portfolio_status">開発環境</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">個人開発 or チーム開発</p>
@@ -647,7 +641,7 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="portfolio_name">ポートフォリオコメント</label>
+                              <label for="portfolio_contents" id="result_portfolio_contents">ポートフォリオコメント</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
