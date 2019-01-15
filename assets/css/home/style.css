@@ -1991,19 +1991,19 @@ nav > div a.nav-item.nav-link:focus
   .portfolio-item {
     right: 0;
     margin: 0 0 15px;
-    .portfolio-link {
-      position: relative;
-      display: block;
-      width: 400px;
-      margin: 0 auto;
-      cursor: pointer;
-      .portfolio-hover {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all ease 0.5s;
-        -moz-transition: all ease 0.5s;
-        transition: all ease 0.5s;
+  .portfolio-link {
+    position: relative;
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    cursor: pointer;
+  .portfolio-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    transition: all ease 0.5s;
         opacity: 0;
         background: fade-out($primary, .1);
         &:hover {
@@ -2064,9 +2064,12 @@ nav > div a.nav-item.nav-link:focus
     margin: 1rem;
     max-width: 100vw;
   }
-  .modal-content {
+ 
+ .modal-content {
     padding: 100px 0;
     text-align: center;
+    width: 650px !important;
+
     h2 {
       font-size: 3em;
       margin-bottom: 15px;

@@ -91,13 +91,6 @@
 	<!-- categories section -->
 	<section class="categories-section spad-courses">
 		<div class="container">
-			<nav>
-            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-            	<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Graduates</a>
-            	<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Students</a>
-            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">就活中</a>
-            </div>
-            </nav>
 			<div class="row">
 				
 				<!-- categorie -->
