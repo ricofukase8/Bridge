@@ -10,6 +10,14 @@ input[type=text], input[type=email], input[type=password]{
   resize: vertical;
 }
 
+input[type=tel]{
+  width: 40%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
 select{
   width: 100%;
   padding: 12px;
@@ -71,8 +79,23 @@ input[type=submit]:hover {
   margin-right: 5px !important;
 }
 
-  
-#select_box{
+
+#select_box_year {
+  width:70px;
+  margin-right: 5px;
+}
+
+#select_box_year_end {
+  width:70px;
+  margin-right: 5px;
+}
+
+#select_box_month {
+  width:70px;
+  margin-right: 5px;
+}
+
+#select_box_month_end {
   width:70px;
   margin-right: 5px;
 }
