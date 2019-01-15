@@ -707,5 +707,6 @@ function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
 </script>
+<script src="assets/js/signup.js">
 </body>
 </html>

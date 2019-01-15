@@ -257,7 +257,175 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                   <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">大月　エリカ</h2>
                   <img class="img-fluid d-block mx-auto" src="assets/img/categories/1.jpg" alt="">
-                  <ul class="list-inline">
+                   <div class="row">
+                      <div class="col-25">
+                        <label for="status" id="result_status">ステータス</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead">status</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="batchnumber" id="result_batchnumber">batch number</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead">batch48</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="period" id="result_period">在籍期間</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead">○ヶ月〜○ヶ月</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="course" id="result_course">コース</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead">course</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                       <label for="plofile" id="result_profile">Profile<br>(卒業後の予定等)</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-25">
+                              <label for="career" id="result_career">職歴</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">Yes or No</p>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="company_name" id="result_company_name">会社名</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">company name</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="managerial" id="result_managerial">役職</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">position</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="carrer_period" id="result_career_period">在籍期間</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">0000年00月〜0000年00月</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="job_status" id="result_job_status">現在働いている</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">Yes or No</p>
+                            </div>
+                          </div>
+                            <div class="row">
+                              <div class="col-25">
+                                <label for="job_contents" id="result_job_contents">仕事内容</label>
+                              </div>
+                              <div class="col-75">
+                               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                               proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                              </div>
+                            </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="job_offer" id="result_job_offer">求人の有無</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">Yes or No</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="job_offer_comments" id="result_job_offer_comments">求人情報</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="advice" id="result_advice">相談に乗れること</label>
+                            </div>
+                            <div class="col-75">
+                              <label class="advice_check" for="advice1">就活相談</label>
+                              <label class="advice_check" for="advice2">業界分析</label>
+                              <label class="advice_check" for="advice3">企業研究</label>
+                              <label class="advice_check" for="advice4">自己分析</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="portfolio" id="result_portfolio">ポートフォリオURL</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">PortfolioURL</p>
+                            </div>
+                          </div> 
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="portfolio_name" id="result_portfolio_name">サービス名</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">service name</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="portfolio_status" id="result_portfolio_status">開発環境</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">個人開発 or チーム開発</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="portfolio_contents" id="result_portfolio_contents">ポートフォリオコメント</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                          </div>
+                  <!-- <ul class="list-inline">
                     <li>バッチ: 48期</li>
                     <li>在学期間: ６週間</li>
                     <li>コース: webコース</li>
@@ -268,9 +436,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     <li>企業名: Nexceed inc.</li>
                     <li>在学期間: 2018年4月〜</li>
                     <li>仕事内容: 正社員・インターンシップの採用担当</li>
-                  </ul>
+                  </ul> -->
+                  <div class="btn-profile">
+                  <button class="btn btn-primary" type="button">Like</button>
+                  <button class="btn btn-primary" type="button">Facebook</button>
                   <button class="btn btn-primary" data-dismiss="modal" type="button">
                     Close Project</button>
+                  </div>
                 </div>
               </div>
             </div>
