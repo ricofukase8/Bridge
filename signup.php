@@ -1,3 +1,29 @@
+<?php 
+
+session_start();
+
+$errors=[];
+
+$name=[];
+$email=[];
+$password=[];
+
+if(!isset($_POST)){
+    $name=$_POST["input_name"];
+    $email=$_POST["input_email"];
+    $password=$_POST["input_password"];
+    if ($name=="") {
+        $errors["name"]="blank";
+    }if ($email=="") {
+        $errors["email"]="blank";
+    }if ($password=="") {
+        $errors["password"]="blank";
+    }
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +40,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="navbar.css">
+
     
 </head>
 <body>
@@ -65,7 +92,7 @@
 
 
 <!-- step1 form内容 -->
-          <form role="form">
+          <form role="form" method="post" action="#complete">
             <div class="tab-content">
               <div class="tab-pane active" role="tabpanel" id="step1">
                 <h3>Basic Infomation</h3>
@@ -455,7 +482,7 @@
                         <label for="name">name</label>
                       </div>
                       <div class="col-75">
-                      <p class="lead">name</p>
+                      <p class="lead" id="hoge">name</p>
                       </div>
                     </div>
                     <div class="row">
@@ -713,5 +740,6 @@ function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
 </script>
+<script src="assets/js/signup.js"></script>
 </body>
 </html>
