@@ -22,7 +22,7 @@ $(function() {
       })
       $(document).on('click', '#next-btn', function() {
          let batchnumber = $('#batchnumber').val();
-         $('#result_batchnumber',).text(batchnumber);
+         $('#result_batchnumber',).text(batchnumber + 'batch');
       })
       $(document).on('click', '#next-btn', function() {
          let period = $('#period').val();
