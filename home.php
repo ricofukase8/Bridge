@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 	<title>bridge-home</title>
 	<meta charset="UTF-8">
@@ -16,14 +16,14 @@
 	<link rel="stylesheet" href="assets/css/home/bootstrap.min.css"/>
 	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
 	<link rel="stylesheet" href="assets/css/home/owl.carousel.css"/>
+  
+
+
+  <!-- Tabs -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="assets/css/home/style.css"/>
-	
-
-
-	<!-- Tabs -->
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 	<!--[if lt IE 9]>
@@ -243,7 +243,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-profile">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
             <div class="lr">
