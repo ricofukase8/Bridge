@@ -274,6 +274,10 @@ ol {
   Header section
 ---------------------*/
 
+.modal-profile {
+	max-width: 1200px;
+}
+
 .header-section {
 	position: absolute;
 	width: 100%;
