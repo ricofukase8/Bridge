@@ -35,8 +35,8 @@ $(function() {
          let course = $('#course').val();
          $('#result_course').text(course);
 
-         let plofile = $('#plofile').val();
-         $('#result_plofile').text(plofile);
+         let profile = $('#profile').val();
+         $('#result_profile').text(profile);
 
          let fb = $('#fb').val();
          $('#result_fb').text(fb);

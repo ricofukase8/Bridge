@@ -86,8 +86,8 @@
 							<button type="button" class="btn btn-info sharp">人気順</button>
 							</a>
 							<text class="course-search-form-select">インターン採用</text>
-							<input class="radio-career" type="radio" id="carrerrer" name="carrer" value="Yes"> Yes
-							<input class="radio-career" type="radio" id="carrer" name="carrer" value="No"> No
+							<input class="radio-career" type="radio" id="careerrer" name="career" value="Yes"> Yes
+							<input class="radio-career" type="radio" id="career" name="career" value="No"> No
 							</div>
 							<div class="course-search-form-2">
 							<input type="text" placeholder="keywords">
@@ -329,7 +329,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="carrer_period" id="result_career_period">在籍期間</label>
+                              <label for="career_period" id="result_career_period">在籍期間</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">0000年00月〜0000年00月</p>
