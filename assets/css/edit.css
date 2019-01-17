@@ -1,6 +1,93 @@
+
 body {
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
     background: #f8f8f8 !important;
 }
+
+
+#icon{
+    text-align: right;
+}
+
+
+
+#panel-btn{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+    background: #00AFE5;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    text-align: right;
+    margin-top: 10px;
+}
+
+#company-toggle{
+    display: none;
+}
+
+#panel-btn:hover{
+  background: #357ebd;
+}
+
+#panel-btn-icon{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 2px;
+  margin: -1px 0 0 -7px;
+  background: #ffffff;
+  transition: .2s;
+}
+
+#panel-btn-icon:before, #panel-btn-icon:after{
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 2px;
+  background: #ffffff;
+  transition: .3s;
+}
+
+#panel-btn-icon:before{
+  margin-top: -6px;
+}
+
+#panel-btn-icon:after{
+  margin-top: 4px;
+}
+
+#panel-btn .close{
+  background: transparent;
+}
+
+#panel-btn .close:before, #panel-btn .close:after{
+  margin-top: 0;
+}
+
+
+#panel-btn .close:before{
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+#panel-btn .close:after{
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+
+
+
 
 
        .wizard {
@@ -152,6 +239,26 @@ span.round-tab:hover {
 
 #next-btn:hover{
     background-color: #0688B5;
+}
+
+#select_box_year {
+  width:70px;
+  margin-right: 5px;
+}
+
+#select_box_year_end {
+  width:70px;
+  margin-right: 5px;
+}
+
+#select_box_month {
+  width:70px;
+  margin-right: 5px;
+}
+
+#select_box_month_end {
+  width:70px;
+  margin-right: 5px;
 }
 
 

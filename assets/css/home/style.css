@@ -17,6 +17,24 @@ body {
 	font-smoothing: antialiased;
 }
 
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  text-align: center;
+  margin-top: 26px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 13px !important;
+}
+
+#hoge{
+	margin-top: 45px;
+}
+
 h1,
 h2,
 h3,
@@ -348,7 +366,7 @@ ol {
 }
 
 .hero-section-1 {
-	height: 450px;
+	height: 150px;
 }
 
 .hero-text {
@@ -360,7 +378,8 @@ ol {
 .hero-text h2 {
 	font-size: 60px;
 	font-weight: 500;
-	margin-bottom: 20px;
+	margin-top: 30px;
+	color: #00AFE5;
 }
 
 .intro-newslatter input[type=text],
