@@ -8,10 +8,10 @@
     <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
 
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
 
     <link rel="stylesheet" type="text/css" href="navbar.css">
     
@@ -205,10 +205,10 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="managerial">役職</label>
+                              <label for="position">役職</label>
                             </div>
                             <div class="col-75">
-                              <input type="text" id="managerial" name="input_managerial" placeholder="Your managerial..">
+                              <input type="text" id="position" name="input_position" placeholder="Your position..">
                             </div>
                           </div>
                           <div class="row">
@@ -324,8 +324,8 @@
                               <label for="job_status">現在働いている</label>
                             </div>
                             <div class="col-75">
-                              <input class="radio-career" type="radio" id="job_status_yes" name="input_job_status" value="Yes">Yes &emsp;
-                              <input class="radio-career" type="radio" id="job_status_no" name="input_job_status" value="No">No
+                              <input class="radio-career" type="radio" id="job_status_yes" name="job_status" value="Yes">Yes &emsp;
+                              <input class="radio-career" type="radio" id="job_status_no" name="job_status" value="No">No
                             </div>
                           </div>
                             <div class="row">
@@ -341,8 +341,8 @@
                               <label for="job_offer">求人の有無</label>
                             </div>
                             <div class="col-75">
-                              <input class="radio-career" type="radio" id="job_offer_yes" name="input_job_offer" value="Yes">Yes &emsp;
-                              <input class="radio-career" type="radio" id="job_offer_no" name="input_job_offer" value="No">No
+                              <input class="radio-career" type="radio" id="job_offer_yes" name="job_offer" value="Yes">Yes &emsp;
+                              <input class="radio-career" type="radio" id="job_offer_no" name="job_offer" value="No">No
                             </div>
                           </div>
                           <div class="row">
@@ -357,14 +357,14 @@
                             <div class="col-25">
                               <label for="advice">相談に乗れること</label>
                             </div>
-                            <div class="col-75">
-                              <input type="checkbox" class="check_box" id="advice1" />
+                            <div class="checkbox">
+                              <input type="checkbox" class="check_box" id="advice1" name="advice[]" value="就活相談">
                               <label class="advice_check" for="advice1">就活相談</label>
-                              <input type="checkbox" class="check_box" id="advice2" />
+                              <input type="checkbox" class="check_box" id="advice2" name="advice[]" value="業界分析">
                               <label class="advice_check" for="advice2">業界分析</label>
-                              <input type="checkbox" class="check_box" id="advice3" />
+                              <input type="checkbox" class="check_box" id="advice3" name="advice[]" value="企業分析">
                               <label class="advice_check" for="advice3">企業研究</label>
-                              <input type="checkbox" class="check_box" id="advice4" />
+                              <input type="checkbox" class="check_box" id="advice4" name="advice[]" value="自己分析">
                               <label class="advice_check" for="advice4">自己分析</label>
                             </div>
                           </div>
@@ -410,8 +410,8 @@
                               <label for="portfolio_status">開発環境</label>
                             </div>
                             <div class="col-75">
-                               <input class="radio-career" type="radio" id="portfolio_status_yes" name="input_portfolio_status" value="Yes">チーム開発 &emsp;
-                                      <input class="radio-career" type="radio" id="portfolio_status_no" name="input_portfolio_status" value="No">個人開発
+                               <input class="radio-career" type="radio" id="portfolio_status_yes" name="portfolio_status" value="Yes">チーム開発 &emsp;
+                                      <input class="radio-career" type="radio" id="portfolio_status_no" name="portfolio_status" value="No">個人開発
                             </div>
                           </div>
                           <div class="row">
@@ -472,7 +472,7 @@
                         <label for="img_name">プロフィール画像</label>
                       </div>
                       <div class="col-75">
-                        <img src="assets/img/categories/1.jpg" class="img-responsive img-thumbnail" id="result_img_name">
+                        <img src="assets/img/categories/1.jpg" class="img-responsive img-thumbnail" id="result_img_name" width="300px">
                       </div>
                     </div>
                     <div class="row">
@@ -547,18 +547,23 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="managerial">役職</label>
+                              <label for="position">役職</label>
                             </div>
                             <div class="col-75">
-                              <p class="lead" id="result_managerial">position</p>
+                              <p class="lead" id="result_position">position</p>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-25">
                               <label for="carrer_period">在籍期間</label>
                             </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_career_period">0000年00月〜0000年00月</p>
+                            <div class="col-75">  <!--要検討事項-->
+                              <ul class="career_period">
+                              <li class="lead" id="result_career_year">0000年</li>
+                              <li class="lead" id="result_career_month">00月〜</li>
+                              <li class="lead" id="result_career_year_end">0000年</li>
+                              <li class="lead" id="result_career_month_end">00月</li>
+                            </ul>
                             </div>
                           </div>
                           <div class="row">
@@ -608,10 +613,10 @@
                               <label for="advice">相談に乗れること</label>
                             </div>
                             <div class="col-75">
-                              <label class="advice_check" for="advice1" id="result_advice">就活相談</label>
-                              <label class="advice_check" for="advice2" id="result_advice">業界分析</label>
-                              <label class="advice_check" for="advice3" id="result_advice">企業研究</label>
-                              <label class="advice_check" for="advice4" id="result_advice">自己分析</label>
+                              <p class="lead" for="advice1" id="result_advice"></p>
+                              <!-- <p class="advice_check" for="advice2" id="result_advice"></p>
+                              <p class="advice_check" for="advice3" id="result_advice"></p>
+                              <p class="advice_check" for="advice4" id="result_advice"></p> -->
                             </div>
                           </div>
                           <div class="row">
