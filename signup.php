@@ -1,3 +1,45 @@
+<?php
+
+echo '<pre>';
+var_dump($_POST);
+echo '</pre>';
+
+// session_start();
+// require('dbconnect.php');
+
+// if (!isset($_SESSION['bridge'])) {
+//   header('Location: signup.php');
+//   exit();
+// }
+
+// // step1
+// $name = $_SESSION['bridge']['name'];
+// $email = $_SESSION['bridge']['email'];
+// $password = $_SESSION['bridge']['password'];
+// $img_name = $_SESSION['bridge']['img_name'];
+// $status = $_SESSION['bridge']['status'];
+// $batchnumber = $_SESSION['bridge']['batchnumber'];
+// $period = $_SESSION['bridge']['period'];
+// $course = $_SESSION['bridge']['course'];
+// $profile = $_SESSION['bridge']['profile'];
+// $fb = $_SESSION['bridge']['fb'];
+
+// if (!empty($_POST)) {
+//   $sql = 'INSERT INTO `users` SET `name`, `email`, `password`, `img_name`, `status`, `batchnumber`, `period` `course`, `profile`, `fb`, `created` VALUES  (?,?,?,?,?,?,?,?,?,?,NOW())';
+//   $data = array($name, $email, password_hash($password,PASSWORD_DEFAULT), $img_name, $status, $batchnumber, $period, $course, $profile, $fb);
+//   $stmt = $dbh->prepare($sql);
+//   $stmt->execute($data);
+//   $dbh = null;
+
+//   unset($_SESSION['bridge']);
+//   header('Location: thanks.php');
+//   exit();
+// }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,13 +47,13 @@
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>BRIDGE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
 
     <link rel="stylesheet" type="text/css" href="navbar.css">
     
@@ -65,7 +107,7 @@
 
 
 <!-- step1 form内容 -->
-          <form role="form">
+          <form method="POST" action="signup.php" enctype="multipart/form-data">
             <div class="tab-content">
               <div class="tab-pane active" role="tabpanel" id="step1">
                 <h3>Basic Infomation</h3>
@@ -154,10 +196,10 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                       <label for="plofile">Profile<br>(卒業後の予定等)</label>
+                       <label for="profile">Profile<br>(卒業後の予定等)</label>
                       </div>
                       <div class="col-75">
-                        <textarea id="plofile" name="subject" placeholder="Write something.."></textarea>
+                        <textarea id="profile" name="subject" placeholder="Write something.."></textarea>
                       </div>
                     </div>
                     <div class="row">
@@ -168,13 +210,12 @@
                         <input type="text" id="fb" name="input_fb" placeholder="Your FBaccount..">
                       </div>
                     </div>
-                  <!-- </form> -->
                 </div>
                 <ul class="list-inline pull-right">
-                  <li><button type="button" class="btn btn-primary next-step" id="next-btn">Save and continue</button></li>
+                  <li><input type="submit" class="btn btn-primary next-step" id="next-btn" value="Save and continue"></li>
                 </ul>
               </div>
-
+            </form>
 
               <!-- step2 form内容 -->
               <div class="tab-pane" role="tabpanel" id="step2">
@@ -509,10 +550,10 @@
                     </div>
                     <div class="row">
                       <div class="col-25">
-                       <label for="plofile">Profile<br>(卒業後の予定等)</label>
+                       <label for="profile">Profile<br>(卒業後の予定等)</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_plofile"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p class="lead" id="result_profile"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
