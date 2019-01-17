@@ -75,7 +75,7 @@ $(function() {
          let job_offer_comments = $('#job_offer_comments').val();
          $('#result_job_offer_comments').text(job_offer_comments);
 
-         $('input[name="advice[]"]').change(function() {
+         // $('input[name="advice[]"]').change(function() {
             var advices = [];
             $('input[name="advice[]"]:checked').each(function() {
                advices.push($(this).val());
@@ -83,7 +83,7 @@ $(function() {
             $('#result_advice').text(advices);
          console.log(advices);
 
-         });
+         // });
       // });
       //    let advice = $('.checkbox :checkbox:checked').val();
       //    $('#result_advice').text(advice); //要検討

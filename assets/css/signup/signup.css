@@ -1,5 +1,8 @@
  body {
     background: #f8f8f8 !important;
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
 
 
