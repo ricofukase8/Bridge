@@ -291,7 +291,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     </div>
                     <div class="row">
                       <div class="col-25">
-                       <label for="plofile" id="result_profile">Profile<br>(卒業後の予定等)</label>
+                       <label for="profile" id="result_profile">Profile<br>(卒業後の予定等)</label>
                       </div>
                       <div class="col-75">
                         <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -321,7 +321,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="managerial" id="result_managerial">役職</label>
+                              <label for="position" id="result_position">役職</label>
                             </div>
                             <div class="col-75">
                               <p class="lead">position</p>
