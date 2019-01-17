@@ -125,7 +125,7 @@
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">就活中</a>
             </div>
             </nav>
-			<div class="row">
+			<div class="row" id="hoge">
 				
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
@@ -259,18 +259,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                   <img class="img-fluid d-block mx-auto" src="assets/img/categories/1.jpg" alt="">
                    <div class="row">
                       <div class="col-25">
-                        <label for="status" id="result_status">ステータス</label>
+                        <label for="status">ステータス</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead">status</p>
+                        <p class="lead" id="result_status">status</p>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="batchnumber" id="result_batchnumber">batch number</label>
+                        <label for="batchnumber">batch number</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead">batch48</p>
+                        <p class="lead" id="result_batchnumber">batch48</p>
                       </div>
                     </div>
                     <div class="row">

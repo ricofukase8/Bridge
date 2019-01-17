@@ -15,13 +15,13 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/home/bootstrap.min.css"/>
 	<link rel="stylesheet" href="assets/css/home/owl.carousel.css"/>
-	<link rel="stylesheet" href="assets/css/home/style.css"/>
+	
 
 	<!-- Tabs -->
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+  <link rel="stylesheet" href="assets/css/home/style.css"/>
 
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

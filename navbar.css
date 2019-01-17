@@ -1,5 +1,4 @@
 .navbar {
-    font-family: 'Raleway', sans-serif;
     margin-bottom: 0;
     /*background-color: #1abc9c;*/
     z-index: 9999;
@@ -45,13 +44,13 @@
 }
 
 #title{
-   display: inline-block;
+    font-weight: bolder; 
+    display: inline-block;
     color: #00AFE5;
     width: 155px;
     text-align: center;
     margin: 0px;
     margin-bottom: 0px;
-    /*font-size: 30px;*/
 }
 
 #navbar{
