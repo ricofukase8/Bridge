@@ -254,7 +254,7 @@ echo '</pre>';
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="carrer_period">在籍期間</label>
+                              <label for="career_period">在籍期間</label>
                             </div>
                             <div class="col-75">
                               <select id="select_box_year" name="input_career_year">
@@ -596,7 +596,7 @@ echo '</pre>';
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="carrer_period">在籍期間</label>
+                              <label for="career_period">在籍期間</label>
                             </div>
                             <div class="col-75">  <!--要検討事項-->
                               <ul class="career_period">
