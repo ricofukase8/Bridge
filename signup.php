@@ -1,44 +1,25 @@
 <?php
-
-echo '<pre>';
-var_dump($_POST);
-echo '</pre>';
-
-// session_start();
+session_start();
 // require('dbconnect.php');
 
-// if (!isset($_SESSION['bridge'])) {
-//   header('Location: signup.php');
-//   exit();
-// }
-
-// // step1
-// $name = $_SESSION['bridge']['name'];
-// $email = $_SESSION['bridge']['email'];
-// $password = $_SESSION['bridge']['password'];
-// $img_name = $_SESSION['bridge']['img_name'];
-// $status = $_SESSION['bridge']['status'];
-// $batchnumber = $_SESSION['bridge']['batchnumber'];
-// $period = $_SESSION['bridge']['period'];
-// $course = $_SESSION['bridge']['course'];
-// $profile = $_SESSION['bridge']['profile'];
-// $fb = $_SESSION['bridge']['fb'];
-
+// $name="";
 // if (!empty($_POST)) {
-//   $sql = 'INSERT INTO `users` SET `name`, `email`, `password`, `img_name`, `status`, `batchnumber`, `period` `course`, `profile`, `fb`, `created` VALUES  (?,?,?,?,?,?,?,?,?,?,NOW())';
-//   $data = array($name, $email, password_hash($password,PASSWORD_DEFAULT), $img_name, $status, $batchnumber, $period, $course, $profile, $fb);
-//   $stmt = $dbh->prepare($sql);
-//   $stmt->execute($data);
-//   $dbh = null;
+//   $_SESSION["bridge2"]["name"]=$name;
 
-//   unset($_SESSION['bridge']);
-//   header('Location: thanks.php');
-//   exit();
 // }
+
+// var_dump($_POST);
+// $name="";
+
+
+// $_SESSION["48_LearnSNS"]["name"]=$_POST["input_name"];
+// $file_name="";
+
+
+
+
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -107,7 +88,7 @@ echo '</pre>';
 
 
 <!-- step1 form内容 -->
-          <form method="POST" action="signup.php" enctype="multipart/form-data">
+          <form method="POST" action="post.php" enctype="multipart/form-data">
             <div class="tab-content">
               <div class="tab-pane active" role="tabpanel" id="step1">
                 <h3>Basic Infomation</h3>
@@ -153,10 +134,10 @@ echo '</pre>';
                       <div class="col-75">
                         <select id="status" name="input_status">
                           <option value="" selected="selected">選択してください</option>
-                          <option value="在校生">在校生</option>
-                          <option value="卒業生(就活中)">卒業生(就活中)</option>
-                          <option value="卒業生(就職済)">卒業生(就職済)</option>
-                          <option value="フリーランス">フリーランス</option>
+                          <option value="1">在校生</option>
+                          <option value="2">卒業生(就活中)</option>
+                          <option value="3">卒業生(就職済)</option>
+                          <option value="4">フリーランス</option>
                         </select>
                       </div>
                     </div>
@@ -175,9 +156,9 @@ echo '</pre>';
                       <div class="col-75">
                         <select id="period" name="input_period">
                           <option value="" selected="selected">選択してください</option>
-                          <option value="1~4週間">1~4週間</option>
-                          <option value="5~8週間">5~8週間</option>
-                          <option value="8週間以上">8週間以上</option>
+                          <option value="1">1~4週間</option>
+                          <option value="2">5~8週間</option>
+                          <option value="3">8週間以上</option>
                         </select>
                       </div>
                     </div>
@@ -188,9 +169,10 @@ echo '</pre>';
                       <div class="col-75">
                         <select id="course" name="input_course">
                           <option value="" selected="selected">選択してください</option>
-                          <option value="webコース">webコース</option>
-                          <option value="iOSコース">iOSコース</option>
-                          <option value="basicコース">basicコース</option>
+                          <option value="1">webコース</option>
+                          <option value="2">iOSコース</option>
+                          <option value="3">basicコース</option>
+                          <option value="4">wec+iOSコース</option>
                         </select>
                       </div>
                     </div>
@@ -199,7 +181,7 @@ echo '</pre>';
                        <label for="profile">Profile<br>(卒業後の予定等)</label>
                       </div>
                       <div class="col-75">
-                        <textarea id="profile" name="subject" placeholder="Write something.."></textarea>
+                        <textarea id="profile" name="input_profile" placeholder="Write something.."></textarea>
                       </div>
                     </div>
                     <div class="row">
@@ -212,7 +194,7 @@ echo '</pre>';
                     </div>
                 </div>
                 <ul class="list-inline pull-right">
-                  <li><input type="submit" class="btn btn-primary next-step" id="next-btn" value="Save and continue"></li>
+                  <li><button type="button" class="btn btn-primary next-step" id="next-btn" value="Save and continue">Save and continue</button></li>
                 </ul>
               </div>
             </form>
@@ -399,8 +381,8 @@ echo '</pre>';
                               <label for="advice">相談に乗れること</label>
                             </div>
                             <div class="checkbox">
-                              <input type="checkbox" class="check_box" id="advice1" name="advice[]" value="就活相談">
-                              <label class="advice_check" for="advice1">就活相談</label>
+                              <input type="checkbox" class="check_box" id="advice1" name="advice[]" value="1">
+                              <label class="advice_check" for="advice1" >就活相談</label>
                               <input type="checkbox" class="check_box" id="advice2" name="advice[]" value="業界分析">
                               <label class="advice_check" for="advice2">業界分析</label>
                               <input type="checkbox" class="check_box" id="advice3" name="advice[]" value="企業分析">
@@ -700,7 +682,7 @@ echo '</pre>';
 
                   <ul class="list-inline pull-right">
                     <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                    <li><a href="thanks.php"><button type="button" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button></a></li>
+                    <li><a href="post.php"><button type="submit" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button></a></li>
                     
                   </ul>
               </div>
