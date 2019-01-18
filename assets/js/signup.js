@@ -1,5 +1,8 @@
 $(function() {
    $(document).on('click', '#next-btn', function() {
+
+         $('html,body').scrollTop(0);
+
          let name = $("#name").val(); //idがnameの値を変数nameに代入
          $('#result_name').text(name); //idのresult_nameにnameの値を入れる
 
@@ -35,8 +38,8 @@ $(function() {
          let course = $('#course').val();
          $('#result_course').text(course);
 
-         let plofile = $('#plofile').val();
-         $('#result_plofile').text(plofile);
+         let profile = $('#profile').val();
+         $('#result_profile').text(profile);
 
          let fb = $('#fb').val();
          $('#result_fb').text(fb);
@@ -77,11 +80,15 @@ $(function() {
 
          // $('input[name="advice[]"]').change(function() {
             var advices = [];
-            $('input[name="advice[]"]:checked').each(function() {
-               advices.push($(this).val());
+            $('[name="advice[]"]:checked').each(function(index, elm) {
+               var osValue = $(elm).attr('id');
+               var advices = $('label[for="' + osValue + '"]').text();
+               // advices.push($(this).val());
+               console.log(advices);
+               $('#result_advice').text(advices);
             });
-            $('#result_advice').text(advices);
-         console.log(advices);
+            // $('#result_advice').text(osText);
+         // console.log(osText);
 
          // });
       // });
