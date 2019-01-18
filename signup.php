@@ -45,7 +45,6 @@ session_start();
       <p class="subtitle">-NexSeed-</p>
     </div>
   </div>
-  
 
   <div class="container">
     <div class="row">
