@@ -8,7 +8,7 @@
           <label for="name">name</label>
         </div>
         <div class="col-75">
-        <input type="text" id="name" name="input_name" placeholder="Your name..">
+        <input type="text" id="name" name="input_name" placeholder="Your name.." value="<?php echo isset($signin_user) ? $signin_user[0] : ''; ?>"> 
         </div>
       </div>
       <div class="row">
