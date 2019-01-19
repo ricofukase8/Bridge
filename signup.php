@@ -2,23 +2,7 @@
 session_start();
 // require('dbconnect.php');
 
-// $name="";
-// if (!empty($_POST)) {
-//   $_SESSION["bridge2"]["name"]=$name;
-
-// }
-
-// var_dump($_POST);
-// $name="";
-
-
-// $_SESSION["48_LearnSNS"]["name"]=$_POST["input_name"];
-// $file_name="";
-
-
-
-
-
+// var_dump($_SESSION["bridge"]["id"]);
 ?>
 
 <!DOCTYPE html>
