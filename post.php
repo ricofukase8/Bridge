@@ -1,6 +1,14 @@
 <?php
 session_start();
+
+if (false) {
+	header("Location:signup.php");
+	exit();
+}
+
 require('dbconnect.php');
+
+require("function.php");
 
 // $name=$_SESSION["48_LearnSNS"]["name"];
 
@@ -9,7 +17,7 @@ $date_str=date("YmdHis");
 $file_name=$date_str . $_FILES["input_img_name"]["name"];
 // move_uploaded_file($_FILES["input_img_name"]["tmp_name"] , "assets/img/user_profile_img" . $file_name);
 
-$name=$_POST["input_name"];
+$name = $_POST["input_name"];
 $email=$_POST["input_email"];
 $password=$_POST["input_password"];
 // $img_name=$file_name;
@@ -20,19 +28,53 @@ $course=$_POST["input_course"];
 $profile=$_POST["input_profile"];
 $fb=$_POST["input_fb"];
 
-if (!empty($_POST)) {
-	$sql = "INSERT INTO `users` SET `name`=?,`email`=?,`password`=?,`img_name`=?,`status_id`=?,`batch_number`=?,`term_nexseed_id`=?,`course_id`=?,
-	`profile`=?,`fb_account`=?,`created`=NOW()";
-	$data = array($name , $email , $password , $file_name , $status , $batchnumber , $period , $course , $profile , $fb);
-	$stmt = $dbh->prepare($sql);
-	$stmt->execute($data);
-  	$dbh=null;
-
-  	header("Location:thanks.php");
-	exit();
-}else{
-	header("Location:signup.php");
+$career="";
+if (isset($_POST["input_career"])) {
+	$career=$_POST["input_career"];
 }
+
+$job_status="";
+if (isset($_POST["input_job_status"])) {
+	$job_status=$_POST["input_job_status"];
+}
+
+$advices="";
+if (isset($_POST["advice"])) {
+	$advices=$_POST["advice"];
+}
+
+// var_dump($advices); dai();
+
+$company_name=$_POST["input_company_name"];
+$position=$_POST["input_position"];
+$term_company=$_POST["input_career_year"] ."/".$_POST["input_career_month"] ."~". $_POST["input_career_year_end"] ."/".$_POST["input_career_month_end"];
+$job_contents=$_POST["input_job_content"];
+$offer_comments=$_POST["input_job_offer_comments"];
+
+$job_offer="";
+if (isset($_POST["input_job_offer"])) {
+	$job_offer=$_POST["input_job_offer"];
+}
+
+
+createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status);
+
+$signup_user_id = intval($dbh->query("SELECT max(id) FROM users")->fetchColumn());
+
+createCompanies($dbh, $signup_user_id, $company_name,$position,$term_company,$job_contents,$job_offer,$offer_comments);
+
+createAdvicesUsers($dbh, $signup_user_id, $advices);
+
+
+
+
+
+
+$dbh=null;
+
+header("Location:thanks.php");
+exit();
+
 
 // if (!empty($_SESSION) {
 // 	$sql="INSERT INTO `users` SET `name`=?";
