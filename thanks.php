@@ -11,7 +11,7 @@ session_start();
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
-  <div id="top" class="jumbotron">
+  <div id="top" class="jumbotron" style="background-image: url(assets/img/bridgemain.png);">
     <div class="container">
       <h1 class="title">BRIDGE</h1>
         <p class="subtitle">-NexSeed-</p>
