@@ -30,17 +30,17 @@ $(function() {
           }, true);
           reader.readAsDataURL(file[0]);
 
-         let status = $('#status').val();
+         let status = $('#status option:selected').text();
          $('#result_status').text(status);
 
 
          let batchnumber = $('#batchnumber').val();
          $('#result_batchnumber',).text(batchnumber + 'batch');
 
-         let period = $('#period').val();
+         let period = $('#period option:selected').text();
          $('#result_period').text(period);
 
-         let course = $('#course').val();
+         let course = $('#course option:selected').text();
          $('#result_course').text(course);
 
          let profile = $('#profile').val();
@@ -49,8 +49,9 @@ $(function() {
          let fb = $('#fb').val();
          $('#result_fb').text(fb);
 
-         let career = $('[name=career]:checked').val();
+         let career = $("input[name='input_career']:checked").parent().text();
          $('#result_career').text(career);
+         // console.log(career);
 
          let company_name = $('#company_name').val();
          $('#result_company_name').text(company_name);
@@ -70,7 +71,7 @@ $(function() {
          let career_month_end = $('#select_box_month_end').val();
          $('#result_career_month_end').text(career_month_end + '月');
 
-         let job_status = $('[name=input_job_status]:checked').val();
+         let job_status = $("input[name='input_job_status']:checked").parent().text();
          $('#result_job_status').text(job_status);
 
          let job_contents = $('#job_contents').val();
@@ -103,7 +104,7 @@ $(function() {
          let job_contents_2 = $('#job_contents_2').val();
          $('#result_job_contents_2').text(job_contents_2);
 
-         let job_offer = $('[name=job_offer]:checked').val();
+         let job_offer = $("input[name='input_job_offer']:checked").parent().text();
          $('#result_job_offer').text(job_offer);
 
          let job_offer_comments = $('#job_offer_comments').val();
@@ -114,7 +115,7 @@ $(function() {
                advices.push($(this).val());
             });
             $('#result_advice').text(advices);
-         console.log(advices);
+         // console.log(advices);
 
          let portfolio = $('#portfolio').val();
          $('#result_portfolio').text(portfolio);
@@ -122,8 +123,8 @@ $(function() {
          let portfolio_name = $('#portfolio_name').val();
          $('#result_portfolio_name').text(portfolio_name);
 
-         let portfolio_status = $('[name=portfolio_status]:checked').val();
-         $('#result_portfolio_status').text(portfolio_status);
+        let portfolio_status = $("input[name='input_portfolio_status']:checked").parent().text();
+         $('#result_career').text(portfolio_status);
 
           let portfolio_contents = $('#portfolio_contents').val();
          $('#result_portfolio_contents').text(portfolio_contents);
