@@ -11,7 +11,7 @@ function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,
 function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company, $job_contents, $job_offer, $offer_contents)
 {
 	$sql = "INSERT INTO `companies` SET `user_id`=?, `company_name` = ?, `position` = ?, `term_company` = ?, `job_contents` = ?, `job_offer` = ?,`offer_contents` =?";
-	$data = array($signup_user_id, $company_name,$position, $term_company, $job_contents, $job_offer, $offer_contents);
+	$data = array($signup_user_id, $company_name, $position, $term_company, $job_contents, $job_offer, $offer_contents);
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
 }
@@ -22,5 +22,14 @@ function createAdvicesUsers($dbh, $signup_user_id, $advices)
 	$data = array($signup_user_id, $advices);
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
+}
+
+function createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents)
+{
+	$sql = "INSERT INTO `portfolios` SET `user_id`=?, `portfolio_url`=?, `portfolio_name`=?, `portfolio_status`=?, `portfolio_comments`=?";
+	$data = array($signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
+	$stmt = $dbh->prepare($sql);
+	$stmt->execute($data);
+
 }
 

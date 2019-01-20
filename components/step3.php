@@ -27,8 +27,8 @@
                 <label for="portfolio_status">開発環境</label>
               </div>
               <div class="col-75">
-                 <input class="radio-career" type="radio" id="portfolio_status_yes" name="portfolio_status" value="Yes">チーム開発 &emsp;
-                        <input class="radio-career" type="radio" id="portfolio_status_no" name="portfolio_status" value="No">個人開発
+                 <input class="radio-career" type="radio" id="portfolio_status_yes" name="input_portfolio_status" value="1">チーム開発 &emsp;
+                        <input class="radio-career" type="radio" id="portfolio_status_no" name="input_portfolio_status" value="2">個人開発
               </div>
             </div>
             <div class="row">

@@ -43,7 +43,6 @@ if (isset($_POST["advice"])) {
 	$advices=$_POST["advice"];
 }
 
-// var_dump($advices); dai();
 
 $company_name=$_POST["input_company_name"];
 $position=$_POST["input_position"];
@@ -56,6 +55,15 @@ if (isset($_POST["input_job_offer"])) {
 	$job_offer=$_POST["input_job_offer"];
 }
 
+$portfolio=$_POST["input_portfolio"];
+$portfolio_name=$_POST["input_portfolio_name"];
+
+$portfolio_status="";
+if (isset($_POST["input_portfolio_status"])) {
+	$portfolio_status=$_POST["input_portfolio_status"];
+}
+
+$portfolio_contents=$_POST["input_portfolio_contents"];
 
 createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status);
 
@@ -65,8 +73,7 @@ createCompanies($dbh, $signup_user_id, $company_name,$position,$term_company,$jo
 
 createAdvicesUsers($dbh, $signup_user_id, $advices);
 
-
-
+createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
 
 
 
