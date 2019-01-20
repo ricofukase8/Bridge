@@ -1,3 +1,4 @@
+<?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false): ?>
 <div class="tab-pane" role="tabpanel" id="complete">
   <h3>Check Page</h3>
     <p>以下の内容でよろしいですか？</p>
@@ -219,7 +220,7 @@
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
             </div>
-
+            <?php endif; ?>
     <ul class="list-inline pull-right">
       <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
       <li><a href="post.php"><button type="submit" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button></a></li>

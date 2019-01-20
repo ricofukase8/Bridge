@@ -1,3 +1,7 @@
+<?php 
+  require('get_userdata.php');
+ ?>
+
 <div class="tab-pane" role="tabpanel" id="step2">
 <h3>Job Infomation</h3>
   <p>This is step 2</p>
@@ -11,8 +15,16 @@
               <label for="career">職歴</label>
             </div>
             <div class="col-75">
-              <input class="radio-career" type="radio" id="career-yes" name="input_career" value="1">Yes &emsp;
-              <input class="radio-career" type="radio" id="career-no" name="input_career" value="2">No
+              <label><input class="radio-career" type="radio" id="career" name="input_career" value="1"
+              <?php if (isset($signin_user) && $signin_user["career"]=="1"): ?>
+                checked="checked"
+              <?php endif ?>
+                >Yes</label> 
+              <label><input class="radio-career" type="radio" id="career" name="input_career" value="2" 
+              <?php if (isset($signin_user) && $signin_user["career"]=="2"): ?>
+                checked="checked"
+              <?php endif ?>
+              >No</label>
             </div>
           </div>
 
@@ -21,7 +33,7 @@
               <label for="company_name">会社名</label>
             </div>
             <div class="col-75">
-              <input type="text" id="company_name" name="input_company_name" placeholder="Your company name..">
+              <input type="text" id="company_name" name="input_company_name" placeholder="Your company name.." value="<?php echo isset($signin_user) ? $signin_user["company_name"] : ''; ?>">
             </div>
           </div>
           <div class="row">
@@ -29,7 +41,7 @@
               <label for="position">役職</label>
             </div>
             <div class="col-75">
-              <input type="text" id="position" name="input_position" placeholder="Your position..">
+              <input type="text" id="position" name="input_position" placeholder="Your position.." value="<?php echo isset($signin_user) ? $signin_user["position"] : ''; ?>">
             </div>
           </div>
           <div class="row">
@@ -145,8 +157,16 @@
               <label for="job_status">現在働いている</label>
             </div>
             <div class="col-75">
-              <input class="radio-career" type="radio" id="job_status_yes" name="input_job_status" value="1">Yes &emsp;
-              <input class="radio-career" type="radio" id="job_status_no" name="input_job_status" value="2">No
+              <label><input class="radio-career" type="radio" id="job_status_yes" name="input_job_status" value="1" 
+              <?php if (isset($signin_user) && $signin_user["job_status"]=="1"): ?>
+              checked="checked"
+              <?php endif ?>
+              >Yes</label>
+              <label><input class="radio-career" type="radio" id="job_status_no" name="input_job_status" value="2"
+              <?php if (isset($signin_user) && $signin_user["job_status"]=="2"): ?>
+              checked="checked"
+              <?php endif ?>
+              >No</label>
             </div>
           </div>
           <div class="row">
@@ -154,7 +174,7 @@
               <label for="job_contents">仕事内容</label>
             </div>
             <div class="col-75">
-             <textarea id="job_contents" name="input_job_content" placeholder="Write your job contents..."></textarea>
+             <textarea id="job_contents" name="input_job_content" placeholder="Write your job contents..."><?php echo isset($signin_user) ? $signin_user["job_contents"] : ''; ?></textarea>
             </div>
           </div>
           <!-- 職歴2 -->
@@ -162,6 +182,7 @@
             <div id="icon">
               <a id="panel-btn"><span id="panel-btn-icon"></span></a>
             </div>
+
              <div id="company-toggle">
               <div class="row">
               <div class="col-25">
@@ -322,8 +343,16 @@
               <label for="job_offer">求人の有無</label>
             </div>
             <div class="col-75">
-              <input class="radio-career" type="radio" id="job_offer_yes" name="input_job_offer" value="1">Yes &emsp;
-              <input class="radio-career" type="radio" id="job_offer_no" name="input_job_offer" value="2">No
+              <label><input class="radio-career" type="radio" id="job_offer_yes" name="input_job_offer" value="1"
+              <?php if (isset($signin_user) && $signin_user["job_offer"]=="1"): ?>
+              checked="checked"
+              <?php endif ?>
+              >Yes</label>
+              <label><input class="radio-career" type="radio" id="job_offer_no" name="input_job_offer" value="2"
+              <?php if (isset($signin_user) && $signin_user["job_offer"]=="2"): ?>
+              checked="checked"
+              <?php endif ?>
+              >No</label>
             </div>
           </div>
           <div class="row">
@@ -331,7 +360,7 @@
               <label for="job_offer_comments">求人情報</label>
             </div>
             <div class="col-75">
-              <textarea id="job_offer_comments" name="input_job_offer_comments" placeholder="Write job offer contents..."></textarea>
+              <textarea id="job_offer_comments" name="input_job_offer_comments" placeholder="Write job offer contents..."><?php echo isset($signin_user) ? $signin_user["offer_contents"] : ''; ?></textarea>
             </div>
           </div>
           <div class="row">
