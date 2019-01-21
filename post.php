@@ -1,6 +1,6 @@
 <?php
 session_start();
-var_dump(123);die();
+
 if (false) {
 	header("Location:signup.php");
 	exit();
@@ -74,7 +74,6 @@ createCompanies($dbh, $signup_user_id, $company_name,$position,$term_company,$jo
 createAdvicesUsers($dbh, $signup_user_id, $advices);
 
 createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
-
 
 
 $dbh=null;

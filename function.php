@@ -5,9 +5,8 @@ function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,
 	$sql = "INSERT INTO `users` SET `name` = ?, `email` = ?, `password` = ?, `img_name` = ?, `status_id` = ?, `batch_number` = ?, `term_nexseed_id` = ?, `course_id` = ?, `profile` = ?, `fb_account` = ?, `career` = ?, `job_status` = ?, `created` = NOW()";
 		$data = array($name , $email , $password , $file_name , $status , $batchnumber , $period , $course , $profile , $fb, $career, $job_status);
 		$stmt = $dbh->prepare($sql);
-		$hoge = $stmt->execute($data);
+		$stmt->execute($data);
 
-		var_dump($hoge);die();
 }
 
 function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company, $job_contents, $job_offer, $offer_contents)
