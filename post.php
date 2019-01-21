@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+var_dump(123);die();
 if (false) {
 	header("Location:signup.php");
 	exit();
@@ -78,7 +78,6 @@ createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_
 
 
 $dbh=null;
-
 header("Location:thanks.php");
 exit();
 
