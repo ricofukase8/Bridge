@@ -328,8 +328,12 @@ require('get_userdata.php');
                             </div>
                           </div>
                   <ul class="list-inline pull-right">
-                    <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                    <li><a href="thanks.php"><button type="button" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button></a></li>
+                    <li>
+                    <button type="buton" class="btn btn-default prev-step">Previous</button>
+                    </li>
+                    <li>
+                    <button type="submit" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button>
+                    </li>
                   </ul>
               </div>
             </div>
