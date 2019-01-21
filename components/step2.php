@@ -283,10 +283,10 @@
           </div>
           <div class="row">
             <div class="col-25">
-              <label for="job_offer_comments">求人情報</label>
+              <label for="job_offer_contents">求人情報</label>
             </div>
             <div class="col-75">
-              <textarea id="job_offer_comments" name="input_job_offer_comments" placeholder="Write job offer contents..."><?php echo isset($signin_user) ? $signin_user["offer_contents"] : ''; ?></textarea>
+              <textarea id="job_offer_contents" name="input_job_offer_contents" placeholder="Write job offer contents..."><?php echo isset($signin_user) ? $signin_user["offer_contents"] : ''; ?></textarea>
             </div>
           </div>
           <div class="row">

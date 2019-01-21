@@ -34,3 +34,52 @@ function createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $p
 
 }
 
+function getAllUsers($dbh,$user_id)
+{
+	$sql = 'SELECT `u`.*, `c`.*, `a`.*, `p`.* FROM `users` AS `u` JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id`';
+    $data = [23];
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $user;
+}
+
+//$sql='SELECT`f`.*,`u`.`name`,`u`.`img_name` FROM `feeds` AS `f` LEFT JOIN `users` AS `u` ON `f`.`user_id`=`u`.`id` WHERE `f`.`feed`
+
+// function getUserCompanies($dbh,$user_id)
+// {
+// 	$sql = 'SELECT `c`.`company_name`,`position`,`term_company`,`job_contents`,`job_offer`,`offer_contents` FROM `companies` AS `c` WHERE `user_id` = ?';
+//     $data = [16];
+//     $stmt = $dbh->prepare($sql);
+//     $stmt->execute($data);
+
+//     $user_companies = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//     return $user_companies;
+// }
+
+// function getUserAdvices($dbh,$user_id)
+// {
+// 	$sql = 'SELECT `a`.`advices_id` FROM `advices_users` AS `a` WHERE `user_id` = ?';
+//     $data = [16];
+//     $stmt = $dbh->prepare($sql);
+//     $stmt->execute($data);
+
+//     $user_advices = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//     return $user_advices;
+// }
+
+// function getUserPortfolios($dbh,$user_id)
+// {
+// 	$sql = 'SELECT `p`.`portfolio_url`, `portfolio_name`, `portfolio_status`, `portfolio_comments` FROM `portfolios` AS `p` WHERE `user_id` = ?';
+//     $data = [16];
+//     $stmt = $dbh->prepare($sql);
+//     $stmt->execute($data);
+
+//     $user_portfolios = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//     return $user_portfolios;
+// }
