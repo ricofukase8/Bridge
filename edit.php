@@ -23,8 +23,6 @@
 
     <link rel="stylesheet" type="text/css" href="navbar.css">
     <link rel="stylesheet" type="text/css" href="assets/css/edit.css">
-    <script type="text/javascript" src="assets/js/edit.js"></script>
-
 </head>
 <body>
 
