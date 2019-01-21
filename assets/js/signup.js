@@ -40,7 +40,7 @@ $(function() {
       let fb = $('#fb').val();
       $('#result_fb').text(fb);
 
-      let career = $('input[name='input_career']:checked').parent().val();
+      let career = $('input[name="input_career"]:checked').parent().val();
       $('#result_career').text(career);
       // console.log(career);
 
@@ -62,7 +62,7 @@ $(function() {
       let career_month_end = $('#select_box_month_end').val();
       $('#result_career_month_end').text(career_month_end + '月');
 
-      let job_status = $('input[name='input_job_status']:checked').parent().val();
+      let job_status = $('input[name="input_job_status"]:checked').parent().val();
       $('#result_job_status').text(job_status);
 
       let job_contents = $('#job_contents').val();
@@ -100,7 +100,7 @@ $(function() {
       $('#result_portfolio_name').text(portfolio_name);
       // console.log(portfolio_name);
 
-      let portfolio_status = $('input[name='input_portfolio_status']:checked').parent().val();
+      let portfolio_status = $('input[name="input_portfolio_status"]:checked').parent().val();
       $('#result_portfolio_status').text(portfolio_status);
       // console.log(portfolio_status);
 
