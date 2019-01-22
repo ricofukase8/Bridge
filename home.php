@@ -3,10 +3,9 @@ session_start();
 require('dbconnect.php');
 require('function.php');
 
-$user = getAllUsers($dbh,[23]);
-
-// $signin_user = getUser($dbh,[23]); //関数の呼び出し
-$users[] = $user;
+$users = getAllUsers($dbh);
+$signin_user = getUser($dbh,[23]); //関数の呼び出し
+// $users[] = $user;
 // $user_companies = getUserCompanies($dbh,[16]); //関数の呼び出し
 // $user_advices = getUserAdvices($dbh,[16]); //関数の呼び出し
 // $user_portfolios = getUserPortfolios($dbh,[16]); //関数の呼び出し
@@ -22,6 +21,10 @@ $users[] = $user;
 //       break;
 //     }
 // }
+
+// echo '<pre>';
+// var_dump($users);die();
+
  ?>
 
 <!DOCTYPE html>
@@ -81,7 +84,7 @@ $users[] = $user;
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9">
-					<a href="#portfolioModal1" class="site-btn header-btn" data-toggle="modal" >MYPAGE</a></a>
+					<a href="#mypage" class="site-btn header-btn" data-toggle="modal" >MYPAGE</a></a>
 					<nav class="main-menu">
 						<ul>
 							<li><a href="like.php" id="link">LIKE</a></li>
@@ -161,7 +164,7 @@ $users[] = $user;
 					<div class="categorie-item">
 						<div class="ci-thumb set-bg" data-setbg="assets/img/user_profile_img/<?php echo $user['img_name']; ?>">
             			</div>
-            			<a class="ci-text-link" data-toggle="modal" href="#portfolioModal1">
+            			<a class="ci-text-link" data-toggle="modal" href="#portfolioModal<?php echo $user['id']; ?>">
 						<div class="ci-text">
 							<h5><?php echo $user['name']; ?></h5>
 							<p><?php echo $user['company_name']; ?></p>
@@ -170,109 +173,9 @@ $users[] = $user;
 						</a>
 					</div>
 				</div>
-			<?php endforeach; ?>
-				<!-- categorie -->
-				<!-- <div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/2.jpg"></div>
-						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal2">
-						<div class="ci-text">
-							<h5>萩原カズマ</h5>
-							<p>株式会社〇〇</p> -->
-							<!-- <span>70 Courses</span> -->
-						<!-- </div>
-						</a>
-					</div>
-				</div> -->
-				<!-- categorie -->
-				<!-- <div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/3.jpg"></div>
-						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal3">
-						<div class="ci-text" href="#portfolio-modal1">
-							<h5>伊藤公平</h5>
-							<p>〇〇株式会社</p> -->
-							<!-- <span>55 Courses</span> -->
-						<!-- </div>
-						</a>
-					</div>
-				</div> -->
-				<!-- categorie -->
-				<!-- <div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/4.jpg"></div>
-						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal4">
-						<div class="ci-text">
-							<h5>大月えりか</h5>
-							<p>〇〇 Co., LTD</p> -->
-							<!-- <span>40 Courses</span> -->
-						<!-- </div>
-						</a>
-					</div>
-				</div> -->
-				<!-- categorie -->
-				<!-- <div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/5.jpg"></div>
-						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal5">
-						<div class="ci-text">
-							<h5>萩原カズマ</h5>
-							<p>〇〇株式会社</p> -->
-							<!-- <span>220 Courses</span> -->
-						<!-- </div>
-						</a>
-					</div>
-				</div> -->
-				<!-- categorie -->
-				<!-- <div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/6.jpg"></div>
-						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal6">
-						<div class="ci-text">
-							<h5>伊藤公平</h5>
-							<p>株式会社〇〇</p> -->
-							<!-- <span>25 Courses</span> -->
-						<!-- </div>
-						</a>
-					</div>
-				</div> -->
-			</div>
-		</div>
-	</section>
-	<!-- categories section end -->
 
-
-		<!-- banner section end -->
-
-
-	<!-- footer section -->
-	<footer class="footer-section spad pb-0" style="padding-top: 50px">
-		<div class="footer-top">
-			<div class="footer-warp">
-				<a href="home.php">
-					<h3 style="color: #474747">☝︎TOP</h3>
-				</a>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="footer-warp">
-				<ul class="footer-menu">
-					<li><a href="#">Terms & Conditions</a></li>
-					<li><a href="#">Register</a></li>
-					<li><a href="#">Privacy</a></li>
-				</ul>
-				<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-			</div>
-		</div>
-	</footer>
-	<!-- footer section end -->
-
-	<!-- Portfolio Modals -->
-
-    <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+				    <!-- Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $user['id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-profile">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
@@ -397,7 +300,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                               <label for="advice">相談に乗れること</label>
                             </div>
                             <div class="col-75">
-                              <p class="lead" for="advice1" id="result_advice"><?php echo $user['offer_contents']; ?></p>
+                              <p class="lead" for="advice1" id="result_advice"><?php echo $user['advice_id']; ?></p>
                             </div>
                           </div>
                           <div class="row">
@@ -448,10 +351,110 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
       </div>
     </div>
+			<?php endforeach; ?>
+				<!-- categorie -->
+				<!-- <div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/2.jpg"></div>
+						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal2">
+						<div class="ci-text">
+							<h5>萩原カズマ</h5>
+							<p>株式会社〇〇</p> -->
+							<!-- <span>70 Courses</span> -->
+						<!-- </div>
+						</a>
+					</div>
+				</div> -->
+				<!-- categorie -->
+				<!-- <div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/3.jpg"></div>
+						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal3">
+						<div class="ci-text" href="#portfolio-modal1">
+							<h5>伊藤公平</h5>
+							<p>〇〇株式会社</p> -->
+							<!-- <span>55 Courses</span> -->
+						<!-- </div>
+						</a>
+					</div>
+				</div> -->
+				<!-- categorie -->
+				<!-- <div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/4.jpg"></div>
+						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal4">
+						<div class="ci-text">
+							<h5>大月えりか</h5>
+							<p>〇〇 Co., LTD</p> -->
+							<!-- <span>40 Courses</span> -->
+						<!-- </div>
+						</a>
+					</div>
+				</div> -->
+				<!-- categorie -->
+				<!-- <div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/5.jpg"></div>
+						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal5">
+						<div class="ci-text">
+							<h5>萩原カズマ</h5>
+							<p>〇〇株式会社</p> -->
+							<!-- <span>220 Courses</span> -->
+						<!-- </div>
+						</a>
+					</div>
+				</div> -->
+				<!-- categorie -->
+				<!-- <div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<div class="ci-thumb set-bg" data-setbg="assets/img/categories/6.jpg"></div>
+						<a class="ci-text-link" data-toggle="modal" href="#portfolioModal6">
+						<div class="ci-text">
+							<h5>伊藤公平</h5>
+							<p>株式会社〇〇</p> -->
+							<!-- <span>25 Courses</span> -->
+						<!-- </div>
+						</a>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+	<!-- categories section end -->
 
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
+
+		<!-- banner section end -->
+
+
+	<!-- footer section -->
+	<footer class="footer-section spad pb-0" style="padding-top: 50px">
+		<div class="footer-top">
+			<div class="footer-warp">
+				<a href="home.php">
+					<h3 style="color: #474747">☝︎TOP</h3>
+				</a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="footer-warp">
+				<ul class="footer-menu">
+					<li><a href="#">Terms & Conditions</a></li>
+					<li><a href="#">Register</a></li>
+					<li><a href="#">Privacy</a></li>
+				</ul>
+				<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer section end -->
+
+	<!-- Portfolio Modals -->
+
+	<!-- my page -->
+    <div class="portfolio-modal modal fade" id="mypage" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-profile">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
             <div class="lr">
@@ -463,22 +466,162 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">萩原 カズマ</h2>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/2.jpg" alt="">
-                  <ul class="list-inline">
-                    <li>バッチ: 48期</li>
-                    <li>在学期間: ６週間</li>
-                    <li>コース: webコース</li>
-                  </ul>
-                  <p class="item-intro text-muted">よろしくお願いします。</p>
-                  <ul class="list-inline">
-                    <li>相談に乗れること: </li>
-                    <li>企業名: Nexceed inc.</li>
-                    <li>在学期間: 2018年4月〜</li>
-                    <li>仕事内容: 正社員・インターンシップの採用担当</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    Close Project</button>
+                  <h2 class="text-uppercase"><?php echo $signin_user['name']; ?></h2>
+                  <img class="img-fluid d-block mx-auto" src="assets/img/user_profile_img/<?php echo $signin_user['img_name']; ?>" alt="">
+                   <div class="row">
+                      <div class="col-25">
+                        <label for="status">ステータス</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_status"><?php echo $signin_user['status_id']; ?></p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="batchnumber">batch number</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_batchnumber"><?php echo $signin_user['batch_number']; ?></p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="period">在籍期間</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead"  id="result_period"><?php echo $signin_user['term_nexseed_id']; ?></p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="course">コース</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_course"><?php echo $signin_user['course_id']; ?></p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                       <label for="profile" id="result_profile">Profile<br>(卒業後の予定等)</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_profile"><?php echo $signin_user['profile']; ?></p>
+                      </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-25">
+                              <label for="career">職歴</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_career"><?php echo $signin_user['career']; ?></p>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="company_name">会社名</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_company_name"><?php echo $signin_user['company_name']; ?></p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="position" id="result_position">役職</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_position"><?php echo $signin_user['position']; ?></p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="career_period">在籍期間</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_career_period"><?php echo $signin_user['term_company']; ?></p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="job_status">現在働いている</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_job_status"><?php echo $signin_user['job_status']; ?></p>
+                            </div>
+                          </div>
+                            <div class="row">
+                              <div class="col-25">
+                                <label for="job_contents">仕事内容</label>
+                              </div>
+                              <div class="col-75">
+                               <p class="lead" id="result_job_contents"><?php echo $signin_user['job_contents']; ?></p>
+                              </div>
+                            </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="job_offer">求人の有無</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_job_offer"><?php echo $signin_user['job_offer']; ?></p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="job_offer_contents">求人情報</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_job_offer_contents"><?php echo $signin_user['offer_contents']; ?></p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="advice">相談に乗れること</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" for="advice1" id="result_advice"><?php echo $signin_user['offer_contents']; ?></p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="portfolio">ポートフォリオURL</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_portfolio"><?php echo $signin_user['portfolio_url']; ?></p>
+                            </div>
+                          </div> 
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="portfolio_name">サービス名</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_portfolio_name"><?php echo $signin_user['portfolio_name']; ?></p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="portfolio_status">開発環境</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_portfolio_status"><?php echo $signin_user['portfolio_status']; ?></p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="portfolio_contents">ポートフォリオコメント</label>
+                            </div>
+                            <div class="col-75">
+                              <p class="lead" id="result_portfolio_contents"><?php echo $signin_user['portfolio_comments']; ?></p>
+                            </div>
+                          </div>
+
+
+                  <div class="btn-profile">
+                  	<ul class="btn-profile">
+                  		<li><button class="btn btn-warning" type="button" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">LIKE</button></li>
+                  		<li><a href="<?php echo $user['fb_account']; ?>"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a></li>
+                  		<li><button class="btn btn-primary" data-dismiss="modal" type="button" style="margin-bottom: 10px; margin-left: 700px;" >Close Project</button></li>
+              		</ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -487,157 +630,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
       </div>
     </div>
 
-    <!-- Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">伊藤 公平</h2>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/3.jpg" alt="">
-                  <ul class="list-inline">
-                    <li>バッチ: 48期</li>
-                    <li>在学期間: ６週間</li>
-                    <li>コース: webコース</li>
-                  </ul>
-                  <p class="item-intro text-muted">よろしくお願いします。</p>
-                  <ul class="list-inline">
-                    <li>相談に乗れること: </li>
-                    <li>企業名: Nexceed inc.</li>
-                    <li>在学期間: 2018年4月〜</li>
-                    <li>仕事内容: 正社員・インターンシップの採用担当</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">大月 エリカ</h2>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/4.jpg" alt="">
-                  <ul class="list-inline">
-                    <li>バッチ: 48期</li>
-                    <li>在学期間: ６週間</li>
-                    <li>コース: webコース</li>
-                  </ul>
-                  <p class="item-intro text-muted">よろしくお願いします。</p>
-                  <ul class="list-inline">
-                    <li>相談に乗れること: </li>
-                    <li>企業名: Nexceed inc.</li>
-                    <li>在学期間: 2018年4月〜</li>
-                    <li>仕事内容: 正社員・インターンシップの採用担当</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">萩原 カズマ</h2>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/5.jpg" alt="">
-                  <ul class="list-inline">
-                    <li>バッチ: 48期</li>
-                    <li>在学期間: ６週間</li>
-                    <li>コース: webコース</li>
-                  </ul>
-                  <p class="item-intro text-muted">よろしくお願いします。</p>
-                  <ul class="list-inline">
-                    <li>相談に乗れること: </li>
-                    <li>企業名: Nexceed inc.</li>
-                    <li>在学期間: 2018年4月〜</li>
-                    <li>仕事内容: 正社員・インターンシップの採用担当</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">伊藤 公平</h2>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/categories/6.jpg" alt="">
-                  <ul class="list-inline">
-                    <li>バッチ: 48期</li>
-                    <li>在学期間: ６週間</li>
-                    <li>コース: webコース</li>
-                  </ul>
-                  <p class="item-intro text-muted">よろしくお願いします。</p>
-                  <ul class="list-inline">
-                    <li>相談に乗れること: </li>
-                    <li>企業名: Nexceed inc.</li>
-                    <li>在学期間: 2018年4月〜</li>
-                    <li>仕事内容: 正社員・インターンシップの採用担当</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 	<!--====== Javascripts & Jquery ======-->

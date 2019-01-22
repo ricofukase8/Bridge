@@ -34,21 +34,24 @@ function createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $p
 
 }
 
-function getAllUsers($dbh,$user_id)
+function getAllUsers($dbh)
 {
-	$sql = 'SELECT `u`.*, `c`.*, `a`.*, `p`.* FROM `users` AS `u` JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id`';
-    $data = [23];
+	$sql = 'SELECT * FROM `users` AS `u` ';
+	$sql .= 'JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
+	$sql .= 'JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
+	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
+	$sql .= 'JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
+	// $sql .=
+	// $sql .=
     $stmt = $dbh->prepare($sql);
-    $stmt->execute($data);
+    $stmt->execute();
 
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    return $user;
+    return $stmt->fetchAll();
 }
 
 function getUser($dbh,$user_id)
 {
-	$sql = 'SELECT * FROM `users` WHERE `id` = ?';
+	$sql = 'SELECT `u`.*, `c`.*, `a`.*, `p`.* FROM `users` AS `u` JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id`';
     $data = [23];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
