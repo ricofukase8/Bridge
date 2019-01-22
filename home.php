@@ -5,7 +5,7 @@ require('function.php');
 
 $user = getAllUsers($dbh,[23]);
 
-// $user = getUser($dbh,[16]); //関数の呼び出し
+// $signin_user = getUser($dbh,[23]); //関数の呼び出し
 $users[] = $user;
 // $user_companies = getUserCompanies($dbh,[16]); //関数の呼び出し
 // $user_advices = getUserAdvices($dbh,[16]); //関数の呼び出し

@@ -46,7 +46,17 @@ function getAllUsers($dbh,$user_id)
     return $user;
 }
 
-//$sql='SELECT`f`.*,`u`.`name`,`u`.`img_name` FROM `feeds` AS `f` LEFT JOIN `users` AS `u` ON `f`.`user_id`=`u`.`id` WHERE `f`.`feed`
+function getUser($dbh,$user_id)
+{
+	$sql = 'SELECT * FROM `users` WHERE `id` = ?';
+    $data = [23];
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $signin_user;
+}
 
 // function getUserCompanies($dbh,$user_id)
 // {
