@@ -368,10 +368,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="job_offer_comments">求人情報</label>
+                              <label for="job_offer_contents">求人情報</label>
                             </div>
                             <div class="col-75">
-                              <p class="lead" id="result_job_offer_comments">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              <p class="lead" id="result_job_offer_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse

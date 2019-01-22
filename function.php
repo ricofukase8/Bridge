@@ -9,10 +9,12 @@ function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,
 
 }
 
-function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company, $job_contents, $job_offer, $offer_contents)
+function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
+ $term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents)
 {
-	$sql = "INSERT INTO `companies` SET `user_id`=?, `company_name` = ?, `position` = ?, `term_company` = ?, `job_contents` = ?, `job_offer` = ?,`offer_contents` =?";
-	$data = array($signup_user_id, $company_name, $position, $term_company, $job_contents, $job_offer, $offer_contents);
+	$sql = "INSERT INTO `companies` SET `user_id`=?, `company_name` = ?, `position` = ?, `term_company_year` = ?, `term_company_month`= ?, `term_company_year_end` = ?, `term_company_month_end` = ?, `job_contents` = ?, `job_offer` = ?,`offer_contents` =?";
+	$data = array($signup_user_id, $company_name, $position, $term_company_year, $term_company_month, 
+		$term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents);
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
 }
@@ -31,6 +33,31 @@ function createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $p
 	$data = array($signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
-
 }
+
+
+function upDate($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status)
+{
+	$sql = "UPDATE `users` SET `name` = ?, `email` = ?, `password` = ?, `img_name` = ?, `status_id` = ?, `batch_number` = ?, `term_nexseed_id` = ?, `course_id` = ?, `profile` = ?, `fb_account` = ?, `career` = ?, `job_status` = ?, `updated` = NOW() WHERE`id`=?";
+		$data = array($name , $email , $password , $file_name , $status , $batchnumber , $period , $course , $profile , $fb, $career, $job_status, "93");
+		$stmt = $dbh->prepare($sql);
+		$stmt->execute($data);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

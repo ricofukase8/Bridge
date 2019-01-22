@@ -71,8 +71,8 @@ $(function() {
       let job_offer = $('[name=job_offer]:checked').val();
       $('#result_job_offer').text(job_offer);
 
-      let job_offer_comments = $('#job_offer_comments').val();
-      $('#result_job_offer_comments').text(job_offer_comments);
+      let job_offer_contents = $('#job_offer_contents').val();
+      $('#result_job_offer_contents').text(job_offer_contents);
 
       // $('input[name="advice[]"]').change(function() {
       var advices = [];
