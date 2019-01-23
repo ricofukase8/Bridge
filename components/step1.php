@@ -63,7 +63,7 @@
         </div>
         <div class="col-75">
           <select id="period" name="input_period">
-            <option value="" <?php if (isset($signin_user) && $signin_user["tearm_nexseed_id"] == "0"){echo "selected";}?>>-</option>
+            <option value="" <?php if (isset($signin_user) && $signin_user["term_nexseed_id"] == "0"){echo "selected";}?>>-</option>
             <option value="1" <?php if (isset($signin_user) && $signin_user["term_nexseed_id"] == "1"){echo "selected";}?>>1~4週間</option>
             <option value="2" <?php if (isset($signin_user) && $signin_user["term_nexseed_id"] == "2"){echo "selected";}?>>5~8週間</option>
             <option value="3" <?php if (isset($signin_user) && $signin_user["term_nexseed_id"] == "3"){echo "selected";}?>>8週間以上</option>

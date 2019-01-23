@@ -11,15 +11,15 @@ $(function() {
    })
 
    $(document).on('click', '#next-btn', function() {
+
       let name = $("#name").val(); //idがnameの値を変数nameに代入
       $('#result_name').text(name); //idのresult_nameにnameの値を入れる
-      console.log(name);
 
       let email = $('#email').val();
       $('#result_email').text(email);
 
+
       let file = document.getElementById('img_name').files;
-      console.log('img_name');
       let reader = new FileReader();
       reader.addEventListener('load', function(e) {
          document.getElementById('result_img_name').src = reader.result;
@@ -73,7 +73,9 @@ $(function() {
       let job_contents = $('#job_contents').val();
       $('#result_job_contents').text(job_contents);
 
-      let career_2 = $('[name=input_career_2]:checked').val();
+
+         // 職歴２
+      let career_2 = $('[name="input_career_2"]:checked').val();
       $('#result_career_2').text(career_2);
 
       let company_name_2 = $('#company_name_2').val();
@@ -99,19 +101,19 @@ $(function() {
 
       let job_contents_2 = $('#job_contents_2').val();
       $('#result_job_contents_2').text(job_contents_2);
+       // 職歴２
 
       let job_offer = $("input[name='input_job_offer']:checked").parent().text();
       $('#result_job_offer').text(job_offer);
 
-      let job_offer_comments = $('#job_offer_comments').val();
-      $('#result_job_offer_comments').text(job_offer_comments);
+      let job_offer_contents = $('#job_offer_contents').val();
+      $('#result_job_offer_contents').text(job_offer_contents);
 
-         var advices = [];
-         $('input[name="advice[]"]:checked').each(function() {
-            advices.push($(this).val());
-         });
-         $('#result_advice').text(advices);
-      // console.log(advices);
+      var advices = [];
+      $('input[name="advice[]"]:checked').each(function() {
+         advices.push($(this).val());
+      });
+      $('#result_advice').text(advices);
 
       let portfolio = $('#portfolio').val();
       $('#result_portfolio').text(portfolio);
@@ -119,10 +121,10 @@ $(function() {
       let portfolio_name = $('#portfolio_name').val();
       $('#result_portfolio_name').text(portfolio_name);
 
-     let portfolio_status = $("input[name='input_portfolio_status']:checked").parent().text();
-      $('#result_career').text(portfolio_status);
+      let portfolio_status = $("input[name='input_portfolio_status']:checked").parent().text();
+      $('#result_portfolio_status').text(portfolio_status);
 
-       let portfolio_contents = $('#portfolio_contents').val();
+      let portfolio_contents = $('#portfolio_contents').val();
       $('#result_portfolio_contents').text(portfolio_contents);
    })
 

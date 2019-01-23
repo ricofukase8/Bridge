@@ -1,7 +1,10 @@
 <?php
-  require('get_userdata.php');
+session_start();
+require('dbconnect.php');  
+require('get_userdata.php');
 
-
+// echo "<pre>";
+// var_dump($signin_user);die();
 
 ?>
 
@@ -34,7 +37,7 @@
           <?php include('components/wizard.php');?>
         </div>
 
-          <form role="form">
+          <form method="POST" action="update.php" enctype="multipart/form-data">
             <div class="tab-content">
               <?php include('components/step1.php');?>
               <?php include('components/step2.php');?>
@@ -264,10 +267,10 @@
                           </div>
                           <div class="row">
                             <div class="col-25">
-                              <label for="job_offer_comments">求人情報</label>
+                              <label for="job_offer_contents">求人情報</label>
                             </div>
                             <div class="col-75">
-                              <p class="lead" id="result_job_offer_comments">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              <p class="lead" id="result_job_offer_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -325,7 +328,9 @@
                           </div>
                   <ul class="list-inline pull-right">
                     <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                    <li><a href="thanks.php"><button type="button" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button></a></li>
+                    <li>
+                      <button type="submit" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button>
+                    </li>
                   </ul>
               </div>
             </div>

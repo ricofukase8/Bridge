@@ -2,7 +2,7 @@
 session_start();
 
 if (false) {
-	header("Location:signup.php");
+	header("Location:edit.php");
 	exit();
 }
 
@@ -10,7 +10,6 @@ require('dbconnect.php');
 
 require("function.php");
 
-// $name=$_SESSION["48_LearnSNS"]["name"];
 
 date_default_timezone_set("Asia/Manila");
 $date_str=date("YmdHis");
@@ -38,6 +37,11 @@ if (isset($_POST["input_job_status"])) {
 	$job_status=$_POST["input_job_status"];
 }
 
+$advices="";
+if (isset($_POST["advice"])) {
+	$advices=$_POST["advice"];
+}
+
 
 $company_name=$_POST["input_company_name"];
 $position=$_POST["input_position"];
@@ -61,7 +65,6 @@ if (isset($_POST["advice"])) {
 }
 
 
-
 $portfolio=$_POST["input_portfolio"];
 $portfolio_name=$_POST["input_portfolio_name"];
 
@@ -72,20 +75,18 @@ if (isset($_POST["input_portfolio_status"])) {
 
 $portfolio_contents=$_POST["input_portfolio_contents"];
 
-createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status);
+$signup_user_id="100";
 
-$signup_user_id = intval($dbh->query("SELECT max(id) FROM users")->fetchColumn());
-
-createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
+upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status);
+// $signup_user_id = intval($dbh->query("SELECT max(id) FROM users")->fetchColumn());
+upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
  $term_company_year_end, $term_company_month_end, $job_contents,$job_offer,$offer_contents);
 
-createAdvicesUsers($dbh, $signup_user_id, $advices);
-
-createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
+upDatePortfolio($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
 
 // var_dump($_POST); die();
 
 $dbh=null;
-header("Location:thanks.php");
-exit();
 
+header("Location:home.php");
+exit();
