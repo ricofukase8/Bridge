@@ -1336,6 +1336,10 @@ ol {
 	padding-top: 35px;
 }
 
+.hidden {
+	display: none;
+}
+
 /* Circle progress */
 
 .circle-progress {

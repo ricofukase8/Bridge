@@ -67,7 +67,8 @@ $(function() {
       let career_month_end = $('#select_box_month_end').val();
       $('#result_career_month_end').text(career_month_end + '月');
 
-      let job_status = $("input[name='input_job_status']:checked").parent().text();
+     let job_status = $("input[name='input_job_status']:checked").parent().text();
+
       $('#result_job_status').text(job_status);
 
       let job_contents = $('#job_contents').val();
