@@ -1,7 +1,10 @@
 <?php
-  require('get_userdata.php');
+session_start();
+require('dbconnect.php');  
+require('get_userdata.php');
 
-
+// echo "<pre>";
+// var_dump($signin_user);die();
 
 ?>
 
@@ -34,7 +37,7 @@
           <?php include('components/wizard.php');?>
         </div>
 
-          <form role="form">
+          <form method="POST" action="update.php" enctype="multipart/form-data">
             <div class="tab-content">
               <?php include('components/step1.php');?>
               <?php include('components/step2.php');?>
@@ -325,7 +328,9 @@
                           </div>
                   <ul class="list-inline pull-right">
                     <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                    <li><a href="thanks.php"><button type="button" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button></a></li>
+                    <li>
+                      <button type="submit" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button>
+                    </li>
                   </ul>
               </div>
             </div>
