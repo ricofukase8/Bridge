@@ -151,9 +151,9 @@ $signin_user = getUser($dbh,[26]); //関数の呼び出し
 		<div class="container">
 				<nav>
 		            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-		            	<a class="nav-item nav-link active" id="nav-graduates-tab" data-toggle="tab" href="#nav-graduates" role="tab" aria-controls="nav-graduates" aria-selected="true">Graduates</a>
-		            	<a class="nav-item nav-link" id="nav-students-tab" data-toggle="tab" href="#nav-students" role="tab" aria-controls="nav-students" aria-selected="false">Students</a>
-		            <a class="nav-item nav-link" id="nav-hunting-tab" data-toggle="tab" href="#nav-hunting" role="tab" aria-controls="nav-hunting" aria-selected="false">就活中</a>
+		            	<a class="nav-item nav-link graduates" id="nav-graduates-tab" data-toggle="tab" href="#nav-graduates" role="tab" aria-controls="nav-graduates" aria-selected="true">Graduates</a>
+		            	<a class="nav-item nav-link students" id="nav-students-tab" data-toggle="tab" href="#nav-students" role="tab" aria-controls="nav-students" aria-selected="false">Students</a>
+		            <a class="nav-item nav-link hunting" id="nav-hunting-tab" data-toggle="tab" href="#nav-hunting" role="tab" aria-controls="nav-hunting" aria-selected="false">就活中</a>
 		            </div>
 	            </nav>
 			<div class="row" id="hoge">
