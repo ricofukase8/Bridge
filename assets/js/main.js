@@ -122,14 +122,14 @@ $(window).on('load', function() {
 
 })(jQuery);
 
-$(function() { //jqueryを使うおまじない
-	$(document).on('click','.graduates',function() { //document(ページ全体)の'graduates'がクリックされたら
-		console.log('ボタンが押されました。');
-		$("")addClass('hidden');
+// $(function() { //jqueryを使うおまじない
+// 	$(document).on('click','.graduates',function() { //document(ページ全体)の'graduates'がクリックされたら
+// 		console.log('ボタンが押されました。');
+// 		$("")addClass('hidden');
 		// var feed_id = $(this).siblings('.feed-id').text(); //this・・・ボタンが押されたら
 		// var user_id = $('#signin_user').text();
 		// var like_btn = $(this);
 		// var like_count = $(this).siblings('.like_count').text();
-	});
-});
+// 	});
+// });
 
