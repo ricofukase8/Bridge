@@ -41,18 +41,27 @@ function getAllUsers($dbh)
 	$sql .= 'JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
 	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
 	$sql .= 'JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
-	// $sql .=
-	// $sql .=
+	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
+	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
+	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
 
     return $stmt->fetchAll();
 }
 
-function getUser($dbh,$user_id)
+function getUser($dbh)
 {
-	$sql = 'SELECT `u`.*, `c`.*, `a`.*, `p`.* FROM `users` AS `u` JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id`';
-    $data = [23];
+	$sql = 'SELECT * FROM `users` AS `u` ';
+	$sql .= 'JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
+	$sql .= 'JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
+	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
+	$sql .= 'JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
+	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
+	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
+	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
+	$sql .= 'WHERE `u`.`id` = ?';
+    $data = [26];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 
@@ -60,39 +69,3 @@ function getUser($dbh,$user_id)
 
     return $signin_user;
 }
-
-// function getUserCompanies($dbh,$user_id)
-// {
-// 	$sql = 'SELECT `c`.`company_name`,`position`,`term_company`,`job_contents`,`job_offer`,`offer_contents` FROM `companies` AS `c` WHERE `user_id` = ?';
-//     $data = [16];
-//     $stmt = $dbh->prepare($sql);
-//     $stmt->execute($data);
-
-//     $user_companies = $stmt->fetch(PDO::FETCH_ASSOC);
-
-//     return $user_companies;
-// }
-
-// function getUserAdvices($dbh,$user_id)
-// {
-// 	$sql = 'SELECT `a`.`advices_id` FROM `advices_users` AS `a` WHERE `user_id` = ?';
-//     $data = [16];
-//     $stmt = $dbh->prepare($sql);
-//     $stmt->execute($data);
-
-//     $user_advices = $stmt->fetch(PDO::FETCH_ASSOC);
-
-//     return $user_advices;
-// }
-
-// function getUserPortfolios($dbh,$user_id)
-// {
-// 	$sql = 'SELECT `p`.`portfolio_url`, `portfolio_name`, `portfolio_status`, `portfolio_comments` FROM `portfolios` AS `p` WHERE `user_id` = ?';
-//     $data = [16];
-//     $stmt = $dbh->prepare($sql);
-//     $stmt->execute($data);
-
-//     $user_portfolios = $stmt->fetch(PDO::FETCH_ASSOC);
-
-//     return $user_portfolios;
-// }

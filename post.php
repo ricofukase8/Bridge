@@ -15,7 +15,7 @@ require("function.php");
 date_default_timezone_set("Asia/Manila");
 $date_str=date("YmdHis");
 $file_name=$date_str . $_FILES["input_img_name"]["name"];
-// move_uploaded_file($_FILES["input_img_name"]["tmp_name"] , "assets/img/user_profile_img" . $file_name);
+move_uploaded_file($_FILES["input_img_name"]["tmp_name"] , "assets/img/user_profile_img/" . $file_name);
 
 $name = $_POST["input_name"];
 $email=$_POST["input_email"];
@@ -48,7 +48,7 @@ $company_name=$_POST["input_company_name"];
 $position=$_POST["input_position"];
 $term_company=$_POST["input_career_year"] ."/".$_POST["input_career_month"] ."~". $_POST["input_career_year_end"] ."/".$_POST["input_career_month_end"];
 $job_contents=$_POST["input_job_content"];
-$offer_comments=$_POST["input_job_offer_comments"];
+$offer_contents=$_POST["input_job_offer_contents"];
 
 $job_offer="";
 if (isset($_POST["input_job_offer"])) {
@@ -69,7 +69,7 @@ createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$
 
 $signup_user_id = intval($dbh->query("SELECT max(id) FROM users")->fetchColumn());
 
-createCompanies($dbh, $signup_user_id, $company_name,$position,$term_company,$job_contents,$job_offer,$offer_comments);
+createCompanies($dbh, $signup_user_id, $company_name,$position,$term_company,$job_contents,$job_offer,$offer_contents);
 
 createAdvicesUsers($dbh, $signup_user_id, $advices);
 

@@ -62,7 +62,7 @@ $(function() {
       let career_month_end = $('#select_box_month_end').val();
       $('#result_career_month_end').text(career_month_end + '月');
 
-      let job_status = $('input[name="input_job_status"]:checked').parent().val();
+     let job_status = $("input[name='input_job_status']:checked").parent().text();
       $('#result_job_status').text(job_status);
 
       let job_contents = $('#job_contents').val();
@@ -71,8 +71,8 @@ $(function() {
       let job_offer = $('[name=job_offer]:checked').val();
       $('#result_job_offer').text(job_offer);
 
-      let job_offer_comments = $('#job_offer_comments').val();
-      $('#result_job_offer_comments').text(job_offer_comments);
+      let job_offer_contents = $('#job_offer_contents').val();
+      $('#result_job_offer_contents').text(job_offer_contents);
 
       // $('input[name="advice[]"]').change(function() {
       var advices = [];
