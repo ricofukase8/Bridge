@@ -1,5 +1,7 @@
 <?php
   require('get_userdata.php');
+
+
  ?>
 
 <div class="tab-pane" role="tabpanel" id="step2">
@@ -49,10 +51,10 @@
               <label for="carrer_period">在籍期間</label>
             </div>
             <div class="col-75">
-              <select id="select_box_year" name="input_career_year">
+              <select id="select_box_year" name="input_career_year" >
                   <option value="" selected="selected">-</option>
                   <?php foreach(range(2000,2030) as $year): ?>
-                  <option value="<?=$year?>"><?=$year?></option>
+                  <option value="<?=$year?>" <?php if (isset($signin_user) && $year==$signin_user["term_company_year"]){echo "selected";}?>><?=$year?></option>
                   <?php endforeach; ?>
               </select>年&thinsp;
 

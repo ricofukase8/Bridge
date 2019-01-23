@@ -38,11 +38,6 @@ if (isset($_POST["input_job_status"])) {
 	$job_status=$_POST["input_job_status"];
 }
 
-$advices="";
-if (isset($_POST["advice"])) {
-	$advices=$_POST["advice"];
-}
-
 
 $company_name=$_POST["input_company_name"];
 $position=$_POST["input_position"];
@@ -88,7 +83,7 @@ createAdvicesUsers($dbh, $signup_user_id, $advices);
 
 createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
 
-// var_dump($advices); die();
+// var_dump($_POST); die();
 
 $dbh=null;
 header("Location:thanks.php");

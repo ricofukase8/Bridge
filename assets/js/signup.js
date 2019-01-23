@@ -1,7 +1,16 @@
 $(function() {
    $(document).on('click', '#next-btn', function() {
-
       $('html,body').scrollTop(0);
+   })
+
+
+   // $(document).on('click', '#panel-btn', function() {
+   //    $("#company-toggle").slideToggle(400);
+   //    $('#panel-btn-icon').toggleClass('close');
+   //    return false;
+   // })
+
+   $(document).on('click', '#next-btn', function() {
 
       let name = $("#name").val(); //idがnameの値を変数nameに代入
       $('#result_name').text(name); //idのresult_nameにnameの値を入れる
@@ -9,13 +18,8 @@ $(function() {
       let email = $('#email').val();
       $('#result_email').text(email);
 
-      // let password = $('#password').val();
-      // $('#result_password').text(password);
 
-      // $(document).on('click', '#next-btn', function() {
-      // document.getElementById('file').addEventListener('change', function(e) {
       let file = document.getElementById('img_name').files;
-      console.log('img_name');
       let reader = new FileReader();
       reader.addEventListener('load', function(e) {
          document.getElementById('result_img_name').src = reader.result;
@@ -25,13 +29,14 @@ $(function() {
       let status = $('#status option:selected').text();
       $('#result_status').text(status);
 
+
       let batchnumber = $('#batchnumber').val();
       $('#result_batchnumber',).text(batchnumber + 'batch');
 
-      let period = $('#period').val();
+      let period = $('#period option:selected').text();
       $('#result_period').text(period);
 
-      let course = $('#course').val();
+      let course = $('#course option:selected').text();
       $('#result_course').text(course);
 
       let profile = $('#profile').val();
@@ -40,7 +45,7 @@ $(function() {
       let fb = $('#fb').val();
       $('#result_fb').text(fb);
 
-      let career = $('input[name="input_career"]:checked').parent().val();
+      let career = $("input[name='input_career']:checked").parent().text();
       $('#result_career').text(career);
       // console.log(career);
 
@@ -62,50 +67,36 @@ $(function() {
       let career_month_end = $('#select_box_month_end').val();
       $('#result_career_month_end').text(career_month_end + '月');
 
-      let job_status = $('input[name="input_job_status"]:checked').parent().val();
+      let job_status = $("input[name='input_job_status']:checked").parent().text();
       $('#result_job_status').text(job_status);
 
       let job_contents = $('#job_contents').val();
       $('#result_job_contents').text(job_contents);
 
-      let job_offer = $('[name=job_offer]:checked').val();
+
+      let job_offer = $("input[name='input_job_offer']:checked").parent().text();
       $('#result_job_offer').text(job_offer);
 
       let job_offer_contents = $('#job_offer_contents').val();
       $('#result_job_offer_contents').text(job_offer_contents);
 
-      // $('input[name="advice[]"]').change(function() {
       var advices = [];
-      $('[name="advice[]"]:checked').each(function(index, elm) {
-         var osValue = $(elm).attr('id');
-         var advices = $('label[for="' + osValue + '"]').text();
-         // advices.push($(this).val());
-         console.log(advices);
-         $('#result_advice').text(advices);
+      $('input[name="advice[]"]:checked').each(function() {
+         advices.push($(this).val());
       });
-         // $('#result_advice').text(osText);
-      // console.log(osText);
-
-      // });
-   // });
-   //    let advice = $('.checkbox :checkbox:checked').val();
-   //    $('#result_advice').text(advice); //要検討
-   // })
+      $('#result_advice').text(advices);
 
       let portfolio = $('#portfolio').val();
       $('#result_portfolio').text(portfolio);
-      // console.log(portfolio);
 
       let portfolio_name = $('#portfolio_name').val();
       $('#result_portfolio_name').text(portfolio_name);
-      // console.log(portfolio_name);
 
-      let portfolio_status = $('input[name="input_portfolio_status"]:checked').parent().val();
+      let portfolio_status = $("input[name='input_portfolio_status']:checked").parent().text();
       $('#result_portfolio_status').text(portfolio_status);
-      // console.log(portfolio_status);
 
-       let portfolio_contents = $('#portfolio_contents').val();
+      let portfolio_contents = $('#portfolio_contents').val();
       $('#result_portfolio_contents').text(portfolio_contents);
-      // console.log(portfolio_contents);
    })
+
 })

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require('dbconnect.php');
-require('get_userdata.php');
+// require('get_userdata.php');
 
 // var_dump($_SESSION["bridge"]["id"]);
 ?>
@@ -329,7 +329,7 @@ require('get_userdata.php');
                           </div>
                   <ul class="list-inline pull-right">
                     <li>
-                    <button type="buton" class="btn btn-default prev-step">Previous</button>
+                    <button type="button" class="btn btn-default prev-step">Previous</button>
                     </li>
                     <li>
                     <button type="submit" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button>

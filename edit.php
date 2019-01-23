@@ -3,7 +3,8 @@ session_start();
 require('dbconnect.php');  
 require('get_userdata.php');
 
-
+// echo "<pre>";
+// var_dump($signin_user);die();
 
 ?>
 
