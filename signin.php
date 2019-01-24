@@ -1,4 +1,37 @@
 <?php
+session_start();
+require("dbconnect.php");
+require("function.php");
+
+
+$errors=[];
+
+if (!empty($_POST)) {
+    $email = $_POST["input_email"];
+    $password = $_POST["input_password"];
+    // var_dump($email);die();
+    if ($email !== "" && $password !== "") {
+        $signin_user = getUser($dbh,$email);
+        if ($signin_user == false) {
+            $errors["signin"]="failed";
+            // var_dump($errors["signin"]);
+        }else{
+            if (password_verify($password,$signin_user["password"])) {
+                $_SESSION["bridge"]["id"]=$signin_user["user_id"];
+                header("Location: home.php");
+                exit();
+            }else{
+                $errors["signin"]="failed";
+                var_dump($errors["signin"]);
+            }
+        }
+    }else{
+        $errors["signin"]="blank";
+    }
+}
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +57,12 @@
             <div class="form-group">
               <label for="email">メールアドレス</label>
               <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
+              <?php if (isset($errors["signin"]) && $errors["signin"] == "blank"): ?>
+              <p class="text-danger">メールアドレスとパスワードを入力してください</p>
+              <?php endif ?>
+              <?php if (isset($errors["signin"]) && $errors["signin"] == "failed"): ?>
+              <p class="text-danger">ログインに失敗しました</p>
+              <?php endif ?>
             </div>
             <div class="form-group">
                 <label for="password">パスワード</label>

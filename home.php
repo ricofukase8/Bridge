@@ -3,8 +3,12 @@ session_start();
 require('dbconnect.php');
 require('function.php');
 
+$signin_user_id=$_SESSION["bridge"]["id"];
+
 $users = getAllUsers($dbh);
-$signin_user = getUser($dbh,[26]); //関数の呼び出し
+$signin_user = getUser($dbh,$signin_user_id); //関数の呼び出し
+
+var_dump($signin_user_id);
 // $users[] = $user;
 // $user_companies = getUserCompanies($dbh,[16]); //関数の呼び出し
 // $user_advices = getUserAdvices($dbh,[16]); //関数の呼び出し

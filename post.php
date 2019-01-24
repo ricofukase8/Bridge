@@ -77,7 +77,7 @@ createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$
 $signup_user_id = intval($dbh->query("SELECT max(id) FROM users")->fetchColumn());
 
 createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
- $term_company_year_end, $term_company_month_end, $job_contents,$job_offer,$offer_contents)
+ $term_company_year_end, $term_company_month_end, $job_contents,$job_offer,$offer_contents);
 
 createAdvicesUsers($dbh, $signup_user_id, $advices);
 
