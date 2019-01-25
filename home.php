@@ -5,41 +5,21 @@ require('function.php');
 
 $signin_user_id=$_SESSION["bridge"]["id"];
 
-$users = getAllUsers($dbh);
-$signin_user = getUser($dbh,$signin_user_id); //関数の呼び出し
-
-// foreach ($users as $user) {
-// 	var_dump($user["id"]);
-// }
+$tmp_users = getAllUsers($dbh);
+$signin_user = getSigninUser($dbh,$signin_user_id); 
+var_dump($signin_user["user_id"]);
 
 
-// $users[] = $user;
-// $user_companies = getUserCompanies($dbh,[16]); //関数の呼び出し
-// $user_advices = getUserAdvices($dbh,[16]); //関数の呼び出し
-// $user_portfolios = getUserPortfolios($dbh,[16]); //関数の呼び出し
-
-// $sql='SELECT*FROM`users`';
-// $stmt=$dbh->prepare($sql);
-// $stmt->execute();
-// $users=[];
-// while (true) {
-//     $record=$stmt->fetch(PDO::FETCH_ASSOC);
-
-// if ($record==false) {
-//       break;
-//     }
-// }
-
-// echo '<pre>';
-// var_dump($users[0]['status_id']);die();
-foreach ($users as $user) {
+foreach ($tmp_users as $user) {
 	$like_flg_sql = 'SELECT * FROM `likes` WHERE `user_id` = ? AND `liked_id` = ?';
 	$like_flg_data = [$signin_user_id, $user['user_id']];
 	$like_flg_stmt = $dbh->prepare($like_flg_sql);
 	$like_flg_stmt->execute($like_flg_data);
 	$is_liked = $like_flg_stmt->fetch(PDO::FETCH_ASSOC);
 	$user['is_liked'] = $is_liked ? true : false;
+	$users[] = $user;
 }
+// var_dump($users);
 
 
  ?>
@@ -106,7 +86,7 @@ foreach ($users as $user) {
 					<a href="#mypage" class="site-btn header-btn" data-toggle="modal" >MYPAGE</a></a>
 					<nav class="main-menu">
 						<ul>
-							<li><a href="like.php" id="link">LIKE</a></li>
+							<li><a href="like.php?user_id=<?php echo $signin_user["user_id"]?>" id="link">LIKE</a></li>
 							<li><a href="edit.php" id="link">EDIT</a></li>
 							<li><a href="main.php" id="link">LOG OUT</a></li>
 						</ul>
@@ -179,7 +159,7 @@ foreach ($users as $user) {
 			<div class="row" id="hoge">
 
 			<!-- categorie -->
-				
+				<?php foreach($users as $user): ?>
 					<div class="col-lg-4 col-md-6">
 						<div class="categorie-item">
 						<div class="ci-thumb set-bg" data-setbg="assets/img/user_profile_img/<?php echo $user['img_name']; ?>">
@@ -195,6 +175,7 @@ foreach ($users as $user) {
 					</div>
 
 				    <!-- profileModal -->
+				    
 				    <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $user['user_id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
 				      <div class="modal-dialog modal-profile">
 				      <div class="modal-content">
@@ -376,15 +357,16 @@ foreach ($users as $user) {
 				                  <div class="btn-profile">
 				                  	<ul class="btn-profile">
 				                  		<li>
-				                  		 <span hidden class="user-id"><?php echo $user['user_id']; ?></span>
 				                  		 <?php if ($user['is_liked']): ?>
-					                  		 	<button class="btn btn-warning" id="js-unlike" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
-					                  		 		<span>LIKEを取り消す</span>
-					                  		  </button>
+				                  		 	<span hidden class="user-id"><?php echo $user['user_id']; ?></span>
+					                  	   <button class="btn btn-warning js-unlike" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
+					                  	     <span>LIKEを取り消す</span>
+					                  	   </button>
 				                  		</li>
-                            	  			<?php else: ?>
+                            	  		<?php else: ?>
 				                  		<li>
-				                  		  <button class="btn btn-warning" id="js-like" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
+				                  		 <span hidden class="user-id"><?php echo $user['user_id']; ?></span>
+				                  		  <button class="btn btn-warning js-like" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
 				                  		  <span>LIKE</span>
 				                  		  </button>
 				                  		</li>
@@ -405,7 +387,7 @@ foreach ($users as $user) {
 				        </div>
 				      </div>
 				    </div>
-				
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>

@@ -99,7 +99,56 @@ function getUser($dbh,$email)
     $stmt->execute($data);
 
     $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
-    // var_dump($signin_user["user_id"]);die();
+    // var_dump($signin_user);die();
 
     return $signin_user;
 }
+
+function getSigninUser($dbh,$signin_user_id)
+{
+	$sql = 'SELECT * FROM `users` AS `u` ';
+	$sql .= 'LEFT JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
+	$sql .= 'LEFT JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
+	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
+	$sql .= 'LEFT JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
+	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
+	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
+	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
+	$sql .= 'WHERE `u`.`id` = ?';
+    $data = [$signin_user_id];
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
+    // var_dump($signin_user);die();
+
+    return $signin_user;
+}
+
+function getLike($dbh,$signin_user_id)
+{
+	$sql = 'SELECT * FROM `users` AS `u` ';
+	$sql .= 'LEFT JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
+	$sql .= 'LEFT JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
+	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
+	$sql .= 'LEFT JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
+	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
+	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
+	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
+	$sql .= 'LEFT JOIN `likes` ON u.course_id = `likes`.`user_id` ';
+	$sql .= 'WHERE `likes`.`user_id` = ?';
+    $data = [$signin_user_id];
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
+    // var_dump($signin_user);die();
+
+    return $signin_user;
+}
+
+
+
+
+
+
