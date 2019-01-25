@@ -1,14 +1,75 @@
 $(function() {
-   $(document).on('click', '#next-btn', function() {
-      $('html,body').scrollTop(0);
+   import Joi from 'joi'
+
+   const User = Joi.object().keys({
+     name: Joi.string().required(),
+     email: Joi.string().email(),
+     password: Joi.string().min(4).max(14).required()
+   })
+
+      new Vue({
+     el: '#app',
+     data () {
+       return {
+         formData: {
+           name: '',
+           email: '',
+           password: ''
+         },
+         errors: {
+           name: false,
+           email: false,
+           password: false
+         },
+         touched: {
+           name: false,
+           email: false,
+           password: false
+         }
+       }
+     },
+     methods: {
+       validate (name) {
+         this.touched[name] = true
+         Object.keys(this.errors).forEach((k)=>{
+           this.errors[k] = false
+         })
+         const result = Joi.validate({...this.formData}, this.schema, { abortEarly: false })
+         console.log(result)
+         if (result.error) {
+           result.error.details.forEach((detail) => {
+             const name = detail.path[0]
+             if(this.touched[name]) this.errors[name] = true
+           })
+         }
+       }
+     },
+     computed: {
+       isValid () {
+         let isValid = true
+
+         Object.entries(this.errors).forEach(([k,v]) => {
+           if(v) isValid = false
+         })
+         Object.entries(this.touched).forEach(([k,v]) => {
+           if(!v) isValid = false
+         })
+         return isValid
+       },
+       schema () {
+         return Joi.object().keys({
+           user_id: Joi.string().required(),
+           email: Joi.string().email(),
+           password: Joi.string().min(12).required()
+         })
+       }
+     }
    })
 
 
-   // $(document).on('click', '#panel-btn', function() {
-   //    $("#company-toggle").slideToggle(400);
-   //    $('#panel-btn-icon').toggleClass('close');
-   //    return false;
-   // })
+   $(document).on('click', '#next-btn', function() {
+      $('html,body').scrollTop(0);
+   })
 
    $(document).on('click', '#next-btn', function() {
 

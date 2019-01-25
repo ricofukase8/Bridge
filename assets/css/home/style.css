@@ -29,6 +29,7 @@ body {
   float: left;
   width: 75%;
   margin-top: 13px !important;
+  color: #878787 !important;
 }
 
 #hoge{
@@ -445,6 +446,10 @@ ol {
 .categorie-item:hover .ci-text p,
 .categorie-item:hover .ci-text span {
 	color: #fff;
+}
+
+.hide {
+	display: none;
 }
 
 /*------------------
@@ -938,6 +943,7 @@ ol {
 	color: #474747;
 }
 
+.career_period
 /*------------------
     Other Pages
 ---------------------

@@ -1,9 +1,7 @@
 <?php
 session_start();
 require('dbconnect.php');
-// require('get_userdata.php');
 
-// var_dump($_SESSION["bridge"]["id"]);
 ?>
 
 <!DOCTYPE html>
