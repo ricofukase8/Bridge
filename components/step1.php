@@ -17,6 +17,7 @@
         </div>
         <div class="col-75">
           <input type="email" id="email" name="input_email" placeholder="Your email.." value="<?php echo isset($signin_user) ? $signin_user["email"] : ''; ?>">
+          <span class="sng-email-alert">正しいメールアドレスを入力して下さい</span>
         </div>
       </div>
       <div class="row">
@@ -105,3 +106,14 @@
     <li><button type="button" class="btn btn-primary next-step" id="next-btn" value="Save and continue">Save and continue</button></li>
   </ul>
 </div>
+
+<script>
+  // script を初期化する
+  window.onload = function() {
+    SngEmailChecker({
+      fadeInTime: '200ms',
+      fadeOutTime: '200ms',
+      borderNotification: true
+    });
+  }
+</script>

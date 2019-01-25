@@ -58,7 +58,6 @@ function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_co
 	$stmt->execute($data);
 }
 
-
 function upDatePortfolio($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents)
 {
 	$sql = "UPDATE `portfolios` SET `user_id`=?, `portfolio_url`=?, `portfolio_name`=?, `portfolio_status`=?, `portfolio_comments`=? WHERE `user_id` = ?";
