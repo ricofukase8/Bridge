@@ -114,6 +114,7 @@
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <script>
   // script を初期化する
   window.onload = function() {
@@ -124,6 +125,9 @@
     });
   }
 </script>
+=======
+<script src="assets/js/signup.js"></script>
+>>>>>>> Stashed changes
 =======
 <script src="assets/js/signup.js"></script>
 >>>>>>> Stashed changes
