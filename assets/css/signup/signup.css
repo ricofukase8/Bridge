@@ -178,7 +178,9 @@ span.round-tab:hover {
     background-color: #0688B5;
 }
 
-
+.error {
+    color: #dc3545;
+}
 
 
 
