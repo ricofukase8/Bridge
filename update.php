@@ -75,7 +75,7 @@ if (isset($_POST["input_portfolio_status"])) {
 
 $portfolio_contents=$_POST["input_portfolio_contents"];
 
-$signup_user_id="100";
+$signup_user_id="107";
 
 upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status);
 // $signup_user_id = intval($dbh->query("SELECT max(id) FROM users")->fetchColumn());

@@ -54,28 +54,29 @@
               <select id="select_box_year" name="input_career_year" >
                   <option value="" selected="selected">-</option>
                   <?php foreach(range(2000,2030) as $year): ?>
-                  <option value="<?=$year?>" <?php if (isset($signin_user) && $year==$signin_user["term_company_year"]){echo "selected";}?>><?=$year?></option>
+                  <option value="<?=$year?>" <?php if (isset($signin_user) && $year == $signin_user["term_company_year"]){echo "selected";}?>><?=$year?></option>
                   <?php endforeach; ?>
               </select>年&thinsp;
 
               <select id="select_box_month" name="input_career_month">
                 <option value="" selected="selected">-</option>
                 <?php foreach(range(1,12) as $month): ?>
-                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>"><?=$month?></option>
+                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>" <?php if (isset($signin_user) && $month == $signin_user["term_company_month"]){echo "selected";}?>><?=$month?></option>
                 <?php endforeach; ?>
               </select>月~
 
               <select id="select_box_year_end" name="input_career_year_end">
                   <option value="" selected="selected">-</option>
                   <?php foreach(range(2000,2030) as $year_end): ?>
-                  <option value="<?=$year_end?>"><?=$year_end?></option>
+                  <option value="<?=$year_end?>" <?php if (isset($signin_user) && $year_end == $signin_user["term_company_year_end"]){echo "selected";}?>><?=$year_end?></option>
                   <?php endforeach; ?>
               </select>年　&thinsp;
 
               <select id="select_box_month_end" name="input_career_month_end">
                 <option value="" selected="selected">-</option>
-                <?php foreach(range(1,12) as $month): ?>
-                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>"><?=$month?></option>
+                <?php foreach(range(1,12) as $month_end): ?>
+                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>" <?php if (isset($signin_user) && $month_end == 
+                $signin_user["term_company_month_end"]){echo "selected";}?>><?=$month_end?></option>
                 <?php endforeach; ?>
               </select>月
             </div>
