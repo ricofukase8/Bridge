@@ -22,7 +22,6 @@
           <!-- <span class="sng-email-alert">正しいメールアドレスを入力して下さい</span> -->
           <!-- <input @blur="validate('email')" v-model="formData.email" type="email" id="email" name="input_email" placeholder="Your email.." value="<?php echo isset($signin_user) ? $signin_user["email"] : ''; ?>">
           <span class="error" v-if="errors.email"><br>emailが不正です</span> -->
-
         </div>
       </div>
       <div class="row">
@@ -114,6 +113,7 @@
 </div>
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <script>
   // script を初期化する
   window.onload = function() {
@@ -124,6 +124,9 @@
     });
   }
 </script>
+=======
+<script src="assets/js/signup.js"></script>
+>>>>>>> Stashed changes
 =======
 <script src="assets/js/signup.js"></script>
 >>>>>>> Stashed changes
