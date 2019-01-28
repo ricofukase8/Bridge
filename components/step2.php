@@ -143,108 +143,35 @@
                 <label for="career_period">在籍期間</label>
               </div>
               <div class="col-75">
-                <select id="select_box_year_2" name="input_career_year_2">
-                    <option value="" selected="selected">-</option>
-                    <option value="2000">2000</option>
-                    <option value="2001">2001</option>
-                    <option value="2002">2002</option>
-                    <option value="2003">2003</option>
-                    <option value="2004">2004</option>
-                    <option value="2005">2005</option>
-                    <option value="2006">2006</option>
-                    <option value="2007">2007</option>
-                    <option value="2008">2008</option>
-                    <option value="2009">2009</option>
-                    <option value="2010">2010</option>
-                    <option value="2011">2011</option>
-                    <option value="2012">2012</option>
-                    <option value="2013">2013</option>
-                    <option value="2014">2014</option>
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                    <option value="2027">2027</option>
-                    <option value="2028">2028</option>
-                    <option value="2029">2029</option>
-                    <option value="2030">2030</option>
-                </select>年 &thinsp;
-
-                <select id="select_box_month_2" name="input_career_month_2">
+              <select id="select_box_year" name="input_career_year" >
                   <option value="" selected="selected">-</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>月~
+                  <?php foreach(range(2000,2030) as $year): ?>
+                  <option value="<?=$year?>" <?php if (isset($signin_user) && $year == $signin_user["term_company_year"]){echo "selected";}?>><?=$year?></option>
+                  <?php endforeach; ?>
+              </select>年&thinsp;
 
-                <select id="select_box_year_end_2" name="input_career_year_end_2">
-                    <option value="" selected="selected">-</option>
-                    <option value="2000">2000</option>
-                    <option value="2001">2001</option>
-                    <option value="2002">2002</option>
-                    <option value="2003">2003</option>
-                    <option value="2004">2004</option>
-                    <option value="2005">2005</option>
-                    <option value="2006">2006</option>
-                    <option value="2007">2007</option>
-                    <option value="2008">2008</option>
-                    <option value="2009">2009</option>
-                    <option value="2010">2010</option>
-                    <option value="2011">2011</option>
-                    <option value="2012">2012</option>
-                    <option value="2013">2013</option>
-                    <option value="2014">2014</option>
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                    <option value="2027">2027</option>
-                    <option value="2028">2028</option>
-                    <option value="2029">2029</option>
-                    <option value="2030">2030</option>
-                </select>年 &thinsp;
+              <select id="select_box_month" name="input_career_month">
+                <option value="" selected="selected">-</option>
+                <?php foreach(range(1,12) as $month): ?>
+                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>" <?php if (isset($signin_user) && $month == $signin_user["term_company_month"]){echo "selected";}?>><?=$month?></option>
+                <?php endforeach; ?>
+              </select>月~
 
-                <select id="select_box_month_end_2" name="input_career_month_end_2">
+              <select id="select_box_year_end" name="input_career_year_end">
                   <option value="" selected="selected">-</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>月
-              </div>
+                  <?php foreach(range(2000,2030) as $year_end): ?>
+                  <option value="<?=$year_end?>" <?php if (isset($signin_user) && $year_end == $signin_user["term_company_year_end"]){echo "selected";}?>><?=$year_end?></option>
+                  <?php endforeach; ?>
+              </select>年　&thinsp;
+
+              <select id="select_box_month_end" name="input_career_month_end">
+                <option value="" selected="selected">-</option>
+                <?php foreach(range(1,12) as $month_end): ?>
+                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>" <?php if (isset($signin_user) && $month_end == 
+                $signin_user["term_company_month_end"]){echo "selected";}?>><?=$month_end?></option>
+                <?php endforeach; ?>
+              </select>月
+            </div>
             </div>
             <div class="row">
               <div class="col-25">

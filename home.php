@@ -6,7 +6,7 @@ require('function.php');
 $signin_user_id=$_SESSION["bridge"]["id"];
 
 $tmp_users = getAllUsers($dbh);
-$signin_user = getSigninUser($dbh,$signin_user_id); 
+$signin_user = getSigninUser($dbh,$signin_user_id);
 // var_dump($signin_user["name"]);
 
 
@@ -308,7 +308,7 @@ foreach ($tmp_users as $user) {
                                             <div class="col-75">
                                               <a href="<?php echo $user['portfolio_url']; ?>"><p class="lead" id="result_portfolio"><?php echo $user['portfolio_url']; ?></p></a>
                                             </div>
-                                          </div> 
+                                          </div>
                                           <div class="row">
                                             <div class="col-25">
                                               <label for="portfolio_name">サービス名</label>
