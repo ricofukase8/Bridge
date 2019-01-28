@@ -1,70 +1,70 @@
 $(function() {
-   import Joi from 'joi'
+   // import Joi from 'joi'
 
-   const User = Joi.object().keys({
-     name: Joi.string().required(),
-     email: Joi.string().email(),
-     password: Joi.string().min(4).max(14).required()
-   })
+   // const User = Joi.object().keys({
+   //   name: Joi.string().required(),
+   //   email: Joi.string().email(),
+   //   password: Joi.string().min(4).max(14).required()
+   // })
 
-      new Vue({
-     el: '#app',
-     data () {
-       return {
-         formData: {
-           name: '',
-           email: '',
-           password: ''
-         },
-         errors: {
-           name: false,
-           email: false,
-           password: false
-         },
-         touched: {
-           name: false,
-           email: false,
-           password: false
-         }
-       }
-     },
-     methods: {
-       validate (name) {
-         this.touched[name] = true
-         Object.keys(this.errors).forEach((k)=>{
-           this.errors[k] = false
-         })
-         const result = Joi.validate({...this.formData}, this.schema, { abortEarly: false })
-         console.log(result)
-         if (result.error) {
-           result.error.details.forEach((detail) => {
-             const name = detail.path[0]
-             if(this.touched[name]) this.errors[name] = true
-           })
-         }
-       }
-     },
-     computed: {
-       isValid () {
-         let isValid = true
+   //    new Vue({
+   //   el: '#app',
+   //   data () {
+   //     return {
+   //       formData: {
+   //         name: '',
+   //         email: '',
+   //         password: ''
+   //       },
+   //       errors: {
+   //         name: false,
+   //         email: false,
+   //         password: false
+   //       },
+   //       touched: {
+   //         name: false,
+   //         email: false,
+   //         password: false
+   //       }
+   //     }
+   //   },
+   //   methods: {
+   //     validate (name) {
+   //       this.touched[name] = true
+   //       Object.keys(this.errors).forEach((k)=>{
+   //         this.errors[k] = false
+   //       })
+   //       const result = Joi.validate({...this.formData}, this.schema, { abortEarly: false })
+   //       console.log(result)
+   //       if (result.error) {
+   //         result.error.details.forEach((detail) => {
+   //           const name = detail.path[0]
+   //           if(this.touched[name]) this.errors[name] = true
+   //         })
+   //       }
+   //     }
+   //   },
+   //   computed: {
+   //     isValid () {
+   //       let isValid = true
 
-         Object.entries(this.errors).forEach(([k,v]) => {
-           if(v) isValid = false
-         })
-         Object.entries(this.touched).forEach(([k,v]) => {
-           if(!v) isValid = false
-         })
-         return isValid
-       },
-       schema () {
-         return Joi.object().keys({
-           user_id: Joi.string().required(),
-           email: Joi.string().email(),
-           password: Joi.string().min(12).required()
-         })
-       }
-     }
-   })
+   //       Object.entries(this.errors).forEach(([k,v]) => {
+   //         if(v) isValid = false
+   //       })
+   //       Object.entries(this.touched).forEach(([k,v]) => {
+   //         if(!v) isValid = false
+   //       })
+   //       return isValid
+   //     },
+   //     schema () {
+   //       return Joi.object().keys({
+   //         user_id: Joi.string().required(),
+   //         email: Joi.string().email(),
+   //         password: Joi.string().min(12).required()
+   //       })
+   //     }
+   //   }
+   // })
 
 
    $(document).on('click', '#next-btn', function() {
