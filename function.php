@@ -71,11 +71,13 @@ function getAllUsers($dbh)
 	$sql = 'SELECT * FROM `users` AS `u` ';
 	$sql .= 'JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
 	$sql .= 'JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
+	// $sql .= 'SELECT user_id, id, (SELECT a.advice_id FROM advices_users AS a WHERE a.user_id = advices_users.user_id AND a.id= advices_users.id FOR XML PATH('')) AS  advice_id_concat FROM advices_users GROUP BY user_id, id';
 	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
 	$sql .= 'JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
 	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
 	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
 	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
+
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
 
@@ -93,7 +95,7 @@ function getUser($dbh)
 	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
 	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
 	$sql .= 'WHERE `u`.`id` = ?';
-    $data = [26];
+    $data = [108];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 

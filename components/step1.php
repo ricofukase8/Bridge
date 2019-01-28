@@ -8,7 +8,8 @@
           <label for="name">名前(必須)</label>
         </div>
         <div class="col-75">
-        <input type="text" id="name" name="input_name" placeholder="Your name.." class="required" value="<?php echo isset($signin_user) ? $signin_user["name"] : ''; ?>">
+        <input @blur="validate('name')" v-model="formData.name" type="text" id="name" name="input_name" placeholder="Your name.." value="<?php echo isset($signin_user) ? $signin_user["name"] : ''; ?>">
+        <span class="error" v-if="errors.name"><br>nameが不正です</span>
         </div>
       </div>
       <div class="row">
@@ -16,8 +17,8 @@
           <label for="email">Eメール(必須)</label>
         </div>
         <div class="col-75">
-          <input type="email" id="email" name="input_email" placeholder="Your email.." value="<?php echo isset($signin_user) ? $signin_user["email"] : ''; ?>">
-          <!-- <span class="sng-email-alert">正しいメールアドレスを入力して下さい</span> -->
+          <input @blur="validate('email')" v-model="formData.email" type="email" id="email" name="input_email" placeholder="Your email.." value="<?php echo isset($signin_user) ? $signin_user["email"] : ''; ?>">
+          <span class="error" v-if="errors.email"><br>emailが不正です</span>
         </div>
       </div>
       <div class="row">
@@ -25,7 +26,8 @@
           <label for="password">パスワード(必須)</label>
       </div>
         <div class="col-75">
-          <input type="password" id="password" name="input_password" placeholder="Your password.." value="<?php echo isset($signin_user) ? $signin_user["password"] : ''; ?>">
+          <input @blur="validate('password')" v-model="formData.password" type="password" id="password" name="input_password" placeholder="Your password.." value="<?php echo isset($signin_user) ? $signin_user["password"] : ''; ?>">
+         <span class="error" v-if="errors.password"><br>passwordが不正です</span>
         </div>
       </div>
       <div class="row">

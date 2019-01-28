@@ -122,14 +122,29 @@ $(window).on('load', function() {
 
 })(jQuery);
 
-// $(function() { //jqueryを使うおまじない
-// 	$(document).on('click','.graduates',function() { //document(ページ全体)の'graduates'がクリックされたら
-// 		console.log('ボタンが押されました。');
-// 		$("")addClass('hidden');
-		// var feed_id = $(this).siblings('.feed-id').text(); //this・・・ボタンが押されたら
-		// var user_id = $('#signin_user').text();
-		// var like_btn = $(this);
-		// var like_count = $(this).siblings('.like_count').text();
-// 	});
-// });
+$(function() { //jqueryを使うおまじない
+	$(document).on('click','.graduates',function() { //document(ページ全体)の'graduates'がクリックされたら
+		console.log('ボタンが押されました。');
+		$('.category-item').addClass('hidden');
+		$('.status_id_2').removeClass('hidden');
+		$('.status_id_3').removeClass('hidden');
+		$('.status_id_4').removeClass('hidden');
+	})
+});
 
+$(function() {
+	$(document).on('click','.students',function() {
+		console.log('ボタンが押されました。');
+		$('.category-item').addClass('hidden');
+		$('.status_id_1').removeClass('hidden');
+	})
+});
+
+$(function() {
+	$(document).on('click','.huntings',function() {
+		console.log('ボタンが押されました。');
+		$('.category-item').addClass('hidden');
+		$('.status_id_1').removeClass('hidden');
+		$('.status_id_2').removeClass('hidden');
+	})
+});

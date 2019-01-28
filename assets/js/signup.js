@@ -1,67 +1,71 @@
 $(function() {
-   $(document).ready(function () {
+   import Joi from 'joi'
 
-    var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
+   const User = Joi.object().keys({
+     name: Joi.string().required(),
+     email: Joi.string().email(),
+     password: Joi.string().min(4).max(14).required()
+   })
 
-    allWells.hide();
+      new Vue({
+     el: '#app',
+     data () {
+       return {
+         formData: {
+           name: '',
+           email: '',
+           password: ''
+         },
+         errors: {
+           name: false,
+           email: false,
+           password: false
+         },
+         touched: {
+           name: false,
+           email: false,
+           password: false
+         }
+       }
+     },
+     methods: {
+       validate (name) {
+         this.touched[name] = true
+         Object.keys(this.errors).forEach((k)=>{
+           this.errors[k] = false
+         })
+         const result = Joi.validate({...this.formData}, this.schema, { abortEarly: false })
+         console.log(result)
+         if (result.error) {
+           result.error.details.forEach((detail) => {
+             const name = detail.path[0]
+             if(this.touched[name]) this.errors[name] = true
+           })
+         }
+       }
+     },
+     computed: {
+       isValid () {
+         let isValid = true
 
-    navListItems.click(function (e) {
-        e.preventDefault();
-        var $target = $($(this).attr('href')),
-                $item = $(this);
+         Object.entries(this.errors).forEach(([k,v]) => {
+           if(v) isValid = false
+         })
+         Object.entries(this.touched).forEach(([k,v]) => {
+           if(!v) isValid = false
+         })
+         return isValid
+       },
+       schema () {
+         return Joi.object().keys({
+           user_id: Joi.string().required(),
+           email: Joi.string().email(),
+           password: Joi.string().min(12).required()
+         })
+       }
+     }
+   })
 
-        if (!$item.hasClass('disabled')) {
-            navListItems.removeClass('btn-primary').addClass('btn-default');
-            $item.addClass('btn-primary');
-            allWells.hide();
-            $target.show();
-            $target.find('input:eq(0)').focus();
-        }
-    });
-
-    allNextBtn.click(function(){
-        var curStep = $(this).closest(".setup-content"),
-            curStepBtn = curStep.attr("id"),
-            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='text'],input[type='url']"),
-            isValid = true;
-
-        $(".form-group").removeClass("has-error");
-        for(var i=0; i<curInputs.length; i++){
-            if (!curInputs[i].validity.valid){
-                isValid = false;
-                $(curInputs[i]).closest(".form-group").addClass("has-error");
-            }
-        }
-
-        if (isValid)
-            nextStepWizard.removeAttr('disabled').trigger('click');
-    });
-
-    $('div.setup-panel div a.btn-primary').trigger('click');
-});
-
-
-
-
-   
-   // $('input.required').on('blur', function() {
-   //      var error; // エラー用の変数を定義
-   //      if( $(this).val() === '' ) { // この要素のvalueが空文字だったらエラー
-   //          error = true;
-   //       }
-   //      if( error ) {
-   //          // エラーが見つかった場合
-   //          if( !$(this).next('span.error').length ) { // この要素の後続要素が存在しない場合
-   //             $(this).after('<span class="error">未入力です</span>'); // この要素の後にエラーメッセージを挿入
-   //          }
-   //      } else {
-   //          // エラーがなかった場合
-   //          $(this).next('span.error').remove(); // この要素の後続要素を削除
-   //      }
-   //  });
 
    $(document).on('click', '#next-btn', function() {
       $('html,body').scrollTop(0);
