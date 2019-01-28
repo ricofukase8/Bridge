@@ -108,4 +108,4 @@
     <li><button type="button" class="btn btn-primary next-step" id="next-btn" value="Save and continue">Save and continue</button></li>
   </ul>
 </div>
-<script src="assets/js/signup.js"></script>
+<!-- <script src="assets/js/signup.js"></script> -->
