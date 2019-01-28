@@ -7,7 +7,7 @@ $signin_user_id=$_SESSION["bridge"]["id"];
 
 $tmp_users = getAllUsers($dbh);
 $signin_user = getSigninUser($dbh,$signin_user_id); 
-var_dump($signin_user["name"]);
+// var_dump($signin_user["name"]);
 
 
 foreach ($tmp_users as $user) {
@@ -589,7 +589,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
                   <div class="btn-profile">
                     <ul class="btn-profile">
-                        <li><button class="btn btn-warning" type="button" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">LIKE</button></li>
                         <li><a href="<?php echo $user['fb_account']; ?>"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a></li>
                         <li><button class="btn btn-primary" data-dismiss="modal" type="button" style="margin-bottom: 10px; margin-left: 700px;" >Close Project</button></li>
                     </ul>

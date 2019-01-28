@@ -94,8 +94,8 @@ function getUser($dbh,$email)
 	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
 	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
 	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
-	$sql .= 'WHERE `u`.`id` = ?';
-    $data = [108];
+	$sql .= 'WHERE `u`.`email` = ?';
+    $data = [$email];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 
