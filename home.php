@@ -27,6 +27,7 @@ $signin_user = getUser($dbh,[108]); //関数の呼び出し
 // echo '<pre>';
 // var_dump($users);die();
 // echo '</pre>';
+
 // var_dump($users[0]['status_id']);die();
 foreach ($users as $user) {
 	$like_flg_sql = 'SELECT * FROM `likes` WHERE `user_id` = ? AND `liked_id` = ?';
@@ -36,7 +37,6 @@ foreach ($users as $user) {
 	$is_liked = $like_flg_stmt->fetch(PDO::FETCH_ASSOC);
 	$user['is_liked'] = $is_liked ? true : false;
 }
-
 
  ?>
 
@@ -118,12 +118,12 @@ foreach ($users as $user) {
 	<section class="hero-section set-bg" data-setbg="assets/img/bridgemain.png">
 		<div class="container">
 			<div class="hero-text text-white">
+
 			<!-- <div class="search-warp">
 				<div class="section-title text-white">
 					<h2>SERCH</h2>
 				</div> -->
 				<span hidden id="signin-user"><?php echo $signin_user_id; ?></span>
-
 				<div class="row">
 					<div class="col-md-10 offset-md-1">
 						<!-- search form -->
@@ -167,8 +167,8 @@ foreach ($users as $user) {
 			<div class="row" id="hoge">
 
 			<!-- categorie -->
-				
-					<div class="col-lg-4 col-md-6">
+				<?php foreach ($users as $user): ?>
+					<div class="col-lg-4 col-md-6 category-item status_id_<?php echo $user['status_id']; ?>">
 						<div class="categorie-item">
 						<div class="ci-thumb set-bg" data-setbg="assets/img/user_profile_img/<?php echo $user['img_name']; ?>">
 				    	</div>
