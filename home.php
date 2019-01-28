@@ -306,7 +306,7 @@ foreach ($tmp_users as $user) {
                                               <label for="portfolio">ポートフォリオURL</label>
                                             </div>
                                             <div class="col-75">
-                                              <p class="lead" id="result_portfolio"><?php echo $user['portfolio_url']; ?></p>
+                                              <a href="<?php echo $user['portfolio_url']; ?>"><p class="lead" id="result_portfolio"><?php echo $user['portfolio_url']; ?></p></a>
                                             </div>
                                           </div> 
                                           <div class="row">
@@ -554,7 +554,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                               <label for="portfolio">ポートフォリオURL</label>
                             </div>
                             <div class="col-75">
-                              <p class="lead" id="result_portfolio"><?php echo $signin_user['portfolio_url']; ?></p>
+                              <a href="<?php echo $signin_user['portfolio_url']; ?>"><p class="lead" id="result_portfolio"><?php echo $signin_user['portfolio_url']; ?></p></a>
                             </div>
                           </div> 
                           <div class="row">
