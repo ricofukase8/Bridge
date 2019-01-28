@@ -6,13 +6,7 @@ require('function.php');
 $signin_user_id=$_SESSION["bridge"]["id"];
 
 $users = getAllUsers($dbh);
-$signin_user = getUser($dbh,$signin_user_id); //関数の呼び出し
-
-// foreach ($users as $user) {
-// 	var_dump($user["id"]);
-// }
-
-
+$signin_user = getUser($dbh,[108]); //関数の呼び出し
 // $users[] = $user;
 // $user_companies = getUserCompanies($dbh,[16]); //関数の呼び出し
 // $user_advices = getUserAdvices($dbh,[16]); //関数の呼び出し
@@ -31,6 +25,8 @@ $signin_user = getUser($dbh,$signin_user_id); //関数の呼び出し
 // }
 
 // echo '<pre>';
+// var_dump($users);die();
+// echo '</pre>';
 // var_dump($users[0]['status_id']);die();
 foreach ($users as $user) {
 	$like_flg_sql = 'SELECT * FROM `likes` WHERE `user_id` = ? AND `liked_id` = ?';
@@ -127,6 +123,7 @@ foreach ($users as $user) {
 					<h2>SERCH</h2>
 				</div> -->
 				<span hidden id="signin-user"><?php echo $signin_user_id; ?></span>
+
 				<div class="row">
 					<div class="col-md-10 offset-md-1">
 						<!-- search form -->
@@ -151,15 +148,6 @@ foreach ($users as $user) {
 					</div>
 				</div>
 			</div>
-			<!-- <div class="row">
-				<div class="col-lg-10 offset-lg-1">
-					<form class="intro-newslatter">
-						<input type="text" placeholder="Name">
-						<input type="text" class="last-s" placeholder="E-mail">
-						<button class="site-btn">Sign Up Now</button>
-					</form>
-				</div>
-			</div> -->
 			</div>
 		</div>
 	</section>
@@ -173,7 +161,7 @@ foreach ($users as $user) {
 		            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 		            	<a class="nav-item nav-link graduates" id="nav-graduates-tab" data-toggle="tab" href="#nav-graduates" role="tab" aria-controls="nav-graduates" aria-selected="true">Graduates</a>
 		            	<a class="nav-item nav-link students" id="nav-students-tab" data-toggle="tab" href="#nav-students" role="tab" aria-controls="nav-students" aria-selected="false">Students</a>
-		            <a class="nav-item nav-link hunting" id="nav-hunting-tab" data-toggle="tab" href="#nav-hunting" role="tab" aria-controls="nav-hunting" aria-selected="false">就活中</a>
+		            <a class="nav-item nav-link huntings" id="nav-huntings-tab" data-toggle="tab" href="#nav-huntings" role="tab" aria-controls="nav-huntings" aria-selected="false">就活中</a>
 		            </div>
 	            </nav>
 			<div class="row" id="hoge">
@@ -188,7 +176,6 @@ foreach ($users as $user) {
 								<div class="ci-text">
 									<h5><?php echo $user['name']; ?></h5>
 									<p><?php echo $user['company_name']; ?></p>
-									<span hidden class="status_id_<?php echo $user['status_id']; ?>"><?php echo $user['status_id']; ?></span>
 								</div>
 							</a>
 						</div>
@@ -284,7 +271,12 @@ foreach ($users as $user) {
 				                              <label for="career_period">在籍期間</label>
 				                            </div>
 				                            <div class="col-75">
-				                              <p class="lead" id="result_career_period"><?php echo $user['term_company']; ?></p>
+				                              <ul class="career_period" color="#878787">
+					                              <li class="lead" id="result_career_year"><?php echo $user['term_company_year']; ?>年</li>
+					                              <li class="lead" id="result_career_month"><?php echo $user['term_company_month']; ?>月〜</li>
+					                              <li class="lead" id="result_career_year_end"><?php echo $user['term_company_year_end']; ?>年</li>
+					                              <li class="lead" id="result_career_month_end"><?php echo $user['term_company_month_end']; ?>月</li>
+						                          </ul>
 				                            </div>
 				                          </div>
 				                          <div class="row">
@@ -531,7 +523,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                               <label for="career_period">在籍期間</label>
                             </div>
                             <div class="col-75">
-                              <p class="lead" id="result_career_period"><?php echo $signin_user['term_company']; ?></p>
+                              <ul class="career_period" color="#878787">
+	                              <li class="lead" id="result_career_year"><?php echo $user['term_company_year']; ?>年</li>
+	                              <li class="lead" id="result_career_month"><?php echo $user['term_company_month']; ?>月〜</li>
+	                              <li class="lead" id="result_career_year_end"><?php echo $user['term_company_year_end']; ?>年</li>
+	                              <li class="lead" id="result_career_month_end"><?php echo $user['term_company_month_end']; ?>月</li>
+		                          </ul>
                             </div>
                           </div>
                           <div class="row">
@@ -541,7 +538,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             <div class="col-75">
                             <?php if ($signin_user['job_status'] == 1): ?>
                             <p class="lead" id="result_job_status">Yes</p>
-                            <?php elseif ($usignin_ser['job_status'] == 2): ?>
+                            <?php elseif ($signin_user['job_status'] == 2): ?>
                             <p class="lead" id="result_job_status">No</p>
                         	<?php endif; ?>
                             </div>
@@ -644,4 +641,3 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="assets/js/circle-progress.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/main.js"></script>
-</html>
