@@ -103,4 +103,3 @@ function getUser($dbh,$email)
     // var_dump($signin_user["user_id"]);die();
 
     return $signin_user;
-}
