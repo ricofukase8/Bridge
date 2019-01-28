@@ -7,7 +7,6 @@ if (false) {
 }
 
 require('dbconnect.php');
-
 require("function.php");
 
 // $name=$_SESSION["48_LearnSNS"]["name"];

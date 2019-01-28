@@ -58,7 +58,6 @@ function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_co
 	$stmt->execute($data);
 }
 
-
 function upDatePortfolio($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents)
 {
 	$sql = "UPDATE `portfolios` SET `user_id`=?, `portfolio_url`=?, `portfolio_name`=?, `portfolio_status`=?, `portfolio_comments`=? WHERE `user_id` = ?";
@@ -70,13 +69,15 @@ function upDatePortfolio($dbh, $signup_user_id, $portfolio, $portfolio_name, $po
 function getAllUsers($dbh)
 {
 	$sql = 'SELECT * FROM `users` AS `u` ';
-	$sql .= 'LEFT JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
-	$sql .= 'LEFT JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
+	$sql .= 'JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
+	$sql .= 'JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
+	// $sql .= 'SELECT user_id, id, (SELECT a.advice_id FROM advices_users AS a WHERE a.user_id = advices_users.user_id AND a.id= advices_users.id FOR XML PATH('')) AS  advice_id_concat FROM advices_users GROUP BY user_id, id';
 	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
 	$sql .= 'LEFT JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
 	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
 	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
 	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
+
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
 
@@ -93,8 +94,8 @@ function getUser($dbh,$email)
 	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
 	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
 	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
-	$sql .= 'WHERE `u`.`email` = ?';
-    $data = [$email];
+	$sql .= 'WHERE `u`.`id` = ?';
+    $data = [108];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 
@@ -147,9 +148,4 @@ function getLike($dbh,$signin_user_id)
     return $stmt->fetchAll();
     // return $like_users;
 }
-
-
-
-
-
 
