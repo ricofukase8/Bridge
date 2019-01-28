@@ -5,17 +5,21 @@ require('function.php');
 
 $signin_user_id=$_SESSION["bridge"]["id"];
 
-$users = getAllUsers($dbh);
-$signin_user = getUser($dbh,[108]); //関数の呼び出し
+$tmp_users = getAllUsers($dbh);
+$signin_user = getSigninUser($dbh,$signin_user_id); 
+var_dump($signin_user["name"]);
 
-foreach ($users as $user) {
+
+foreach ($tmp_users as $user) {
 	$like_flg_sql = 'SELECT * FROM `likes` WHERE `user_id` = ? AND `liked_id` = ?';
 	$like_flg_data = [$signin_user_id, $user['user_id']];
 	$like_flg_stmt = $dbh->prepare($like_flg_sql);
 	$like_flg_stmt->execute($like_flg_data);
 	$is_liked = $like_flg_stmt->fetch(PDO::FETCH_ASSOC);
 	$user['is_liked'] = $is_liked ? true : false;
+	$users[] = $user;
 }
+// var_dump($users);
 
  ?>
 
@@ -51,10 +55,13 @@ foreach ($users as $user) {
 
 </head>
 <body>
+
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
+
 
     <!-- Header section -->
     <header class="header-section">
