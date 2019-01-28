@@ -9,7 +9,7 @@ $(function() {
       // 送信先や送信するデータなど
       url: 'likeUpdate.php',
       type: 'POST',
-      datatype: 'json',
+      dataType: 'json',
       data: {
         'user_id': user_id,
         'signin_user_id': signin_user_id
@@ -40,7 +40,7 @@ $(document).on('click', '.js-unlike', function() {
   $.ajax({
     url: 'likeUpdate.php',
     type: 'POST',
-    datatype: 'json',
+    dataType: 'json',
     data: {
       'user_id': user_id,
       'signin_user_id': signin_user_id,

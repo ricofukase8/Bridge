@@ -7,7 +7,7 @@ $signin_user_id=$_SESSION["bridge"]["id"];
 
 $tmp_users = getAllUsers($dbh);
 $signin_user = getSigninUser($dbh,$signin_user_id); 
-var_dump($signin_user["user_id"]);
+var_dump($signin_user["name"]);
 
 
 foreach ($tmp_users as $user) {
