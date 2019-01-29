@@ -139,10 +139,10 @@
               </div>
             </div>
             <div class="row">
-            <div class="col-25">
-              <label for="carrer_period">在籍期間</label>
-            </div>
-            <div class="col-75">
+              <div class="col-25">
+                <label for="career_period">在籍期間</label>
+              </div>
+              <div class="col-75">
               <select id="select_box_year" name="input_career_year" >
                   <option value="" selected="selected">-</option>
                   <?php foreach(range(2000,2030) as $year): ?>

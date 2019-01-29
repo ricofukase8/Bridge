@@ -5,17 +5,21 @@ require('function.php');
 
 $signin_user_id=$_SESSION["bridge"]["id"];
 
-$users = getAllUsers($dbh);
-$signin_user = getUser($dbh,[108]); //関数の呼び出し
+$tmp_users = getAllUsers($dbh);
+$signin_user = getSigninUser($dbh,$signin_user_id);
+// var_dump($signin_user["name"]);
 
-foreach ($users as $user) {
+
+foreach ($tmp_users as $user) {
 	$like_flg_sql = 'SELECT * FROM `likes` WHERE `user_id` = ? AND `liked_id` = ?';
 	$like_flg_data = [$signin_user_id, $user['user_id']];
 	$like_flg_stmt = $dbh->prepare($like_flg_sql);
 	$like_flg_stmt->execute($like_flg_data);
 	$is_liked = $like_flg_stmt->fetch(PDO::FETCH_ASSOC);
 	$user['is_liked'] = $is_liked ? true : false;
+	$users[] = $user;
 }
+// var_dump($users);
 
  ?>
 
@@ -51,10 +55,13 @@ foreach ($users as $user) {
 
 </head>
 <body>
+
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
+
 
     <!-- Header section -->
     <header class="header-section">
@@ -151,7 +158,6 @@ foreach ($users as $user) {
                     <!-- profileModal -->
                     <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $user['user_id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
                       <div class="modal-dialog modal-profile">
-                      <div class="modal-content">
                       <div class="close-modal" data-dismiss="modal">
                         <div class="lr">
                           <div class="rl"></div>
@@ -291,7 +297,11 @@ foreach ($users as $user) {
                                               <label for="advice">相談に乗れること</label>
                                             </div>
                                             <div class="col-75">
-                                              <p class="lead" for="advice1" id="result_advice"><?php echo $user['advice_id']; ?></p>
+                                              <p class="lead" for="advice1" id="result_advice">
+                                                  <?php foreach ($user['advices'] as $advice): ?>
+                                                    <?php echo $advice['advice_id']; ?>
+                                                  <?php endforeach; ?>
+                                              </p>
                                             </div>
                                           </div>
                                           <div class="row">
@@ -299,9 +309,9 @@ foreach ($users as $user) {
                                               <label for="portfolio">ポートフォリオURL</label>
                                             </div>
                                             <div class="col-75">
-                                              <p class="lead" id="result_portfolio"><?php echo $user['portfolio_url']; ?></p>
+                                              <a href="<?php echo $user['portfolio_url']; ?>"><p class="lead" id="result_portfolio"><?php echo $user['portfolio_url']; ?></p></a>
                                             </div>
-                                          </div> 
+                                          </div>
                                           <div class="row">
                                             <div class="col-25">
                                               <label for="portfolio_name">サービス名</label>
@@ -361,7 +371,6 @@ foreach ($users as $user) {
                               </div>
                             </div>
                           </div>
-                        </div>
                       </div>
                     </div>
                 <?php endforeach; ?>
@@ -547,7 +556,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                               <label for="portfolio">ポートフォリオURL</label>
                             </div>
                             <div class="col-75">
-                              <p class="lead" id="result_portfolio"><?php echo $signin_user['portfolio_url']; ?></p>
+                              <a href="<?php echo $signin_user['portfolio_url']; ?>"><p class="lead" id="result_portfolio"><?php echo $signin_user['portfolio_url']; ?></p></a>
                             </div>
                           </div> 
                           <div class="row">
@@ -582,7 +591,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
                   <div class="btn-profile">
                     <ul class="btn-profile">
-                        <li><button class="btn btn-warning" type="button" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">LIKE</button></li>
                         <li><a href="<?php echo $user['fb_account']; ?>"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a></li>
                         <li><button class="btn btn-primary" data-dismiss="modal" type="button" style="margin-bottom: 10px; margin-left: 700px;" >Close Project</button></li>
                     </ul>
@@ -591,7 +599,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
