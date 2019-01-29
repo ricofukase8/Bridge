@@ -1,72 +1,45 @@
 $(function() {
-   // import Joi from 'joi'
+   
 
-   // const User = Joi.object().keys({
-   //   name: Joi.string().required(),
-   //   email: Joi.string().email(),
-   //   password: Joi.string().min(4).max(14).required()
-   // })
+   Parsley.options.trigger = "keyup focusout change input";
 
-   //    new Vue({
-   //   el: '#app',
-   //   data () {
-   //     return {
-   //       formData: {
-   //         name: '',
-   //         email: '',
-   //         password: ''
-   //       },
-   //       errors: {
-   //         name: false,
-   //         email: false,
-   //         password: false
-   //       },
-   //       touched: {
-   //         name: false,
-   //         email: false,
-   //         password: false
-   //       }
-   //     }
-   //   },
-   //   methods: {
-   //     validate (name) {
-   //       this.touched[name] = true
-   //       Object.keys(this.errors).forEach((k)=>{
-   //         this.errors[k] = false
-   //       })
-   //       const result = Joi.validate({...this.formData}, this.schema, { abortEarly: false })
-   //       console.log(result)
-   //       if (result.error) {
-   //         result.error.details.forEach((detail) => {
-   //           const name = detail.path[0]
-   //           if(this.touched[name]) this.errors[name] = true
-   //         })
-   //       }
-   //     }
-   //   },
-   //   computed: {
-   //     isValid () {
-   //       let isValid = true
+   
+   $( 'input[name="input_career"]:radio').change(function() {
+      let radioval = $(this).val();
+      if(radioval == 2){
+         $('#company_name').removeAttr('required');
+         $('.step2_form').prop('disabled' , true);
+         $('.step2_label').addClass('disabled');
+         $('.parsley-required').addClass('hidden');
+         $('#company_name').removeClass('parsley-error');
+      }else{
+         $("#company_name").prop('required' , true);
+         $('.step2_form').removeProp('disabled' , true);
+         $('.step2_label').removeClass('disabled');
+         $('.parsley-required').removeClass('hidden');
+         $('#company_name').addClass('parsley-error');
+      }
+      })
 
-   //       Object.entries(this.errors).forEach(([k,v]) => {
-   //         if(v) isValid = false
-   //       })
-   //       Object.entries(this.touched).forEach(([k,v]) => {
-   //         if(!v) isValid = false
-   //       })
-   //       return isValid
-   //     },
-   //     schema () {
-   //       return Joi.object().keys({
-   //         user_id: Joi.string().required(),
-   //         email: Joi.string().email(),
-   //         password: Joi.string().min(12).required()
-   //       })
-   //     }
-   //   }
-   // })
+   $( 'input[name="input_job_offer"]:radio').change(function() {
+      let job_offer_radio = $(this).val();
+      console.log(job_offer_radio);
+      if(job_offer_radio == 1){
+         $('#job_offer_contents').prop('required', true);
+         $('.step2_form').removeProp('disabled' , true);
+         $('.step2_label').removeClass('disabled');
+         $('.parsley-required').removeClass('hidden');
+         $('#job_offer_contents').addClass('parsley-error');
+      }else{
+         $('#job_offer_contents').removeAttr('required' , true);
+         $('#job_offer_contents').prop('disabled' , true);
+         $('#job_offer_contents').addClass('disabled');
+         $('.parsley-required').addClass('hidden');
+         $('#job_offer_contents').removeClass('parsley-error');
+      }
+   })
 
-
+   
    $(document).on('click', '#next-btn', function() {
       $('html,body').scrollTop(0);
    })
