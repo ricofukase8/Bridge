@@ -6,11 +6,6 @@ require('function.php');
 $signin_user_id=$_SESSION["bridge"]["id"];
 $like_users = getLike($dbh,$signin_user_id);
 
-var_dump($like_users["0"]["name"]);
-
- 
-
-
 ?>
 
 
