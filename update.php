@@ -13,6 +13,9 @@ require("function.php");
 //画像があった場合
 $signin_user = getSigninUser($dbh,$_SESSION['bridge']['id']); //関数の呼び出し
 
+var_dump($signin_user['img_name']);die();
+
+
 if (isset($_POST["input_img_name_new"])) {
 	date_default_timezone_set("Asia/Manila");
 	$date_str=date("YmdHis");
