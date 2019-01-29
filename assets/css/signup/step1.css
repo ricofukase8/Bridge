@@ -122,8 +122,11 @@ input[type=submit]:hover {
   color: #ffff
 }
 
+#img_button {
+  display: none !important;
+
 .disabled{
-  color:#dddddd;;
+  color:#dddddd;
 }
 
 /* Clear floats after the columns */
