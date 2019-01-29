@@ -22,7 +22,7 @@ if (!empty($_POST)) {
                 exit();
             }else{
                 $errors["signin"]="failed";
-                var_dump($errors["signin"]);
+                // var_dump($errors["signin"]);
             }
         }
     }else{
@@ -56,17 +56,20 @@ if (!empty($_POST)) {
           <form method="POST" action="signin.php" enctype="multipart/form-data">
             <div class="form-group">
               <label for="email">メールアドレス</label>
-              <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
-              <?php if (isset($errors["signin"]) && $errors["signin"] == "blank"): ?>
+              <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com" required/>
+              <!-- <?php if (isset($errors["signin"]) && $errors["signin"] == "blank"): ?>
               <p class="text-danger">メールアドレスとパスワードを入力してください</p>
-              <?php endif ?>
-              <?php if (isset($errors["signin"]) && $errors["signin"] == "failed"): ?>
+              <?php endif ?> -->
+             <!--  <?php if (isset($errors["signin"]) && $errors["signin"] == "failed"): ?>
               <p class="text-danger">ログインに失敗しました</p>
-              <?php endif ?>
+              <?php endif ?> -->
             </div>
             <div class="form-group">
                 <label for="password">パスワード</label>
-                <input type="password" name="input_password" class="form-control" id="password" placeholder="4 ~ 16文字のパスワード">
+                <input type="password" name="input_password" class="form-control" id="password" placeholder="4 ~ 16文字のパスワード" pattern="^([a-zA-Z0-9-_/.]{4,16})$" title="半角英数字4~16文字、記号は-_/.で入力してください" required />
+                  <?php if (isset($errors["signin"]) && $errors["signin"] == "failed"): ?>
+                  <p class="text-danger">ログインに失敗しました</p>
+                  <?php endif ?>
             </div>
             <input type="submit" class="btn btn-primary next-step" id="next-btn" value="サインイン">
             <span style="float: right; padding-top: 6px;">

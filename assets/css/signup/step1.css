@@ -122,6 +122,10 @@ input[type=submit]:hover {
   color: #ffff
 }
 
+.disabled{
+  color:#dddddd;;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";

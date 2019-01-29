@@ -22,6 +22,8 @@ require('dbconnect.php');
     <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
 
     <link rel="stylesheet" type="text/css" href="navbar.css">
+
+
 </head>
 <body>
   <div id="top" class="jumbotron" style="background-image: url(assets/img/bridgemain.png);">
@@ -37,7 +39,7 @@ require('dbconnect.php');
         <div class="wizard">
           <?php include('components/wizard.php');?>
 
-            <form method="POST" action="post.php" enctype="multipart/form-data">
+            <form method="POST" action="post.php" enctype="multipart/form-data" data-parsley-validate data-parsley-trigger="keyup focusout change input">
             <div class="tab-content">
               <?php include('components/step1.php');?>
               <?php include('components/step2.php');?>
@@ -387,6 +389,12 @@ function prevTab(elem) {
 }
 </script>
 
+<!-- <script src="assets/jquery/jquery.min.js"></script> -->
+<script src="assets/js/parsley.min.js"></script>
+<script src="assets/js/ja.js"></script>
+<script src="assets/js/ja.extra.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/signup/parsley.css">
 <script src="assets/js/signup.js"></script>
+
 </body>
 </html>
