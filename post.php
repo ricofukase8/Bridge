@@ -47,6 +47,15 @@ $term_company_month_end = $_POST["input_career_month_end"];
 $job_contents=$_POST["input_job_content"];
 $offer_contents=$_POST["input_job_offer_contents"];
 
+$company_name_2=$_POST["input_company_name_2"];
+$position_2=$_POST["input_position_2"];
+$term_company_year_2=$_POST["input_career_year_2"];
+$term_company_month_2 = $_POST["input_career_month_2"];
+$term_company_year_end_2 = $_POST["input_career_year_end_2"];
+$term_company_month_end_2 = $_POST["input_career_month_end_2"];
+$job_contents_2=$_POST["input_job_content_2"];
+$offer_contents_2=$_POST["input_job_offer_contents_2"];
+
 $job_offer="";
 if (isset($_POST["input_job_offer"])) {
 	$job_offer=$_POST["input_job_offer"];

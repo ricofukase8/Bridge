@@ -1,5 +1,15 @@
 $(function() {
-	$(document).on('click', '#next-btn', function() {
+   $(document).on('click', '#select_file_button', function() {
+     $("#file_button").click();
+    }) console.log("ボタン");
+
+   $(document).on('change', '#file_button', function() {
+     $('#filename').val($(this).val().replace(/^.*\\/, ""));
+    })
+
+
+
+   $(document).on('click', '#next-btn', function() {
     	$('html,body').scrollTop(0);
    })
 
