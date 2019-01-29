@@ -172,7 +172,7 @@
                 <?php endforeach; ?>
               </select>月
             </div>
-            </div>
+          </div>
             <div class="row">
               <div class="col-25">
                 <label for="job_status">現在働いている</label>
