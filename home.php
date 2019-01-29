@@ -158,7 +158,6 @@ foreach ($tmp_users as $user) {
                     <!-- profileModal -->
                     <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $user['user_id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
                       <div class="modal-dialog modal-profile">
-                      <div class="modal-content">
                       <div class="close-modal" data-dismiss="modal">
                         <div class="lr">
                           <div class="rl"></div>
@@ -298,7 +297,11 @@ foreach ($tmp_users as $user) {
                                               <label for="advice">相談に乗れること</label>
                                             </div>
                                             <div class="col-75">
-                                              <p class="lead" for="advice1" id="result_advice"><?php echo $user['advice_id']; ?></p>
+                                              <p class="lead" for="advice1" id="result_advice">
+                                                  <?php foreach ($user['advices'] as $advice): ?>
+                                                    <?php echo $advice['advice_id']; ?>
+                                                  <?php endforeach; ?>
+                                              </p>
                                             </div>
                                           </div>
                                           <div class="row">
@@ -368,7 +371,6 @@ foreach ($tmp_users as $user) {
                               </div>
                             </div>
                           </div>
-                        </div>
                       </div>
                     </div>
                 <?php endforeach; ?>
@@ -597,7 +599,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
