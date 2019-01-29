@@ -12,12 +12,17 @@ $(function() {
          $('.step2_label').addClass('disabled');
          $('.parsley-required').addClass('hidden');
          $('#company_name').removeClass('parsley-error');
+         $('#label_job_offer_contents').addClass('disabled');
+         $('#job_offer_contents').prop('disabled' , true);
+         $('#job_offer_contents').removeClass('parsley-error');
       }else{
          $("#company_name").prop('required' , true);
          $('.step2_form').removeProp('disabled' , true);
          $('.step2_label').removeClass('disabled');
          $('.parsley-required').removeClass('hidden');
          $('#company_name').addClass('parsley-error');
+         $('#label_job_offer_contents').removeClass('disabled');
+         $('#job_offer_contents').removeProp('disabled' , true);
       }
       })
 
@@ -26,14 +31,15 @@ $(function() {
       console.log(job_offer_radio);
       if(job_offer_radio == 1){
          $('#job_offer_contents').prop('required', true);
-         $('.step2_form').removeProp('disabled' , true);
-         $('.step2_label').removeClass('disabled');
+         $('#job_offer_contents').removeProp('disabled' , true);
+         $('#label_job_offer_contents').removeClass('disabled');
          $('.parsley-required').removeClass('hidden');
          $('#job_offer_contents').addClass('parsley-error');
       }else{
          $('#job_offer_contents').removeAttr('required' , true);
          $('#job_offer_contents').prop('disabled' , true);
          $('#job_offer_contents').addClass('disabled');
+         $('#label_job_offer_contents').addClass('disabled');
          $('.parsley-required').addClass('hidden');
          $('#job_offer_contents').removeClass('parsley-error');
       }
