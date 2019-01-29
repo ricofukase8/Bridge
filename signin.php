@@ -73,7 +73,7 @@ if (!empty($_POST)) {
             </div>
             <input type="submit" class="btn btn-primary next-step" id="next-btn" value="サインイン">
             <span style="float: right; padding-top: 6px;">
-                <a href="index.php">戻る</a>
+                <a href="main.php">戻る</a>
             </span>
           </form>
       </div>
