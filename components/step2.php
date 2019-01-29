@@ -16,13 +16,13 @@
             <div class="col-25">
               <label for="career">職歴</label>
             </div>
-            <div class="col-75">
-              <label><input class="radio-career" type="radio" id="career" name="input_career" value="1"
+            <div class="col-75" >
+              <label><input class="radio-career" type="radio" id="career" name="input_career" value="1" checked
               <?php if (isset($signin_user) && $signin_user["career"]=="1"): ?>
                 checked="checked"
               <?php endif ?>
                 >Yes</label>
-              <label><input class="radio-career" type="radio" id="career" name="input_career" value="2" 
+              <label><input class="radio-career" type="radio" id="career" name="input_career" value="2"
               <?php if (isset($signin_user) && $signin_user["career"]=="2"): ?>
                 checked="checked"
               <?php endif ?>
@@ -32,47 +32,47 @@
 
           <div class="row">
             <div class="col-25">
-              <label for="company_name">会社名</label>
+              <label for="company_name" class="step2_label">会社名</label>
             </div>
             <div class="col-75">
-              <input type="text" id="company_name" name="input_company_name" placeholder="Your company name.." value="<?php echo isset($signin_user) ? $signin_user["company_name"] : ''; ?>">
+              <input type="text" id="company_name" name="input_company_name" placeholder="Your company name.." value="<?php echo isset($signin_user) ? $signin_user["company_name"] : ''; ?>" class="step2_form" required>
             </div>
           </div>
           <div class="row">
             <div class="col-25">
-              <label for="position">役職</label>
+              <label for="position" class="step2_label">役職</label>
             </div>
             <div class="col-75">
-              <input type="text" id="position" name="input_position" placeholder="Your position.." value="<?php echo isset($signin_user) ? $signin_user["position"] : ''; ?>">
+              <input type="text" id="position" name="input_position" placeholder="Your position.." value="<?php echo isset($signin_user) ? $signin_user["position"] : ''; ?>" class="step2_form">
             </div>
           </div>
           <div class="row">
             <div class="col-25">
-              <label for="carrer_period">在籍期間</label>
+              <label for="carrer_period" class="step2_label">在籍期間</label>
             </div>
-            <div class="col-75">
-              <select id="select_box_year" name="input_career_year" >
+            <div class="col-75" required>
+              <select id="select_box_year" name="input_career_year" class="step2_form">
                   <option value="" selected="selected">-</option>
                   <?php foreach(range(2000,2030) as $year): ?>
                   <option value="<?=$year?>" <?php if (isset($signin_user) && $year == $signin_user["term_company_year"]){echo "selected";}?>><?=$year?></option>
                   <?php endforeach; ?>
               </select>年&thinsp;
 
-              <select id="select_box_month" name="input_career_month">
+              <select id="select_box_month" name="input_career_month" class="step2_form">
                 <option value="" selected="selected">-</option>
                 <?php foreach(range(1,12) as $month): ?>
                 <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>" <?php if (isset($signin_user) && $month == $signin_user["term_company_month"]){echo "selected";}?>><?=$month?></option>
                 <?php endforeach; ?>
               </select>月~
 
-              <select id="select_box_year_end" name="input_career_year_end">
+              <select id="select_box_year_end" name="input_career_year_end" class="step2_form">
                   <option value="" selected="selected">-</option>
                   <?php foreach(range(2000,2030) as $year_end): ?>
                   <option value="<?=$year_end?>" <?php if (isset($signin_user) && $year_end == $signin_user["term_company_year_end"]){echo "selected";}?>><?=$year_end?></option>
                   <?php endforeach; ?>
               </select>年　&thinsp;
 
-              <select id="select_box_month_end" name="input_career_month_end">
+              <select id="select_box_month_end" name="input_career_month_end" class="step2_form">
                 <option value="" selected="selected">-</option>
                 <?php foreach(range(1,12) as $month_end): ?>
                 <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>" <?php if (isset($signin_user) && $month_end == 
@@ -83,15 +83,15 @@
           </div>
           <div class="row">
             <div class="col-25">
-              <label for="job_status">現在働いている</label>
+              <label for="job_status" class="step2_label">現在働いている</label>
             </div>
             <div class="col-75">
-              <label><input class="radio-career" type="radio" id="job_status_yes" name="input_job_status" value="1" 
+              <label><input class="radio-career step2_form" type="radio" id="job_status_yes" name="input_job_status" value="1" checked
               <?php if (isset($signin_user) && $signin_user["job_status"]=="1"): ?>
               checked="checked"
               <?php endif ?>
               >Yes</label>
-              <label><input class="radio-career" type="radio" id="job_status_no" name="input_job_status" value="2"
+              <label><input class="radio-career step2_form" type="radio" id="job_status_no" name="input_job_status" value="2"
               <?php if (isset($signin_user) && $signin_user["job_status"]=="2"): ?>
               checked="checked"
               <?php endif ?>
@@ -100,10 +100,10 @@
           </div>
           <div class="row">
             <div class="col-25">
-              <label for="job_contents">仕事内容</label>
+              <label for="job_contents" class="step2_label">仕事内容</label>
             </div>
             <div class="col-75">
-             <textarea id="job_contents" name="input_job_content" placeholder="Write your job contents..."><?php echo isset($signin_user) ? $signin_user["job_contents"] : ''; ?></textarea>
+             <textarea id="job_contents" name="input_job_content" placeholder="Write your job contents..." class="step2_form"><?php echo isset($signin_user) ? $signin_user["job_contents"] : ''; ?></textarea>
             </div>
           </div>
           <!-- 職歴2 -->
@@ -195,15 +195,15 @@
 
           <div class="row">
             <div class="col-25">
-              <label for="job_offer">求人の有無</label>
+              <label for="job_offer" class="step2_label">求人の有無</label>
             </div>
             <div class="col-75">
-              <label><input class="radio-career" type="radio" id="job_offer_yes" name="input_job_offer" value="1"
+              <label><input class="radio-career step2_form" type="radio" id="job_offer_yes" name="input_job_offer" value="1"
               <?php if (isset($signin_user) && $signin_user["job_offer"]=="1"): ?>
               checked="checked"
               <?php endif ?>
               >Yes</label>
-              <label><input class="radio-career" type="radio" id="job_offer_no" name="input_job_offer" value="2"
+              <label><input class="radio-career step2_form" type="radio" id="job_offer_no" name="input_job_offer" value="2" checked
               <?php if (isset($signin_user) && $signin_user["job_offer"]=="2"): ?>
               checked="checked"
               <?php endif ?>
@@ -212,20 +212,20 @@
           </div>
           <div class="row">
             <div class="col-25">
-              <label for="job_offer_contents">求人情報</label>
+              <label for="job_offer_contents" class="disabled">求人情報</label>
             </div>
             <div class="col-75">
-              <textarea id="job_offer_contents" name="input_job_offer_contents" placeholder="Write job offer contents..."><?php echo isset($signin_user) ? $signin_user["offer_contents"] : ''; ?></textarea>
+              <textarea id="job_offer_contents" name="input_job_offer_contents" placeholder="Write job offer contents..." disabled><?php echo isset($signin_user) ? $signin_user["offer_contents"] : ''; ?></textarea>
             </div>
           </div>
           <div class="row">
             <div class="col-25">
-              <label for="advice">相談に乗れること</label>
+              <label for="advice" class="step2_label">相談に乗れること</label>
             </div>
             <div class="checkbox">
               <?php foreach ($advices as $v): ?>
-                <input type="checkbox" class="check_box" id="advice<?php echo $v['id'] ?>" name="advice[]" value="<?php echo $v['id'] ?>">
-                <label class="advice_check" for="advice<?php echo $v['id'] ?>" ><?php echo $v['advice_id'] ?></label>
+                <input type="checkbox" class="check_box step2_form" id="advice<?php echo $v['id'] ?>" name="advice[]" value="<?php echo $v['id'] ?>">
+                <label class="advice_check step2_form" for="advice<?php echo $v['id'] ?>" ><?php echo $v['advice_id'] ?></label>
               <?php endforeach; ?>
             </div>
           </div>
