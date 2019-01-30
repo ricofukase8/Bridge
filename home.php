@@ -9,14 +9,17 @@ $tmp_users = getAllUsers($dbh);
 $signin_user = getSigninUser($dbh,$signin_user_id);
 
 foreach ($tmp_users as $user) {
-  	$like_flg_sql = 'SELECT * FROM `likes` WHERE `user_id` = ? AND `liked_id` = ?';
-  	$like_flg_data = [$signin_user_id, $user['user_id']];
-  	$like_flg_stmt = $dbh->prepare($like_flg_sql);
-  	$like_flg_stmt->execute($like_flg_data);
-  	$is_liked = $like_flg_stmt->fetch(PDO::FETCH_ASSOC);
-  	$user['is_liked'] = $is_liked ? true : false;
-  	$users[] = $user;
+  $like_flg_sql = 'SELECT * FROM `likes` WHERE `user_id` = ? AND `liked_id` = ?';
+  $like_flg_data = [$signin_user_id, $user['user_id']];
+  $like_flg_stmt = $dbh->prepare($like_flg_sql);
+  $like_flg_stmt->execute($like_flg_data);
+  $is_liked = $like_flg_stmt->fetch(PDO::FETCH_ASSOC);
+  $user['is_liked'] = $is_liked ? true : false;
+  var_dump($user["is_liked"]);
+  // var_dump($user["user_id"]);
+	$users[] = $user;
 }
+
  ?>
 
 <!DOCTYPE html>
@@ -42,7 +45,7 @@ foreach ($tmp_users as $user) {
   <!-- favebook button -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/home/style.css"/>
-  <script src="assets/js/like.js"></script>
+
 </head>
 <body>
   <!-- Page Preloder -->
@@ -63,6 +66,7 @@ foreach ($tmp_users as $user) {
             <i class="fa fa-bars"></i>
           </div>
         </div>
+
         <div class="col-lg-9 col-md-9">
           <a href="#portfolioModal<?php echo $signin_user_id; ?>" class="site-btn header-btn" data-toggle="modal" >MYPAGE</a>
           <nav class="main-menu">
@@ -579,5 +583,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="assets/js/circle-progress.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/like.js"></script>
 </body>
 </html>

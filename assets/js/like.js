@@ -1,8 +1,7 @@
 $(function() {
   $(document).on('click', '.js-like', function() {
     var user_id = $(this).siblings('.user-id').text();
-    // console.log(user_id);
-    var signin_user_id = $('#signin-user').text();
+    var signin_user_id = $('.signin-user').text();
     var like_btn = $(this);
 
     $.ajax({
@@ -15,7 +14,7 @@ $(function() {
         'signin_user_id': signin_user_id
       }
     }).done(function (data) {
-      console.log(data);
+      console.log(user_id);
       // 成功時の処理
       if (data === true) {
         like_btn.removeClass('js-like');
@@ -34,7 +33,7 @@ $(function() {
 
 $(document).on('click', '.js-unlike', function() {
   var user_id = $(this).siblings('.user-id').text();
-  var signin_user_id = $('#signin-user').text();
+  var signin_user_id = $('.signin-user').text();
   var like_btn = $(this);
 
   $.ajax({
@@ -47,7 +46,7 @@ $(document).on('click', '.js-unlike', function() {
       'is_unlike': true
     }
   }).done(function (data) {
-    console.log(data);
+    console.log(user_id);
     if (data === true) {
     like_btn.removeClass('js-unlike');
     like_btn.addClass('js-like');

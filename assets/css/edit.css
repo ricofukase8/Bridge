@@ -261,6 +261,13 @@ span.round-tab:hover {
   margin-right: 5px;
 }
 
+.error {
+  color: #ff0000;
+}
+
+.disabled{
+    color: #cacaca;
+}
 
 
 
