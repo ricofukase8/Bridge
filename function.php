@@ -1,4 +1,3 @@
-
 <?php
 function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb, $career, $job_status)
 {
@@ -159,21 +158,24 @@ function getSigninUser($dbh,$signin_user_id)
     return $signin_user;
 }
 
-function getLike($dbh,$signin_user_id)
+function getLikedUsers($dbh,$signin_user_id)
 {
-	$sql = 'SELECT * FROM `likes` AS `l` ';
-	$sql .= 'LEFT JOIN `users` AS `u` ON `u`.`id` = `l`.`liked_id` ';
-	$sql .= 'LEFT JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
-	$sql .= 'LEFT JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
-	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
+	$sql = 'SELECT * FROM `users` AS `u` ';
 	$sql .= 'LEFT JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
 	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
 	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
 	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
-	$sql .= 'WHERE `l`.`user_id` = ?';
-    $data = [$signin_user_id];
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute($data);
+	$sql .= 'LEFT JOIN companies c ON u.id = c.user_id ';
+	$sql .= 'LEFT JOIN likes l ON u.id = l.liked_id ';
+	$sql .= 'WHERE l.user_id = ' . $signin_user_id;
+	$sql .= ' GROUP BY u.id';
 
-    return $stmt->fetchAll();
+	$stmt = $dbh->prepare($sql);
+	$stmt->execute();
+
+	$users = $stmt->fetchAll();
+
+    $advices = getAdvices($dbh);
+
+    return mergeUserAndAdvice($users, $advices);
 }
