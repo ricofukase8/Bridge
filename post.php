@@ -9,8 +9,6 @@ if (false) {
 require('dbconnect.php');
 require("function.php");
 
-// $name=$_SESSION["48_LearnSNS"]["name"];
-
 date_default_timezone_set("Asia/Manila");
 $date_str=date("YmdHis");
 $file_name=$date_str . $_FILES["input_img_name"]["name"];
@@ -19,7 +17,6 @@ move_uploaded_file($_FILES["input_img_name"]["tmp_name"] , "assets/img/user_prof
 $name = $_POST["input_name"];
 $email=$_POST["input_email"];
 $password=$_POST["input_password"];
-// $img_name=$file_name;
 $status=$_POST["input_status"];
 $batchnumber=$_POST["input_batchnumber"];
 $period=$_POST["input_period"];
@@ -36,7 +33,6 @@ $job_status="";
 if (isset($_POST["input_job_status"])) {
 	$job_status=$_POST["input_job_status"];
 }
-
 
 $company_name=$_POST["input_company_name"];
 $position=$_POST["input_position"];
@@ -61,14 +57,10 @@ if (isset($_POST["input_job_offer"])) {
 	$job_offer=$_POST["input_job_offer"];
 }
 
-// echo '<pre>';
-// var_dump($_POST['advice']);die();
 $advices="";
 if (isset($_POST["advice"])) {
 	$advices = $_POST['advice'];
 }
-
-
 
 $portfolio=$_POST["input_portfolio"];
 $portfolio_name=$_POST["input_portfolio_name"];
@@ -90,8 +82,6 @@ createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_y
 createAdvicesUsers($dbh, $signup_user_id, $advices);
 
 createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
-
-// var_dump($_POST); die();
 
 $dbh=null;
 header("Location:thanks.php");
