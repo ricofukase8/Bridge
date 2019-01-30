@@ -12,15 +12,7 @@ require("function.php");
 // var_dump($_FILES);die();
 //画像があった場合
 $signin_user = getSigninUser($dbh,$_SESSION['bridge']['id']); //関数の呼び出し
-<<<<<<< Updated upstream
 
-var_dump($signin_user['img_name']);die();
-
-
-=======
-var_dump($signin_user['img_name']);die();
-
->>>>>>> Stashed changes
 if (isset($_POST["input_img_name_new"])) {
 	date_default_timezone_set("Asia/Manila");
 	$date_str=date("YmdHis");
