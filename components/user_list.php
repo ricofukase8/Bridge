@@ -275,6 +275,7 @@
                             <ul class="btn-profile">
                               <li>
                                <span hidden class="user-id"><?php echo $user['user_id']; ?></span>
+                               <?php if ($user['user_id'] !== $signin_user_id): ?>
                                     <?php if ($user['is_liked']): ?>
                                     <button class="btn btn-warning js-unlike" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
                                       <span>LIKEを取り消す</span>
@@ -288,6 +289,7 @@
                                 </button>
                               </li>
                                     <?php endif;?>
+                              <?php endif; ?>
                               <li>
                                 <a href="<?php echo $user['fb_account']; ?>"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                               </li>
