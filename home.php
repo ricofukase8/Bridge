@@ -15,7 +15,7 @@ foreach ($tmp_users as $user) {
   $like_flg_stmt->execute($like_flg_data);
   $is_liked = $like_flg_stmt->fetch(PDO::FETCH_ASSOC);
   $user['is_liked'] = $is_liked ? true : false;
-  var_dump($user["is_liked"]);
+  // var_dump($user["is_liked"]);
   // var_dump($user["user_id"]);
 	$users[] = $user;
 }
@@ -85,7 +85,7 @@ foreach ($tmp_users as $user) {
   <section class="hero-section set-bg" data-setbg="assets/img/bridgemain.png">
     <div class="container">
       <div class="hero-text text-white">
-        <span hidden id="signin-user"><?php echo $signin_user_id; ?></span>
+        <span hidden class="signin-user"><?php echo $signin_user_id; ?></span>
         <div class="row">
           <div class="col-md-10 offset-md-1">
             <!-- search form -->
@@ -328,13 +328,14 @@ foreach ($tmp_users as $user) {
                               <li>
                                <span hidden class="user-id"><?php echo $user['user_id']; ?></span>
                                     <?php if ($user['is_liked']): ?>
-                                    <button class="btn btn-warning" id="js-unlike" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
+                                    <button class="btn btn-warning js-unlike" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
                                       <span>LIKEを取り消す</span>
                                     </button>
                               </li>
                                     <?php else: ?>
                               <li>
-                                <button class="btn btn-warning" id="js-like" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
+                                <span hidden class="user-id"><?php echo $user["user_id"]; ?></span>
+                                <button class="btn btn-warning js-like" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
                                   <span>LIKE</span>
                                 </button>
                               </li>

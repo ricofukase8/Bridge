@@ -2,6 +2,7 @@ $(function() {
   $(document).on('click', '.js-like', function() {
     var user_id = $(this).siblings('.user-id').text();
     var signin_user_id = $('.signin-user').text();
+    console.log(signin_user_id);
     var like_btn = $(this);
 
     $.ajax({

@@ -11,17 +11,12 @@ require('dbconnect.php');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="navbar.css">
-
-
-=======
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
   <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
   <link rel="stylesheet" type="text/css" href="navbar.css">
->>>>>>> indent_fix
+
 </head>
 <body>
   <div id="top" class="jumbotron" style="background-image: url(assets/img/bridgemain.png);">
@@ -35,14 +30,8 @@ require('dbconnect.php');
     <div class="row">
       <section>
         <div class="wizard">
-<<<<<<< HEAD
-          <?php include('components/wizard.php');?>
-
-            <form method="POST" action="post.php" enctype="multipart/form-data" data-parsley-validate data-parsley-trigger="keyup focusout change input">
-=======
             <?php include('components/wizard.php');?>
             <form method="POST" action="post.php" enctype="multipart/form-data">
->>>>>>> indent_fix
             <div class="tab-content">
                 <?php include('components/step1.php');?>
                 <?php include('components/step2.php');?>
