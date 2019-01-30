@@ -1,3 +1,5 @@
+hogehoge
+
 $(function() {
 
    Parsley.options.trigger = "keyup focusout change input";
