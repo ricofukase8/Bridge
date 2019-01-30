@@ -41,7 +41,10 @@
         <?php endif; ?>
     <div class="row">
     <div class="col-md-10 offset-md-1">
-      <span hidden id="signin-user"><?php echo $signin_user_id; ?></span>
+      <span hidden class="signin-user"><?php echo $signin_user_id; ?></span>
+      <?php if(strpos($_SERVER['REQUEST_URI'], 'home.php') !== false): ?>
+      <?php include('components/search.php'); ?>
+      <?php endif; ?>
     </div>
     </div>
     </div>
@@ -54,7 +57,7 @@
     padding-bottom: 50‒;
     padding-top: 100‒;
     padding-top: 150px;
-  ">
+  " <?php endif; ?>>
     <div class="container">
         <?php if(strpos($_SERVER['REQUEST_URI'], 'home.php') !== false): ?>
         <nav>
@@ -273,13 +276,14 @@
                               <li>
                                <span hidden class="user-id"><?php echo $user['user_id']; ?></span>
                                     <?php if ($user['is_liked']): ?>
-                                    <button class="btn btn-warning" id="js-unlike" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
+                                    <button class="btn btn-warning js-unlike" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
                                       <span>LIKEを取り消す</span>
                                     </button>
                               </li>
                                     <?php else: ?>
                               <li>
-                                <button class="btn btn-warning" id="js-like" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
+                                <span hidden class="user-id"><?php echo $user["user_id"]; ?></span>
+                                <button class="btn btn-warning js-like" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
                                   <span>LIKE</span>
                                 </button>
                               </li>
@@ -301,7 +305,7 @@
         </div>
             <?php endforeach; ?>
         </div>
-  </section <?php endif; ?>>
+  </section>
 
   <!-- footer section -->
   <footer class="footer-section spad pb-0" style="padding-top: 50px">
