@@ -4,7 +4,6 @@ require('dbconnect.php');
 require('function.php');
 
 $signin_user_id=$_SESSION["bridge"]["id"];
-var_dump($signin_user_id);
 $tmp_users = getLikedUsers($dbh,$signin_user_id);
 $signin_user = getSigninUser($dbh,$signin_user_id);
 
@@ -18,6 +17,6 @@ foreach ($tmp_users as $user) {
     $user['is_liked'] = $is_liked ? true : false;
     $users[] = $user;
 }
- ?>
+?>
 
 <?php include('components/user_list.php'); ?>
