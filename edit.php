@@ -1,7 +1,19 @@
 <?php
 session_start();
 require('dbconnect.php');
-require('get_userdata.php');
+require('function.php');
+
+$sql = 'SELECT * FROM `advices`';
+$stmt = $dbh->prepare($sql);
+$stmt->execute();
+$advices = $stmt->fetchAll();
+
+$signin_user_id = $_SESSION["bridge"]["id"];
+
+if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
+    $signin_user = getSigninUser($dbh , $signin_user_id);
+}
+
 ?>
 
 
@@ -20,6 +32,7 @@ require('get_userdata.php');
     <link rel="stylesheet" type="text/css" href="assets/css/edit.css">
     <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
     <link rel="stylesheet" type="text/css" href="navbar.css">
+    
 </head>
 <body>
   <?php include('navbar.php'); ?>
@@ -30,7 +43,7 @@ require('get_userdata.php');
       <?php include('components/wizard.php');?>
       </div>
 
-      <form method="POST" action="update.php" enctype="multipart/form-data">
+      <form method="POST" action="update.php" enctype="multipart/form-data" data-parsley-validate data-parsley-trigger="keyup focusout change input">
         <div class="tab-content">
           <?php include('components/step1.php');?>
           <?php include('components/step2.php');?>
@@ -361,7 +374,10 @@ function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
 </script>
+<script src="assets/js/parsley.min.js"></script>
+<script src="assets/js/ja.js"></script>
+<script src="assets/js/ja.extra.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/signup/parsley.css">
 <script src="assets/js/edit.js"></script>
-
 </body>
 </html>

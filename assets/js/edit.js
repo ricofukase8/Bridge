@@ -1,7 +1,56 @@
 $(function() {
-   $(document).on('click', '#select_file_button', function() {
+
+   Parsley.options.trigger = "keyup focusout change input";
+
+   
+   $( 'input[name="input_career"]:radio').change(function() {
+      let radioval = $(this).val();
+      if(radioval == 2){
+         $('#company_name').removeAttr('required');
+         $('.step2_form').prop('disabled' , true);
+         $('.step2_label').addClass('disabled');
+         $('.parsley-required').addClass('hidden');
+         $('#company_name').removeClass('parsley-error');
+         $('#label_job_offer_contents').addClass('disabled');
+         $('#job_offer_contents').prop('disabled' , true);
+         $('#job_offer_contents').removeClass('parsley-error');
+      }else{
+         $("#company_name").prop('required' , true);
+         $('.step2_form').removeProp('disabled' , true);
+         $('.step2_label').removeClass('disabled');
+         $('.parsley-required').removeClass('hidden');
+         $('#company_name').addClass('parsley-error');
+         $('#label_job_offer_contents').removeClass('disabled');
+         $('#job_offer_contents').removeProp('disabled' , true);
+      }
+      })
+
+   $( 'input[name="input_job_offer"]:radio').change(function() {
+      let job_offer_radio = $(this).val();
+      console.log(job_offer_radio);
+      if(job_offer_radio == 1){
+         $('#job_offer_contents').prop('required', true);
+         $('#job_offer_contents').removeProp('disabled' , true);
+         $('#label_job_offer_contents').removeClass('disabled');
+         $('.parsley-required').removeClass('hidden');
+         $('#job_offer_contents').addClass('parsley-error');
+      }else{
+         $('#job_offer_contents').removeAttr('required' , true);
+         $('#job_offer_contents').prop('disabled' , true);
+         $('#job_offer_contents').addClass('disabled');
+         $('#label_job_offer_contents').addClass('disabled');
+         $('.parsley-required').addClass('hidden');
+         $('#job_offer_contents').removeClass('parsley-error');
+      }
+   })
+
+
+
+
+   $(document).on('click', '#select_img_button', function() {
+      console.log("ボタン");
      $("#file_button").click();
-    }) console.log("ボタン");
+    }) 
 
    $(document).on('change', '#file_button', function() {
      $('#filename').val($(this).val().replace(/^.*\\/, ""));

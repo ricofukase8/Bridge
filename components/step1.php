@@ -34,10 +34,12 @@
         <div class="col-75">
         <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false): ?>
         <img src="assets/img/user_profile_img/<?php echo isset($signin_user) ? $signin_user["img_name"] : ''; ?>" class="img-responsive img-thumbnail" id="img_name" width="300px">
-        <button type="button" id="select_img_button">プロフィール画像を変更する</button>
-        <input type="file" name="input_img_name_new" id="img_button" accept="image/assets/img/user_profile_img/*" value="<?php echo isset($signin_user) ? $signin_user["img_name"] : ''; ?>">
-         <?php elseif(strpos($_SERVER['REQUEST_URI'], 'signup.php') !== false): ?>
-          <input type="file" name="input_img_name" id="img_button" accept="image/assets/img/user_profile_img/*" value="<?php echo isset($signin_user) ? $signin_user["img_name"] : ''; ?>">
+        <label for="select_img" id="label_select_img">プロフィール画像を変更
+          <input type="file" name="input_img_name" id="select_img" style="display: none;">
+        </label>
+        <!-- <button type="button" id="select_img_button">プロフィール画像を変更する</button> -->
+        <?php else: ?>
+        <input type="file" name="input_img_name" accept="image/assets/img/user_profile_img/*">
         <?php endif; ?>
         </div>
       </div>
@@ -116,15 +118,15 @@
 <script type="text/javascript">
 $(document).on('click', '#select_img_button', function() {
      $("#img_button").click();
-    }); console.log("ボタン");
+    });
 </script>
 
 <!-- <script type="text/javascript">
    $(document).on('change', '#file_button', function() {
      $('#filename').val($(this).val().replace(/^.*\\/, ""));
-    })
-</script>
- -->
+    }) console.log(ボタン);
+</script> -->
+
 
 
 <!-- <script src="assets/js/signup.js"></script> -->
