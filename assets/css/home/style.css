@@ -2213,3 +2213,38 @@ nav > div a.nav-item.nav-link:focus
  #social-em:hover {
      color: #f39c12;
  }
+
+ /* like button */
+
+ .glyphicon-folder-open:before{
+    background-image: url(pen.png) no-repeat center !important;
+}
+
+.glyphicon .glyphicon-heart {
+	height: 50px;
+	width: 50px;
+}
+
+.btn-like {
+	background: none;
+	color: #e95464;
+	padding: 7px 24px;
+	border: 2px solid #e95464;
+}
+
+.btn-like:hover {
+	background: #e95464;
+	color: #ffffff;
+	
+}
+
+/*.btn-unlike {
+	background: none;
+	color: #e95464;
+	border-color: #e95464;
+	padding: 7px 24px;
+}*/
+
+#like-btn:focus {
+	box-shadow: none;
+}
