@@ -36,7 +36,11 @@
           <label for="img_name">プロフィール画像</label>
         </div>
         <div class="col-75">
+          <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false): ?>
+          <img src="assets/img/user_profile_img/<?php echo isset($signin_user) ? $signin_user["img_name"] : ''; ?>" id="img" width="300px">
+          <?php else:?>
           <img src="assets/img/categories/1.jpg" class="img-responsive img-thumbnail" id="result_img_name" width="300px">
+          <?php endif;?>
         </div>
       </div>
       <div class="row">

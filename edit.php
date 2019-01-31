@@ -13,6 +13,7 @@ $signin_user_id = $_SESSION["bridge"]["id"];
 if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
     $signin_user = getSigninUser($dbh , $signin_user_id);
 }
+// var_dump($signin_user["img_name"]);die();
 
 ?>
 
@@ -85,7 +86,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="img_name">プロフィール画像</label>
                       </div>
                       <div class="col-75">
-                        <img src="assets/img/categories/1.jpg" class="img-responsive img-thumbnail" id="result_img_name" width="300px">
+                        <img src="assets/img/user_profile_img/<?php echo $signin_user["img_name"]; ?>" id="result_img_name" width="300px">
                       </div>
                     </div>
                     <div class="row">

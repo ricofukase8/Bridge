@@ -9,31 +9,22 @@ if (false) {
 require('dbconnect.php');
 require("function.php");
 
-// var_dump($_FILES);die();
-//画像があった場合
-$signin_user = getSigninUser($dbh,$_SESSION['bridge']['id']); //関数の呼び出し
 
-if (isset($_POST["input_img_name_new"])) {
+$signin_user = getSigninUser($dbh,$_SESSION['bridge']['id']); 
+
+if (isset($_FILES["input_img_name"]["name"])) {
 	date_default_timezone_set("Asia/Manila");
 	$date_str=date("YmdHis");
 	$file_name=$date_str . $_FILES["input_img_name"]["name"];
 	move_uploaded_file($_FILES["input_img_name"]["tmp_name"] , "assets/img/user_profile_img/" . $file_name);
-} else { //signin_user変数を取ってくる
-//画像がなければ　$_FILEのsizeが0の場合
-	//元々DBにある画像
+} else { 
 	$file_name=$signin_user["img_name"];
 }
-
-// $signin_user["img_name"]の呼び出し
-// 画像を変更した場合→update
-// 画像を変更しなかった場合($_FILEのsizeが0の場合)→元々DBにある画像を再update
-// step1:画像を変更した場合→変更した画像を反映
 
 
 $name = $_POST["input_name"];
 $email=$_POST["input_email"];
 $password=$_POST["input_password"];
-// $img_name=$file_name;
 $status=$_POST["input_status"];
 $batchnumber=$_POST["input_batchnumber"];
 $period=$_POST["input_period"];
@@ -94,7 +85,7 @@ if (isset($_POST["input_portfolio_status"])) {
 
 $portfolio_contents=$_POST["input_portfolio_contents"];
 
-$signup_user_id="107";
+$signup_user_id=$signin_user["user_id"];
 
 upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status);
 

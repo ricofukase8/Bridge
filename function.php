@@ -48,9 +48,11 @@ function createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $p
 function upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status)
 {
 	$sql = "UPDATE `users` SET `name` = ?, `email` = ?, `password` = ?, `img_name` = ?, `status_id` = ?, `batch_number` = ?, `term_nexseed_id` = ?, `course_id` = ?, `profile` = ?, `fb_account` = ?, `career` = ?, `job_status` = ?, `updated` = NOW() WHERE`id`=?";
-	$data = array($name , $email , $password , $file_name , $status , $batchnumber , $period , $course , $profile , $fb, $career, $job_status, $signup_user_id);
-	$stmt = $dbh->prepare($sql);
-	$stmt->execute($data);
+
+		$data = array($name , $email , password_hash($password, PASSWORD_DEFAULT) , $file_name , $status , $batchnumber , $period , $course , $profile , $fb, $career, $job_status, $signup_user_id);
+		$stmt = $dbh->prepare($sql);
+		$stmt->execute($data);
+
 }
 
 function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,

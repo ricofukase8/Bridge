@@ -1,5 +1,3 @@
-hogehoge
-
 $(function() {
 
    Parsley.options.trigger = "keyup focusout change input";
@@ -46,18 +44,20 @@ $(function() {
       }
    })
 
-
-
-
-   $(document).on('click', '#select_img_button', function() {
-      console.log("ボタン");
-     $("#file_button").click();
-    }) 
-
-   $(document).on('change', '#file_button', function() {
-     $('#filename').val($(this).val().replace(/^.*\\/, ""));
-    })
-
+$('#select_img').change(
+    function () {
+        if (!this.files.length) {
+            return;
+        }
+        $(".img").addClass("hidden");
+        let file = document.getElementById('select_img').files;
+        let reader = new FileReader();
+        reader.addEventListener('load', function(e) {
+          document.getElementById('img').src = reader.result;
+          document.getElementById('result_img_name').src = reader.result;
+       }, true);
+       reader.readAsDataURL(file[0]);
+})
 
 
    $(document).on('click', '#next-btn', function() {
@@ -65,27 +65,20 @@ $(function() {
    })
 
 
- 	$(document).on('click', '#panel-btn', function() {
-      $("#company-toggle").slideToggle(400);
-      $('#panel-btn-icon').toggleClass('close');
-    	return false;
-   })
+ 	// $(document).on('click', '#panel-btn', function() {
+  //     $("#company-toggle").slideToggle(400);
+  //     $('#panel-btn-icon').toggleClass('close');
+  //   	return false;
+  //  })
 
    $(document).on('click', '#next-btn', function() {
 
-      let name = $("#name").val(); //idがnameの値を変数nameに代入
-      $('#result_name').text(name); //idのresult_nameにnameの値を入れる
+      let name = $("#name").val(); 
+      $('#result_name').text(name);
 
       let email = $('#email').val();
       $('#result_email').text(email);
 
-
-      let file = document.getElementById('img_name').files;
-      let reader = new FileReader();
-      reader.addEventListener('load', function(e) {
-         document.getElementById('result_img_name').src = reader.result;
-       }, true);
-       reader.readAsDataURL(file[0]);
 
       let status = $('#status option:selected').text();
       $('#result_status').text(status);
@@ -108,7 +101,6 @@ $(function() {
 
       let career = $("input[name='input_career']:checked").parent().text();
       $('#result_career').text(career);
-      // console.log(career);
 
       let company_name = $('#company_name').val();
       $('#result_company_name').text(company_name);

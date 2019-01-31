@@ -269,6 +269,12 @@ span.round-tab:hover {
     color: #cacaca;
 }
 
+#img_name {
+  background-image: url();
+}
+#img_name input[type="file"] {
+  opacity: 0;
+}
 
 
 
