@@ -21,14 +21,17 @@ $(function() {
          $('.step2_label').removeClass('disabled');
          $('.parsley-required').removeClass('hidden');
          $('#company_name').addClass('parsley-error');
-         $('#label_job_offer_contents').removeClass('disabled');
-         $('#job_offer_contents').removeProp('disabled' , true);
+         // $('#job_offer_contents').prop('required', true);
+         // $('#job_offer_contents').removeProp('disabled' , true);
+         // $('#label_job_offer_contents').removeClass('disabled');
       }
-      })
+   })
+
+
 
    $( 'input[name="input_job_offer"]:radio').change(function() {
       let job_offer_radio = $(this).val();
-      console.log(job_offer_radio);
+         console.log(job_offer_radio);
       if(job_offer_radio == 1){
          $('#job_offer_contents').prop('required', true);
          $('#job_offer_contents').removeProp('disabled' , true);

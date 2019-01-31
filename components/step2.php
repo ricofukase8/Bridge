@@ -86,7 +86,10 @@
               <label for="job_status" class="step2_label">現在働いている</label>
             </div>
             <div class="col-75">
-              <label><input class="radio-career step2_form" type="radio" id="job_status_yes" name="input_job_status" value="1" checked
+              <label><input class="radio-career step2_form" type="radio" id="job_status_yes" name="input_job_status" value="1" 
+              <?php if (!isset($signin_user)) :?>
+                checked
+              <?php endif;?>
               <?php if (isset($signin_user) && $signin_user["job_status"]=="1"): ?>
               checked="checked"
               <?php endif ?>
@@ -107,7 +110,7 @@
             </div>
           </div>
           <!-- 職歴2 -->
-          <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false): ?>
+         <!--  <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false): ?>
             <div id="icon">
               <a id="panel-btn"><span id="panel-btn-icon"></span></a>
             </div>
@@ -192,7 +195,7 @@
               <hr>
         </div>
           <?php endif; ?>
-
+ -->
           <div class="row">
             <div class="col-25">
               <label for="job_offer" class="step2_label">求人の有無</label>
@@ -201,12 +204,15 @@
               <label><input class="radio-career step2_form" type="radio" id="job_offer_yes" name="input_job_offer" value="1"
               <?php if (isset($signin_user) && $signin_user["job_offer"]=="1"): ?>
               checked="checked"
-              <?php endif ?>
+              <?php endif; ?>
               >Yes</label>
-              <label><input class="radio-career step2_form" type="radio" id="job_offer_no" name="input_job_offer" value="2" checked
+              <label><input class="radio-career step2_form" type="radio" id="job_offer_no" name="input_job_offer" value="2" 
+               <?php if (!isset($signin_user)): ?>
+                 checked
+               <?php endif; ?>  
               <?php if (isset($signin_user) && $signin_user["job_offer"]=="2"): ?>
               checked="checked"
-              <?php endif ?>
+              <?php endif; ?>
               >No</label>
             </div>
           </div>

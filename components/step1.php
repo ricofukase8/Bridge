@@ -24,22 +24,25 @@
           <label for="password">password</label>
       </div>
         <div class="col-75">
-          <input type="password" id="password" name="input_password" placeholder="半角英数字4~16文字、記号は-_/.で入力してください" value="<?php echo isset($signin_user) ? $signin_user["password"] : ''; ?>" required pattern="^([a-zA-Z0-9-_/.]{4,16})$" title="半角英数字4~16文字、記号は-_/.で入力してください">
+          <input type="password" id="password" name="input_password" placeholder="半角英数字4~16文字、記号は-_/.で入力してください"  required pattern="^([a-zA-Z0-9-_/.]{4,16})$" title="半角英数字4~16文字、記号は-_/.で入力してください">
+          <ul style="list-style: none; padding-left: 0;">
+            <li>※パスワードは再入力してください</li>
+          </ul>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
           <label for="img_name">プロフィール画像</label>
         </div>
-        <div class="col-75">
+        <div class="col-75 preview">
         <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false): ?>
-        <img src="assets/img/user_profile_img/<?php echo isset($signin_user) ? $signin_user["img_name"] : ''; ?>" class="img-responsive img-thumbnail" id="img_name" width="300px">
+        <img src="assets/img/user_profile_img/<?php echo isset($signin_user) ? $signin_user["img_name"] : ''; ?>" id="img" width="300px">
         <label for="select_img" id="label_select_img">プロフィール画像を変更
           <input type="file" name="input_img_name" id="select_img" style="display: none;">
         </label>
         <!-- <button type="button" id="select_img_button">プロフィール画像を変更する</button> -->
         <?php else: ?>
-        <input type="file" name="input_img_name" accept="image/assets/img/user_profile_img/*">
+        <input type="file" name="input_img_name" accept="image/assets/img/user_profile_img/*" id="img_name">
         <?php endif; ?>
         </div>
       </div>
@@ -120,13 +123,5 @@ $(document).on('click', '#select_img_button', function() {
      $("#img_button").click();
     });
 </script>
-
-<!-- <script type="text/javascript">
-   $(document).on('change', '#file_button', function() {
-     $('#filename').val($(this).val().replace(/^.*\\/, ""));
-    }) console.log(ボタン);
-</script> -->
-
-
 
 <!-- <script src="assets/js/signup.js"></script> -->
