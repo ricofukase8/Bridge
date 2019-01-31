@@ -76,7 +76,13 @@
                 <div class="categorie-item">
                   <div class="ci-thumb set-bg" data-setbg="assets/img/user_profile_img/<?php echo $user['img_name']; ?>">
                   </div>
-                  <a class="ci-text-link" data-toggle="modal" href="#portfolioModal<?php echo $user['user_id']; ?>">
+                  <a class="ci-text-link" data-toggle="modal" href="#portfolioModal<?php
+                      if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false) {
+                          echo $user['user_id'];
+                      }elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false){
+                          echo $user['id'];
+                      }
+                     ?>">
                     <div class="ci-text">
                       <h5><?php echo $user['name']; ?></h5>
                       <p><?php echo $user['company_name']; ?></p>
@@ -86,7 +92,13 @@
               </div>
 
               <!-- profileModal -->
-              <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $user['user_id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="portfolio-modal modal fade" id="portfolioModal<?php
+                      if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false) {
+                          echo $user['user_id'];
+                      }elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false){
+                          echo $user['id'];
+                      }
+                     ?>" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-profile">
                 <div class="modal-content">
                   <div class="close-modal" data-dismiss="modal">
@@ -274,22 +286,30 @@
                           <div class="btn-profile">
                             <ul class="btn-profile">
                               <li>
-                               <span hidden class="user-id"><?php echo $user['user_id']; ?></span>
-                               <?php if ($user['user_id'] !== $signin_user_id): ?>
+                                <?php if(strpos($_SERVER['REQUEST_URI'], 'home.php') !== false && $user['user_id'] !== $signin_user_id): ?>
+                                  <span hidden class="user-id"><?php echo $user['user_id']; ?></span>
                                     <?php if ($user['is_liked']): ?>
-                                    <button class="btn btn-warning js-unlike" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
-                                      <span>LIKEを取り消す</span>
-                                    </button>
-                              </li>
+                                      <button class="btn btn-like js-unlike" id="like-btn" style="border-bottom-width: 2px; margin-bottom: 30px; margin-right: 20px;">
+                                        <span>LIKEを取り消す</span>
+                                      </button>
                                     <?php else: ?>
-                              <li>
-                                <span hidden class="user-id"><?php echo $user["user_id"]; ?></span>
-                                <button class="btn btn-warning js-like" style="border-bottom-width: 20px; margin-bottom: 30px; margin-right: 20px;">
-                                  <span>LIKE</span>
-                                </button>
-                              </li>
+                                      <button class="btn btn-like js-like" id="like-btn" style="border-bottom-width: 2px; margin-bottom: 30px; margin-right: 20px;">
+                                        <span>LIKE</span>
+                                      </button>
                                     <?php endif;?>
-                              <?php endif; ?>
+                                <?php elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false && $user['id'] !== $signin_user_id): ?>
+                                  <span hidden class="user-id"><?php echo $user['liked_id']; ?></span>
+                                    <?php if ($user['is_liked']): ?>
+                                      <button class="btn btn-like js-unlike" id="like-btn" style="border-bottom-width: 2px; margin-bottom: 30px; margin-right: 20px;">
+                                        <span>LIKEを取り消す</span>
+                                      </button>
+                                    <?php else: ?>
+                                      <button class="btn btn-like js-like" id="like-btn" style="border-bottom-width: 2px; margin-bottom: 30px; margin-right: 20px;">
+                                        <span>LIKE</span>
+                                      </button>
+                                    <?php endif;?>
+                                <?php endif; ?>
+                              </li>
                               <li>
                                 <a href="<?php echo $user['fb_account']; ?>"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                               </li>
@@ -313,7 +333,11 @@
   <footer class="footer-section spad pb-0" style="padding-top: 50px">
     <div class="footer-top">
       <div class="footer-warp">
-        <a href="home.php">
+          <?php if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false): ?>
+          <a href="home.php">
+          <?php elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false): ?>
+          <a href="like.php">
+          <?php endif; ?>
           <h3 style="color: #474747">☝︎TOP</h3>
         </a>
       </div>
