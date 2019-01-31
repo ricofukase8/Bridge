@@ -1,28 +1,21 @@
 <?php
 session_start();
 require('dbconnect.php');
-
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>BRIDGE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <meta charset="utf-8">
+  <title>BRIDGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
-
-    <link rel="stylesheet" type="text/css" href="navbar.css">
-
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
+  <link rel="stylesheet" type="text/css" href="navbar.css">
 
 </head>
 <body>
@@ -37,30 +30,27 @@ require('dbconnect.php');
     <div class="row">
       <section>
         <div class="wizard">
-          <?php include('components/wizard.php');?>
-
-            <form method="POST" action="post.php" enctype="multipart/form-data" data-parsley-validate data-parsley-trigger="keyup focusout change input">
+            <?php include('components/wizard.php');?>
+            <form method="POST" action="post.php" enctype="multipart/form-data">
             <div class="tab-content">
-              <?php include('components/step1.php');?>
-              <?php include('components/step2.php');?>
-              <?php include('components/step3.php');?>
-
+                <?php include('components/step1.php');?>
+                <?php include('components/step2.php');?>
+                <?php include('components/step3.php');?>
 
             <!-- step4 form内容 -->
-              <div class="tab-pane" role="tabpanel" id="complete">
-                <h3>Check Page</h3>
-                  <p>以下の内容でよろしいですか？</p>
-                <!-- <form role="form"> -->
-                  <div class="tab-content">
-                    <div class="tab-pane active" role="tabpanel" id="complete">
-                      <div class="container">
-                        <!-- <form action="/action_page.php"> -->
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="name">name</label>
+            <div class="tab-pane" role="tabpanel" id="complete">
+              <h3>Check Page</h3>
+              <p>以下の内容でよろしいですか？</p>
+
+              <div class="tab-content">
+              <div class="tab-pane active" role="tabpanel" id="complete">
+                <div class="container">
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="name">name</label>
                       </div>
                       <div class="col-75">
-                      <p class="lead" id="result_name">name</p>
+                        <p class="lead" id="result_name">name</p>
                       </div>
                     </div>
                     <div class="row">
@@ -74,7 +64,7 @@ require('dbconnect.php');
                     <div class="row">
                       <div class="col-25">
                         <label for="password">password</label>
-                    </div>
+                      </div>
                       <div class="col-75">
                         <p class="lead" id="result_password">●●●●●●●●</p>
                       </div>
@@ -141,194 +131,191 @@ require('dbconnect.php');
                       </div>
                     </div>
                     <div class="row">
-                            <div class="col-25">
-                              <label for="career">職歴</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_career">Yes or No</p>
-                            </div>
-                          </div>
+                      <div class="col-25">
+                        <label for="career">職歴</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_career">Yes or No</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="company_name">会社名</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_company_name">company name</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="position">役職</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_position">position</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="career_period">在籍期間</label>
+                      </div>
+                      <div class="col-75">
+                        <ul class="career_period">
+                          <li class="lead" id="result_career_year">0000年</li>
+                          <li class="lead" id="result_career_month">00月〜</li>
+                          <li class="lead" id="result_career_year_end">0000年</li>
+                          <li class="lead" id="result_career_month_end">00月</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="job_status">現在働いている</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_job_status">Yes or No</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="job_contents">仕事内容</label>
+                      </div>
+                      <div class="col-75">
+                         <p class="lead" id="result_job_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      </div>
+                    </div>
 
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="company_name">会社名</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_company_name">company name</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="position">役職</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_position">position</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="career_period">在籍期間</label>
-                            </div>
-                            <div class="col-75">  <!--要検討事項-->
-                              <ul class="career_period">
-                              <li class="lead" id="result_career_year">0000年</li>
-                              <li class="lead" id="result_career_month">00月〜</li>
-                              <li class="lead" id="result_career_year_end">0000年</li>
-                              <li class="lead" id="result_career_month_end">00月</li>
-                            </ul>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="job_status">現在働いている</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_job_status">Yes or No</p>
-                            </div>
-                          </div>
-                            <div class="row">
-                              <div class="col-25">
-                                <label for="job_contents">仕事内容</label>
-                              </div>
-                              <div class="col-75">
-                               <p class="lead" id="result_job_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                               proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                              </div>
-                            </div>
-                            <?php if(isset($_POST["input_career_2"])) :?>
-                              <div class="row">
-                                <div class="col-25">
-                                  <label for="career">職歴2</label>
-                                </div>
-                                <div class="col-75">
-                                  <p class="lead" id="result_career_2">Yes or No</p>
-                                </div>
-                              </div>
+                    <?php if(isset($_POST["input_career_2"])) :?>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="career">職歴2</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_career_2">Yes or No</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="company_name">会社名</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_company_name_2">company name</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="position">役職</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_position_2">position</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="career_period">在籍期間</label>
+                      </div>
+                      <div class="col-75">
+                        <ul class="career_period">
+                          <li class="lead" id="result_career_year_2">0000年</li>
+                          <li class="lead" id="result_career_month_2">00月〜</li>
+                          <li class="lead" id="result_career_year_end_2">0000年</li>
+                          <li class="lead" id="result_career_month_end_2">00月</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="job_status">現在働いている</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_job_status_2">Yes or No</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="job_contents">仕事内容</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_job_contents_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      </div>
+                    </div>
+                    <?php endif; ?>
 
-                              <div class="row">
-                                <div class="col-25">
-                                  <label for="company_name">会社名</label>
-                                </div>
-                                <div class="col-75">
-                                  <p class="lead" id="result_company_name_2">company name</p>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-25">
-                                  <label for="position">役職</label>
-                                </div>
-                                <div class="col-75">
-                                  <p class="lead" id="result_position_2">position</p>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-25">
-                                  <label for="career_period">在籍期間</label>
-                                </div>
-                                <div class="col-75">
-                                  <ul class="career_period">
-                                  <li class="lead" id="result_career_year_2">0000年</li>
-                                  <li class="lead" id="result_career_month_2">00月〜</li>
-                                  <li class="lead" id="result_career_year_end_2">0000年</li>
-                                  <li class="lead" id="result_career_month_end_2">00月</li>
-                                </ul>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-25">
-                                  <label for="job_status">現在働いている</label>
-                                </div>
-                                <div class="col-75">
-                                  <p class="lead" id="result_job_status_2">Yes or No</p>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-25">
-                                  <label for="job_contents">仕事内容</label>
-                                </div>
-                                <div class="col-75">
-                                  <p class="lead" id="result_job_contents_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                              </div>
-                            <?php endif; ?>
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="job_offer">求人の有無</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_job_offer">Yes or No</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="job_offer_contents">求人情報</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_job_offer_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="advice">相談に乗れること</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" for="advice1" id="result_advice"></p>
-                              <!-- <p class="advice_check" for="advice2" id="result_advice"></p>
-                              <p class="advice_check" for="advice3" id="result_advice"></p>
-                              <p class="advice_check" for="advice4" id="result_advice"></p> -->
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="portfolio">ポートフォリオURL<br>(Git URLでも構いません)</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_portfolio">PortfolioURL</p>
-                            </div>
-                          </div> 
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="portfolio_name">サービス名</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_portfolio_name">service name</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="portfolio_status">開発環境</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_portfolio_status">個人開発 or チーム開発</p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-25">
-                              <label for="portfolio_contents">ポートフォリオコメント</label>
-                            </div>
-                            <div class="col-75">
-                              <p class="lead" id="result_portfolio_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                          </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="job_offer">求人の有無</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_job_offer">Yes or No</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="job_offer_contents">求人情報</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_job_offer_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="advice">相談に乗れること</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" for="advice1" id="result_advice"></p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="portfolio">ポートフォリオURL<br>(Git URLでも構いません)</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_portfolio">PortfolioURL</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="portfolio_name">サービス名</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_portfolio_name">service name</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="portfolio_status">開発環境</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_portfolio_status">個人開発 or チーム開発</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="portfolio_contents">ポートフォリオコメント</label>
+                      </div>
+                      <div class="col-75">
+                        <p class="lead" id="result_portfolio_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      </div>
+                    </div>
                   <ul class="list-inline pull-right">
                     <li>
                     <button type="button" class="btn btn-default prev-step">Previous</button>
@@ -337,26 +324,22 @@ require('dbconnect.php');
                     <button type="submit" class="btn btn-primary btn-info-full next-step" id="next-btn">complete</button>
                     </li>
                   </ul>
+                </div>
+              </div>
               </div>
             </div>
-
-
             </div>
-          </form>
+            </form>
         </div>
       </section>
     </div>
   </div>
 
-
 <!-- Java script -->
-
 <script type="text/javascript">
 $(document).ready(function () {
-    //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();
 
-    //Wizard
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
 
         var $target = $(e.target);
@@ -371,13 +354,12 @@ $(document).ready(function () {
         var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');
         nextTab($active);
-
     });
+
     $(".prev-step").click(function (e) {
 
         var $active = $('.wizard .nav-tabs li.active');
         prevTab($active);
-
     });
 });
 
