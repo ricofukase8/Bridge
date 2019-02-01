@@ -53,7 +53,6 @@ function upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$stat
 		$data = array($name , $email , password_hash($password, PASSWORD_DEFAULT) , $file_name , $status , $batchnumber , $period , $course , $profile , $fb, $career, $job_status, $signup_user_id);
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute($data);
-
 }
 
 function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
@@ -161,6 +160,7 @@ function getSigninUser($dbh,$signin_user_id)
     return $signin_user;
 }
 
+
 function getLikedUsers($dbh,$signin_user_id)
 {
 	$sql = 'SELECT * FROM `users` AS `u` ';
@@ -181,4 +181,5 @@ function getLikedUsers($dbh,$signin_user_id)
     $advices = getAdvices($dbh);
 
     return mergeUserAndAdvice($users, $advices);
+}
 }

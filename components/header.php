@@ -1,5 +1,5 @@
 <!-- Header section -->
-  <header class="header-section">
+  <header class="header-section set-bg" style="background-image: url(assets/img/bridgemain.png)">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-3">

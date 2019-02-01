@@ -2248,3 +2248,8 @@ nav > div a.nav-item.nav-link:focus
 #like-btn:focus {
 	box-shadow: none;
 }
+
+.edit-content {
+    line-height: 25px;
+    padding: 30px 25px;
+}
