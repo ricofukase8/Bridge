@@ -1,4 +1,5 @@
 <?php
+
 function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb, $career, $job_status)
 {
 	$sql = "INSERT INTO `users` SET `name` = ?, `email` = ?, `password` = ?, `img_name` = ?, `status_id` = ?, `batch_number` = ?, `term_nexseed_id` = ?, `course_id` = ?, `profile` = ?, `fb_account` = ?, `career` = ?, `job_status` = ?, `created` = NOW()";
@@ -17,7 +18,6 @@ function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_
 	$stmt->execute($data);
 }
 
-// if (!function_exists('createCompanies2')) {
 // function createCompanies2($dbh, $signup_user_id, $company_name_2, $position_2, $term_company_year_2, $term_company_month_2,
 //  $term_company_year_end_2, $term_company_month_end_2, $job_contents_2)
 // {
@@ -26,7 +26,6 @@ function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_
 // 		$term_company_year_end_2, $term_company_month_end_2, $job_contents_2);
 // 	$stmt = $dbh->prepare($sql);
 // 	$stmt->execute($data);
-// }
 // }
 
 function createAdvicesUsers($dbh, $signup_user_id, $advices)

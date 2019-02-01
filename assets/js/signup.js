@@ -6,6 +6,8 @@ $(function() {
    
    $( 'input[name="input_career"]:radio').change(function() {
       let radioval = $(this).val();
+      let hoge = $( 'input[name="input_job_offer"]:radio').checked;
+      console.log(hoge);
       if(radioval == 2){
          $('#company_name').removeAttr('required');
          $('.step2_form').prop('disabled' , true);
@@ -21,9 +23,20 @@ $(function() {
          $('.step2_label').removeClass('disabled');
          $('.parsley-required').removeClass('hidden');
          $('#company_name').addClass('parsley-error');
-         // $('#job_offer_contents').prop('required', true);
-         // $('#job_offer_contents').removeProp('disabled' , true);
-         // $('#label_job_offer_contents').removeClass('disabled');
+
+         if (hoge == 2) {
+            $('#company_name').removeAttr('required');
+            $('.step2_form').prop('disabled' , true);
+            $('.step2_label').addClass('disabled');
+            $('.parsley-required').addClass('hidden');
+            $('#company_name').removeClass('parsley-error');
+         // }else{
+         //    $("#company_name").prop('required' , true);
+         //    $('.step2_form').removeProp('disabled' , true);
+         //    $('.step2_label').removeClass('disabled');
+         //    $('.parsley-required').removeClass('hidden');
+         //    $('#company_name').addClass('parsley-error');
+         }
       }
    })
 

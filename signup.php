@@ -1,6 +1,11 @@
 <?php
 session_start();
 require('dbconnect.php');
+
+$sql = 'SELECT * FROM `advices`';
+$stmt = $dbh->prepare($sql);
+$stmt->execute();
+$advices = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +36,7 @@ require('dbconnect.php');
       <section>
         <div class="wizard">
             <?php include('components/wizard.php');?>
-            <form method="POST" action="post.php" enctype="multipart/form-data">
+            <form method="POST" action="post.php" enctype="multipart/form-data" data-parsley-validate data-parsley-trigger="keyup focusout change input">
             <div class="tab-content">
                 <?php include('components/step1.php');?>
                 <?php include('components/step2.php');?>

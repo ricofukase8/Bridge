@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('transition.php');
 
 if (false) {
 	header("Location:signup.php");

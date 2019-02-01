@@ -47,17 +47,11 @@ if (!empty($_POST)) {
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2 thumbnail" style="border: 0px;">
         <h2 class="text-center content_header">サインイン</h2>
-<<<<<<< HEAD
+
           <form method="POST" action="signin.php" enctype="multipart/form-data">
             <div class="form-group">
               <label for="email">メールアドレス</label>
               <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com" required/>
-              <!-- <?php if (isset($errors["signin"]) && $errors["signin"] == "blank"): ?>
-              <p class="text-danger">メールアドレスとパスワードを入力してください</p>
-              <?php endif ?> -->
-             <!--  <?php if (isset($errors["signin"]) && $errors["signin"] == "failed"): ?>
-              <p class="text-danger">ログインに失敗しました</p>
-              <?php endif ?> -->
             </div>
             <div class="form-group">
                 <label for="password">パスワード</label>
@@ -71,28 +65,7 @@ if (!empty($_POST)) {
                 <a href="main.php">戻る</a>
             </span>
           </form>
-=======
-        <form method="POST" action="signin.php" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="email">メールアドレス</label>
-            <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
-                <?php if (isset($errors["signin"]) && $errors["signin"] == "blank"): ?>
-                <p class="text-danger">メールアドレスとパスワードを入力してください</p>
-                <?php endif ?>
-                <?php if (isset($errors["signin"]) && $errors["signin"] == "failed"): ?>
-                <p class="text-danger">ログインに失敗しました</p>
-                <?php endif ?>
-          </div>
-          <div class="form-group">
-            <label for="password">パスワード</label>
-            <input type="password" name="input_password" class="form-control" id="password" placeholder="4 ~ 16文字のパスワード">
-          </div>
-          <input type="submit" class="btn btn-primary next-step" id="next-btn" value="サインイン">
-          <span style="float: right; padding-top: 6px;">
-            <a href="main.php">戻る</a>
-          </span>
-        </form>
->>>>>>> indent_fix
+
       </div>
     </div>
   </div>
