@@ -1,5 +1,4 @@
 <?php
-// if (!function_exists('createUser')) {
 function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb, $career, $job_status)
 {
 	$sql = "INSERT INTO `users` SET `name` = ?, `email` = ?, `password` = ?, `img_name` = ?, `status_id` = ?, `batch_number` = ?, `term_nexseed_id` = ?, `course_id` = ?, `profile` = ?, `fb_account` = ?, `career` = ?, `job_status` = ?, `created` = NOW()";
@@ -7,9 +6,7 @@ function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
 }
-// }
 
-// if (!function_exists('createCompanies')) {
 function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
  $term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents)
 {
@@ -19,7 +16,6 @@ function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
 }
-// }
 
 // if (!function_exists('createCompanies2')) {
 // function createCompanies2($dbh, $signup_user_id, $company_name_2, $position_2, $term_company_year_2, $term_company_month_2,
@@ -33,7 +29,6 @@ function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_
 // }
 // }
 
-if (!function_exists('createAdvicesUsers')) {
 function createAdvicesUsers($dbh, $signup_user_id, $advices)
 {
 	foreach ($advices as $advice) {
@@ -43,9 +38,7 @@ function createAdvicesUsers($dbh, $signup_user_id, $advices)
 		$stmt->execute($data);
 	}
 }
-// }
 
-// if (!function_exists('createPortfolios')) {
 function createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents)
 {
 	$sql = "INSERT INTO `portfolios` SET `user_id`=?, `portfolio_url`=?, `portfolio_name`=?, `portfolio_status`=?, `portfolio_comments`=?";
@@ -53,9 +46,7 @@ function createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $p
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
 }
-// }
 
-// if (!function_exists('upDateUser')) {
 function upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status)
 {
 	$sql = "UPDATE `users` SET `name` = ?, `email` = ?, `password` = ?, `img_name` = ?, `status_id` = ?, `batch_number` = ?, `term_nexseed_id` = ?, `course_id` = ?, `profile` = ?, `fb_account` = ?, `career` = ?, `job_status` = ?, `updated` = NOW() WHERE`id`=?";
@@ -64,9 +55,7 @@ function upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$stat
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute($data);
 }
-// }
 
-// if (!function_exists('upDateCompany')) {
 function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
  $term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents)
 {
@@ -77,9 +66,7 @@ function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_co
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
 }
-// }
 
-// if (!function_exists('upDatePortfolio')) {
 function upDatePortfolio($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents)
 {
 	$sql = "UPDATE `portfolios` SET `user_id`=?, `portfolio_url`=?, `portfolio_name`=?, `portfolio_status`=?, `portfolio_comments`=? WHERE `user_id` = ?";
@@ -87,7 +74,6 @@ function upDatePortfolio($dbh, $signup_user_id, $portfolio, $portfolio_name, $po
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
 }
-// }
 
 function getAllUsers($dbh)
 {
