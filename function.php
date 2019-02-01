@@ -18,15 +18,15 @@ function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_
 	$stmt->execute($data);
 }
 
-function createCompanies2($dbh, $signup_user_id, $company_name_2, $position_2, $term_company_year_2, $term_company_month_2,
- $term_company_year_end_2, $term_company_month_end_2, $job_contents_2)
-{
-	$sql = "INSERT INTO `companies` SET `user_id`=?, `company_name` = ?, `position` = ?, `term_company_year` = ?, `term_company_month`= ?, `term_company_year_end` = ?, `term_company_month_end` = ?, `job_contents` = ?";
-	$data = array($signup_user_id, $company_name_2, $position_2, $term_company_year_2, $term_company_month_2,
-		$term_company_year_end_2, $term_company_month_end_2, $job_contents_2);
-	$stmt = $dbh->prepare($sql);
-	$stmt->execute($data);
-}
+// function createCompanies2($dbh, $signup_user_id, $company_name_2, $position_2, $term_company_year_2, $term_company_month_2,
+//  $term_company_year_end_2, $term_company_month_end_2, $job_contents_2)
+// {
+// 	$sql = "INSERT INTO `companies` SET `user_id`=?, `company_name` = ?, `position` = ?, `term_company_year` = ?, `term_company_month`= ?, `term_company_year_end` = ?, `term_company_month_end` = ?, `job_contents` = ?";
+// 	$data = array($signup_user_id, $company_name_2, $position_2, $term_company_year_2, $term_company_month_2,
+// 		$term_company_year_end_2, $term_company_month_end_2, $job_contents_2);
+// 	$stmt = $dbh->prepare($sql);
+// 	$stmt->execute($data);
+// }
 
 function createAdvicesUsers($dbh, $signup_user_id, $advices)
 {

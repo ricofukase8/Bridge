@@ -213,10 +213,22 @@
           </div>
           <div class="row">
             <div class="col-25">
-              <label for="job_offer_contents" id="label_job_offer_contents" class="disabled">求人情報</label>
+              <label for="job_offer_contents" id="label_job_offer_contents" 
+              <?php if (!isset($signin_user)): ?>
+              class="disabled"
+              <?php endif; ?>
+
+              <?php if (isset($signin_user) && $signin_user["job_offer"] == "2"): ?>
+              class="disabled"
+              <?php endif; ?>
+              >求人情報</label>
             </div>
             <div class="col-75">
-              <textarea id="job_offer_contents" name="input_job_offer_contents" placeholder="Write job offer contents..." disabled><?php echo isset($signin_user) ? $signin_user["offer_contents"] : ''; ?></textarea>
+              <textarea id="job_offer_contents" name="input_job_offer_contents" placeholder="Write job offer contents..." 
+              <?php if (isset($signin_user) && $signin_user["job_offer"] == "2"): ?>
+              disabled
+              <?php endif; ?>
+              ><?php echo isset($signin_user) ? $signin_user["offer_contents"] : ''; ?></textarea>
             </div>
           </div>
           <div class="row">

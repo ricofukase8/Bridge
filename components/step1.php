@@ -26,7 +26,9 @@
         <div class="col-75">
           <input type="password" id="password" name="input_password" placeholder="半角英数字4~16文字、記号は-_/.で入力してください"  required pattern="^([a-zA-Z0-9-_/.]{4,16})$" title="半角英数字4~16文字、記号は-_/.で入力してください">
           <ul style="list-style: none; padding-left: 0;">
+            <?php if (isset($signin_user)) :?>
             <li>※パスワードは再入力してください</li>
+            <?php endif;?>
           </ul>
         </div>
       </div>

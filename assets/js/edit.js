@@ -2,7 +2,8 @@ $(function() {
 
    Parsley.options.trigger = "keyup focusout change input";
 
-   $( 'input[name="input_career"]:radio').change(function() {
+   
+$( 'input[name="input_career"]:radio').change(function() {
       let radioval = $(this).val();
       if(radioval == 2){
          $('#company_name').removeAttr('required');
@@ -33,7 +34,6 @@ $(function() {
 
       }
       })
-
    $('input[name="input_job_offer"]:radio').change(function() {
       let job_offer_radio = $(this).val();
       console.log(job_offer_radio);
