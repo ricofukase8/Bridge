@@ -91,6 +91,7 @@ $('#select_img').change(
 
       let status = $('#status option:selected').text();
       $('#result_status').text(status);
+      console.log(status);
 
 
       let batchnumber = $('#batchnumber').val();
@@ -137,32 +138,32 @@ $('#select_img').change(
 
 
          // 職歴２
-      let career_2 = $('[name="input_career_2"]:checked').val();
-      $('#result_career_2').text(career_2);
+      // let career_2 = $('[name="input_career_2"]:checked').val();
+      // $('#result_career_2').text(career_2);
 
-      let company_name_2 = $('#company_name_2').val();
-      $('#result_company_name_2').text(company_name_2);
+      // let company_name_2 = $('#company_name_2').val();
+      // $('#result_company_name_2').text(company_name_2);
 
-      let position_2 = $('#position_2').val();
-      $('#result_position_2').text(position_2);
+      // let position_2 = $('#position_2').val();
+      // $('#result_position_2').text(position_2);
 
-      let career_year_2 = $('#select_box_year_2').val();
-      $('#result_career_year_2').text(career_year_2 + '年');
+      // let career_year_2 = $('#select_box_year_2').val();
+      // $('#result_career_year_2').text(career_year_2 + '年');
 
-      let career_month_2 = $('#select_box_month_2').val();
-      $('#result_career_month_2').text(career_month_2 + '月~');
+      // let career_month_2 = $('#select_box_month_2').val();
+      // $('#result_career_month_2').text(career_month_2 + '月~');
 
-      let career_year_end_2 = $('#select_box_year_end_2').val();
-      $('#result_career_year_end_2').text(career_year_end_2 + '年');
+      // let career_year_end_2 = $('#select_box_year_end_2').val();
+      // $('#result_career_year_end_2').text(career_year_end_2 + '年');
 
-      let career_month_end_2 = $('#select_box_month_end_2').val();
-      $('#result_career_month_end_2').text(career_month_end_2 + '月');
+      // let career_month_end_2 = $('#select_box_month_end_2').val();
+      // $('#result_career_month_end_2').text(career_month_end_2 + '月');
 
-      let job_status_2 = $('[name=input_job_status_2]:checked').val();
-      $('#result_job_status_2').text(job_status_2);
+      // let job_status_2 = $('[name=input_job_status_2]:checked').val();
+      // $('#result_job_status_2').text(job_status_2);
 
-      let job_contents_2 = $('#job_contents_2').val();
-      $('#result_job_contents_2').text(job_contents_2);
+      // let job_contents_2 = $('#job_contents_2').val();
+      // $('#result_job_contents_2').text(job_contents_2);
        // 職歴２
 
       let job_offer = $("input[name='input_job_offer']:checked").parent().text();

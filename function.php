@@ -182,4 +182,4 @@ function getLikedUsers($dbh,$signin_user_id)
 
     return mergeUserAndAdvice($users, $advices);
 }
-}
+

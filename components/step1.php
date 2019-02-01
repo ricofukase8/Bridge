@@ -42,7 +42,6 @@
         <label for="select_img" id="label_select_img">プロフィール画像を変更
           <input type="file" name="input_img_name" id="select_img" style="display: none;">
         </label>
-        <!-- <button type="button" id="select_img_button">プロフィール画像を変更する</button> -->
         <?php else: ?>
         <input type="file" name="input_img_name" accept="image/assets/img/user_profile_img/*" id="img_name">
         <?php endif; ?>
@@ -59,7 +58,7 @@
             <option value="2" <?php if (isset($signin_user) && $signin_user["status_id"] == "2"){echo "selected";}?>>卒業生(就活中)</option>
             <option value="3" <?php if (isset($signin_user) && $signin_user["status_id"] == "3"){echo "selected";}?>>卒業生(就職済)</option>
             <option value="4" <?php if (isset($signin_user) && $signin_user["status_id"] == "4"){echo "selected";}?>>フリーランス</option>
-            <option value="5" <?php if (isset($signin_user) && $signin_user["status_id"] == "4"){echo "selected";}?>>未入学</option>
+            <option value="5" <?php if (isset($signin_user) && $signin_user["status_id"] == "5"){echo "selected";}?>>未入学</option>
           </select>
         </div>
       </div>
@@ -68,7 +67,7 @@
           <label for="batchnumber">batch number</label>
         </div>
         <div class="col-75">
-          <input type="tel" id="batchnumber" name="input_batchnumber" placeholder="Your batchnumber.." value="<?php echo isset($signin_user) ? $signin_user["batch_number"] : ''; ?>">&nbsp;batch
+          <input type="text" id="batchnumber" name="input_batchnumber" placeholder="Your batchnumber.." value="<?php echo isset($signin_user) ? $signin_user["batch_number"] : ''; ?>" pattern="\d*">&nbsp;batch
         </div>
       </div>
       <div class="row">
