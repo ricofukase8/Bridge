@@ -57,12 +57,12 @@ $term_company_month_end = $_POST["input_career_month_end"];
 $job_contents=$_POST["input_job_content"];
 $offer_contents=$_POST["input_job_offer_contents"];
 
-$company_name_2=$_POST["input_company_name_2"];
-$position_2=$_POST["input_position_2"];
-$term_company_year_2=$_POST["input_career_year_2"];
-$term_company_month_2 = $_POST["input_career_month_2"];
-$term_company_year_end_2 = $_POST["input_career_year_end_2"];
-$term_company_month_end_2 = $_POST["input_career_month_end_2"];
+// $company_name_2=$_POST["input_company_name_2"];
+// $position_2=$_POST["input_position_2"];
+// $term_company_year_2=$_POST["input_career_year_2"];
+// $term_company_month_2 = $_POST["input_career_month_2"];
+// $term_company_year_end_2 = $_POST["input_career_year_end_2"];
+// $term_company_month_end_2 = $_POST["input_career_month_end_2"];
 
 $job_offer="";
 if (isset($_POST["input_job_offer"])) {
@@ -92,8 +92,8 @@ upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$status,$batch
 upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
  $term_company_year_end, $term_company_month_end, $job_contents,$job_offer,$offer_contents);
 
-createCompanies2($dbh, $signup_user_id, $company_name_2, $position_2, $term_company_year_2, $term_company_month_2,
- $term_company_year_end_2, $term_company_month_end_2, $job_contents_2);
+// createCompanies2($dbh, $signup_user_id, $company_name_2, $position_2, $term_company_year_2, $term_company_month_2,
+//  $term_company_year_end_2, $term_company_month_end_2, $job_contents_2);
 
 upDatePortfolio($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
 
