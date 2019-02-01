@@ -67,7 +67,7 @@
           <label for="batchnumber">batch number</label>
         </div>
         <div class="col-75">
-          <input type="text" id="batchnumber" name="input_batchnumber" placeholder="Your batchnumber.." value="<?php echo isset($signin_user) ? $signin_user["batch_number"] : ''; ?>" pattern="\d*">&nbsp;batch
+          <input type="text" id="batchnumber" name="input_batchnumber" placeholder="Your batchnumber.." value="<?php echo isset($signin_user) ? $signin_user["batch_number"] : ''; ?>" pattern="\d*" style="width: 30%;">&nbsp;batch 
         </div>
       </div>
       <div class="row">
