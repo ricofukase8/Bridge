@@ -277,9 +277,90 @@ span.round-tab:hover {
 }
 
 
+.header-section {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 60px;
+    height: 150px;
+    background-image: url("assets/img/bridgemain.png");
+}
 
+.header {
+  display: block;
+}
 
+.site-logo h3 {
+    display: inline-block;
+    color: #00AFE5;
+    width: 155px;
+    text-align: center;
+    margin: 0px;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    /*font-family: 'Raleway', sans-serif;*/
+    /*-webkit-font-smoothing: antialiased;*/
+}
 
+.site-logo p {
+    display: inline-block;
+    color: #00AFE5;
+    width: 155px;
+    text-align: center;
+    margin: 0px;
+    /*font-family: 'Raleway', sans-serif;*/
+    /*-webkit-font-smoothing: antialiased;*/
+}
 
+.main-menu ul {
+    list-style: none;
+    text-align: right !important;
+}
+
+.main-menu ul li {
+    display: inline;
+}
+
+.main-menu ul li a {
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    margin-left: 45px;
+    font-weight: 600;
+    padding: 20px 0 5px;
+}
+
+.header-btn {
+    float: right;
+    margin-right: 0;
+    margin-left: 50px;
+}
+.site-btn {
+    display: inline-block;
+    min-width: 196px;
+    text-align: center;
+    border: none;
+    padding: 15px 10px;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+    background: #00AFE5;
+}
+
+.hero-section {
+    height: 150px;
+    background-image: url("assets/img/bridgemain.png");
+}
+.set-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
 
 
