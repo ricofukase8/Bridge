@@ -2,7 +2,6 @@ $(function() {
 
    Parsley.options.trigger = "keyup focusout change input";
 
-   
    $( 'input[name="input_career"]:radio').change(function() {
       let radioval = $(this).val();
       if(radioval == 2){
@@ -20,12 +19,22 @@ $(function() {
          $('.step2_label').removeClass('disabled');
          $('.parsley-required').removeClass('hidden');
          $('#company_name').addClass('parsley-error');
-         $('#label_job_offer_contents').removeClass('disabled');
-         $('#job_offer_contents').removeProp('disabled' , true);
+
+         
+         let hoge = $('.radio-career').prop('checked');
+         console.log(hoge);
+
+
+         if ($('input[name="input_job_offer"]:radio').val()) {
+           $('#label_job_offer_contents').removeClass('disabled');
+           $('#job_offer_contents').removeProp('disabled' , true);
+         }
+         
+
       }
       })
 
-   $( 'input[name="input_job_offer"]:radio').change(function() {
+   $('input[name="input_job_offer"]:radio').change(function() {
       let job_offer_radio = $(this).val();
       console.log(job_offer_radio);
       if(job_offer_radio == 1){

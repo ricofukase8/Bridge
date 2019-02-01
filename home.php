@@ -17,7 +17,7 @@ foreach ($tmp_users as $user) {
   $user['is_liked'] = $is_liked ? true : false;
 	$users[] = $user;
 }
-// var_dump($tmp_users);die();
+var_dump($signin_user["user_id"]);
  ?>
 
 <?php include('components/user_list.php'); ?>
