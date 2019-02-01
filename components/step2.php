@@ -1,8 +1,3 @@
-<?php
-  require('get_userdata.php');
-
-
- ?>
 
 <div class="tab-pane" role="tabpanel" id="step2">
 <h3>Job Infomation</h3>

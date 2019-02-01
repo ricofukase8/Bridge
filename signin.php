@@ -47,7 +47,7 @@ if (!empty($_POST)) {
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2 thumbnail" style="border: 0px;">
         <h2 class="text-center content_header">サインイン</h2>
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
           <form method="POST" action="signin.php" enctype="multipart/form-data">
             <div class="form-group">
               <label for="email">メールアドレス</label>
@@ -71,7 +71,7 @@ if (!empty($_POST)) {
                 <a href="main.php">戻る</a>
             </span>
           </form>
-=======
+<!-- =======
         <form method="POST" action="signin.php" enctype="multipart/form-data">
           <div class="form-group">
             <label for="email">メールアドレス</label>
@@ -92,7 +92,7 @@ if (!empty($_POST)) {
             <a href="main.php">戻る</a>
           </span>
         </form>
->>>>>>> indent_fix
+>>>>>>> indent_fix -->
       </div>
     </div>
   </div>

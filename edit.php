@@ -2,6 +2,8 @@
 session_start();
 require('dbconnect.php');
 require('function.php');
+require('transition.php');
+
 
 $sql = 'SELECT * FROM `advices`';
 $stmt = $dbh->prepare($sql);
