@@ -56,7 +56,7 @@ $( 'input[name="input_career"]:radio').change(function() {
          $('#label_job_offer_contents').addClass('disabled');
          $('.parsley-required').addClass('hidden');
          $('#job_offer_contents').removeClass('parsley-error');
-         // $('#job_offer_contents').addClass('hidden');
+         $('#job_offer_contents').addClass('hidden');
 
       }
    })
@@ -178,7 +178,11 @@ $('#select_img').change(
       $('#result_job_offer').text(job_offer);
 
       let job_offer_contents = $('#job_offer_contents').val();
-      $('#result_job_offer_contents').text(job_offer_contents);
+        if($('#job_offer_contents').hasClass('hidden')) {
+        $('#result_job_offer_contents').text("");
+        } else if (!$('#job_offer_contents').hasClass('hidden')) {
+        $('#result_job_offer_contents').text(job_offer_contents);
+        }
 
       var advices = [];
       $('input[name="advice[]"]:checked').each(function() {

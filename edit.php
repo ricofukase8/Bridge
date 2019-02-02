@@ -67,7 +67,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="name">name</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_name">name</p>
+                        <p class="lead" id="result_name"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -75,7 +75,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="email">email</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_email">email</p>
+                        <p class="lead" id="result_email"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -83,7 +83,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="password">password</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_password">●●●●●●●●</p>
+                        <p class="lead" id="result_password"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -99,7 +99,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="status">ステータス</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_status">status</p>
+                        <p class="lead" id="result_status"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -107,7 +107,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="batchnumber">batch number</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_batchnumber">batch48</p>
+                        <p class="lead" id="result_batchnumber"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -115,7 +115,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="period">在籍期間</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_period">○ヶ月〜○ヶ月</p>
+                        <p class="lead" id="result_period"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -123,7 +123,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="course">コース</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_course">course</p>
+                        <p class="lead" id="result_course"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -131,12 +131,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                        <label for="profile">Profile<br>(卒業後の予定等)</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_profile"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                        <p class="lead" id="result_profile"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -144,7 +139,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="facebook">FaceBookアカウント</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_fb">FBaccountURL</p>
+                        <p class="lead" id="result_fb"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -152,7 +147,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="career">職歴</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_career">Yes or No</p>
+                        <p class="lead" id="result_career"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -160,7 +155,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="company_name">会社名</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_company_name">company name</p>
+                        <p class="lead" id="result_company_name"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -168,7 +163,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="position">役職</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_position">position</p>
+                        <p class="lead" id="result_position"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -177,10 +172,10 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                       </div>
                       <div class="col-75">
                         <ul class="career_period">
-                          <li class="lead" id="result_career_year">0000年</li>
-                          <li class="lead" id="result_career_month">00月〜</li>
-                          <li class="lead" id="result_career_year_end">0000年</li>
-                          <li class="lead" id="result_career_month_end">00月</li>
+                          <li class="lead" id="result_career_year"></li>
+                          <li class="lead" id="result_career_month"></li>
+                          <li class="lead" id="result_career_year_end"></li>
+                          <li class="lead" id="result_career_month_end"></li>
                         </ul>
                       </div>
                     </div>
@@ -189,7 +184,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="job_status">現在働いている</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_job_status">Yes or No</p>
+                        <p class="lead" id="result_job_status"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -197,12 +192,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="job_contents">仕事内容</label>
                       </div>
                       <div class="col-75">
-                       <p class="lead" id="result_job_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                       <p class="lead" id="result_job_contents"></p>
                       </div>
                     </div>
 
@@ -272,7 +262,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="job_offer">求人の有無</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_job_offer">Yes or No</p>
+                        <p class="lead" id="result_job_offer"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -280,12 +270,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="job_offer_contents">求人情報</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_job_offer_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p class="lead" id="result_job_offer_contents"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -303,7 +288,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="portfolio">ポートフォリオURL<br>(Git URLでも構いません)</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_portfolio">PortfolioURL</p>
+                        <p class="lead" id="result_portfolio"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -311,7 +296,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="portfolio_name">サービス名</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_portfolio_name">service name</p>
+                        <p class="lead" id="result_portfolio_name"></p>
                       </div>
                     </div>
                     <div class="row">
@@ -327,12 +312,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="portfolio_contents">ポートフォリオコメント</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_portfolio_contents">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p class="lead" id="result_portfolio_contents"></p>
                       </div>
                     </div>
                   <ul class="list-inline pull-right">
