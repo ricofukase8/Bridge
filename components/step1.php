@@ -8,7 +8,7 @@
           <label for="name">name</label>
         </div>
         <div class="col-75">
-        <input type="text" id="name" name="input_name" placeholder="Your name.." value="<?php echo isset($signin_user) ? $signin_user["name"] : ''; ?>" required> 
+        <input type="text" id="name" name="input_name" placeholder="Your name.." value="<?php echo isset($signin_user) ? $signin_user["name"] : ''; ?>" required>
         </div>
       </div>
       <div class="row">
@@ -67,7 +67,7 @@
           <label for="batchnumber">batch number</label>
         </div>
         <div class="col-75">
-          <input type="text" id="batchnumber" name="input_batchnumber" placeholder="Your batchnumber.." value="<?php echo isset($signin_user) ? $signin_user["batch_number"] : ''; ?>" pattern="\d*" style="width: 30%;">&nbsp;batch 
+          <input type="text" id="batchnumber" name="input_batchnumber" placeholder="Your batchnumber.." value="<?php echo isset($signin_user) ? $signin_user["batch_number"] : ''; ?>" pattern="\d*" style="width: 30%;">&nbsp;batch
         </div>
       </div>
       <div class="row">
@@ -110,7 +110,7 @@
           <label for="facebook">FaceBookアカウント</label>
         </div>
         <div class="col-75">
-          <input type="text" id="fb" name="input_fb" placeholder="Your FBaccount.." value="<?php echo isset($signin_user) ? $signin_user["fb_account"] : ''; ?>" required>
+          <input type="text" id="fb" name="input_fb" placeholder="Your FBaccount.." value="<?php echo isset($signin_user) ? $signin_user["fb_account"] : ''; ?>" required pattern="https://www.facebook.com/.+">
         </div>
       </div>
   </div>
