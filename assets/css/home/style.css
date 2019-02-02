@@ -417,7 +417,7 @@ ol {
 
 .categorie-item .ci-thumb {
 	background-size: cover;
-	height: 148px;
+	height: 250px;
 	-webkit-transition: all 0.2s;
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
@@ -426,6 +426,7 @@ ol {
 .categorie-item .ci-text {
 	padding: 40px 35px;
 	/*background: #fff;*/
+	height: 120px;
 }
 
 .categorie-item .ci-text h5 {
@@ -1322,10 +1323,11 @@ ol {
 	margin-right: 8px;
 	background: #e4edef;
 	margin-bottom: 10px;
+	position: relative;
 }
 
 .tab-element .nav-tabs .nav-item:last-child .nav-link {
-	margin-right: 0;
+	margin-right: 0px;
 }
 
 .tab-element .nav-tabs .nav-link.active {
@@ -1981,7 +1983,7 @@ nav > .nav.nav-tabs{
 nav > div a.nav-item.nav-link,
 nav > div a.nav-item.nav-link.active
 {
-  border: none;
+  	border: none;
     padding: 18px 25px;
     color:#fff;
     background:#272e38;
@@ -1989,15 +1991,19 @@ nav > div a.nav-item.nav-link.active
     width: 200px;
 }
 
+
 nav > div a.nav-item.nav-link.active:after
  {
-  content: "";
-  position: relative;
+  content: ;
   bottom: -60px;
   left: -10%;
   border: 15px solid transparent;
   border-top-color: #00AFE5 ;
+  position: relative;
 }
+
+
+
 .tab-content{
   background: #fdfdfd;
     line-height: 25px;
@@ -2010,11 +2016,12 @@ nav > div a.nav-item.nav-link.active:after
 nav > div a.nav-item.nav-link:hover,
 nav > div a.nav-item.nav-link:focus
 {
-  border: none;
+  	border: none;
     background: #00AFE5;
     color:#fff;
     border-radius:0;
     transition:background 0.20s linear;
+    text-align: center;
 }
 
 /*modal*/
@@ -2253,3 +2260,8 @@ nav > div a.nav-item.nav-link:focus
     line-height: 25px;
     padding: 30px 25px;
 }
+
+
+
+
+
