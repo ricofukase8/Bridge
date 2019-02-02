@@ -5,6 +5,7 @@ $(function() {
    
 $( 'input[name="input_career"]:radio').change(function() {
       let radioval = $(this).val();
+      let hoge = $( 'input[name="input_job_offer"]:radio').checked;
       if(radioval == 2){
          $('#company_name').removeAttr('required');
          $('.step2_form').prop('disabled' , true);
@@ -22,13 +23,12 @@ $( 'input[name="input_career"]:radio').change(function() {
          $('#company_name').addClass('parsley-error');
 
          
-         let hoge = $('.radio-career').prop('checked');
-         console.log(hoge);
-
-
-         if ($('input[name="input_job_offer"]:radio').val()) {
-           $('#label_job_offer_contents').removeClass('disabled');
-           $('#job_offer_contents').removeProp('disabled' , true);
+         if (hoge == 2) {
+            $('#company_name').removeAttr('required');
+            $('.step2_form').prop('disabled' , true);
+            $('.step2_label').addClass('disabled');
+            $('.parsley-required').addClass('hidden');
+            $('#company_name').removeClass('parsley-error');
          }
          
 

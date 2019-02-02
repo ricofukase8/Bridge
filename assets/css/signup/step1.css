@@ -7,6 +7,15 @@
     cursor: pointer;
 }
 
+.career_period{
+  list-style: none;
+  padding-left: 0px;
+}
+
+.lead{
+  display: inline-block;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -148,10 +157,6 @@ input[type=submit]:hover {
 ul {
   font-size: 0;
   padding-left: 0px;
-}
-.career_period li {
-  display: inline-block !important;
-  list-style: none !important;
 }
 
 
