@@ -206,7 +206,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                       </div>
                     </div>
 
-                    <?php if(isset($_POST["input_career_2"])) :?>
+                    <!-- <?php if(isset($_POST["input_career_2"])) :?>
                     <div class="row">
                       <div class="col-25">
                         <label for="career">職歴2</label>
@@ -265,7 +265,7 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                       </div>
                     </div>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
 
                     <div class="row">
                       <div class="col-25">
@@ -293,7 +293,9 @@ if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
                         <label for="advice">相談に乗れること</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" for="advice1" id="result_advice"></p>
+                        <p class="lead" for="advice1" id="result_advice">
+                          
+                        </p>
                       </div>
                     </div>
                     <div class="row">
