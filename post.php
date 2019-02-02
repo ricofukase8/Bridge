@@ -1,6 +1,5 @@
 <?php
 session_start();
-// require('transition.php');
 
 if (false) {
 	header("Location:signup.php");
@@ -11,11 +10,12 @@ require('dbconnect.php');
 require("function.php");
 
 if ($_FILES["input_img_name"]["name"] !== "") {
-// var_dump($_FILES["input_img_name"]["name"]);die();
 date_default_timezone_set("Asia/Manila");
 $date_str=date("YmdHis");
 $file_name=$date_str . $_FILES["input_img_name"]["name"];
 move_uploaded_file($_FILES["input_img_name"]["tmp_name"] , "assets/img/user_profile_img/" . $file_name);
+}else{
+	$file_name = "defalut.jpg";
 }
 
 $name = $_POST["input_name"];
@@ -32,7 +32,6 @@ $career="";
 if (isset($_POST["input_career"])) {
 	$career=$_POST["input_career"];
 }
-// var_dump($career);die();
 
 if ($career == 2) {
 	$job_status="";

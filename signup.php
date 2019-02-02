@@ -79,7 +79,7 @@ $advices = $stmt->fetchAll();
                         <label for="img_name">プロフィール画像</label>
                       </div>
                       <div class="col-75">
-                        <img src="assets/img/categories/1.jpg" class="img-responsive img-thumbnail" id="result_img_name" width="300px">
+                        <img src="assets/img/user_profile_img/defalut.jpg" class="img-responsive img-thumbnail" id="result_img_name" width="300px">
                       </div>
                     </div>
                     <div class="row">
