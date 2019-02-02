@@ -15,7 +15,22 @@ $signin_user_id = $_SESSION["bridge"]["id"];
 if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
     $signin_user = getSigninUser($dbh , $signin_user_id);
 }
-// var_dump($signin_user["img_name"]);die();
+
+$sql = 'SELECT * FROM `advices_users`';
+$stmt = $dbh->prepare($sql);
+$stmt->execute();
+$selected_advices = $stmt->fetchAll();
+
+foreach ($selected_advices as $s) {
+    $sql = 'SELECT * FROM `advices_users` WHERE `user_id` = ?';
+    $data = [$signin_user_id];
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+    $selected_advices = $stmt->fetch(PDO::FETCH_ASSOC);
+    $s['selected_advices'] = $selected_advices;
+    $ss[] = $s;
+}
+
 
 ?>
 

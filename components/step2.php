@@ -237,7 +237,11 @@
             </div>
             <div class="checkbox">
               <?php foreach ($advices as $v): ?>
-                <input type="checkbox" class="check_box step2_form" id="advice<?php echo $v['id'] ?>" name="advice[]" value="<?php echo $v['id'] ?>">
+                <input type="checkbox" class="check_box step2_form" id="advice<?php echo $v['id'] ?>" name="advice[]" value="<?php echo $v['id'] ?>"
+                <?php if ($s["advices_id"] == $v["id"]): ?>
+                  checked
+                <?php endif; ?>
+                >
                 <label class="advice_check step2_form" for="advice<?php echo $v['id'] ?>" ><?php echo $v['advice_id'] ?></label>
               <?php endforeach; ?>
             </div>
