@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('transition.php');
+// require('transition.php');
 ?>
 
 <!DOCTYPE html>

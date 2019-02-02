@@ -194,7 +194,7 @@ $advices = $stmt->fetchAll();
                       </div>
                     </div>
 
-                    <?php if(isset($_POST["input_career_2"])) :?>
+                    <!-- <?php if(isset($_POST["input_career_2"])) :?>
                     <div class="row">
                       <div class="col-25">
                         <label for="career">職歴2</label>
@@ -253,7 +253,7 @@ $advices = $stmt->fetchAll();
                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                       </div>
                     </div>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
 
                     <div class="row">
                       <div class="col-25">
