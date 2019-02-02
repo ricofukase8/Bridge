@@ -24,7 +24,7 @@
                 <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') === false): ?>
                 <li><a href="edit.php" id="link">EDIT</a></li>
                 <?php endif; ?>
-                <li><a href="signout.php" id="link">LOG OUT</a></li>
+                <li><a href="main.php" id="link">LOG OUT</a></li>
             </ul>
           </nav>
         </div>

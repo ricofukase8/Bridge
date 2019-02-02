@@ -8,8 +8,9 @@ session_start();
 <head>
   <meta charset="utf-8">
   <title>BRIDGE</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
 </head>
 <body>
   <div id="top" class="jumbotron" style="background-image: url(assets/img/bridgemain.png);">

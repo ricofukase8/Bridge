@@ -11,7 +11,7 @@
                 <label for="portfolio">ポートフォリオURL<br>(Git URLでも構いません)</label>
               </div>
               <div class="col-75">
-                <input type="text" id="portfolio" name="input_portfolio" placeholder="Your Portfolio URL.."  value="<?php echo isset($signin_user) ? $signin_user["portfolio_url"] : ''; ?>">
+                <input type="text" id="portfolio" name="input_portfolio" placeholder="Your Portfolio URL.."  value="<?php echo isset($signin_user) ? $signin_user["portfolio_url"] : ''; ?>" pattern="https?://.+">
               </div>
             </div> 
             <div class="row">
@@ -27,7 +27,7 @@
                 <label for="portfolio_status">開発環境</label>
               </div>
               <div class="col-75">
-                <label><input class="radio-career" type="radio" id="portfolio_status_yes" name="input_portfolio_status" value="1" 
+                <label><input class="radio-career" type="radio" id="portfolio_status_yes" name="input_portfolio_status" value="1"
                 <?php if (isset($signin_user) && $signin_user["portfolio_status"]=="1"): ?>
                 checked="checked"
                 <?php endif ?>
