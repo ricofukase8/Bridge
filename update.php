@@ -11,13 +11,15 @@ require("function.php");
 
 
 $signin_user = getSigninUser($dbh,$_SESSION['bridge']['id']); 
-
-if (isset($_FILES["input_img_name"]["name"])) {
+// var_dump($_FILES["input_img_name"]["name"]);die();
+if ($_FILES["input_img_name"]["name"] !== "") {
 	date_default_timezone_set("Asia/Manila");
 	$date_str=date("YmdHis");
 	$file_name=$date_str . $_FILES["input_img_name"]["name"];
 	move_uploaded_file($_FILES["input_img_name"]["tmp_name"] , "assets/img/user_profile_img/" . $file_name);
 } else { 
+	date_default_timezone_set("Asia/Manila");
+	$date_str=date("YmdHis");
 	$file_name=$signin_user["img_name"];
 }
 
