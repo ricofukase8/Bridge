@@ -139,7 +139,7 @@ $(function() {
 
       var advices = [];
       $('input[name="advice[]"]:checked').each(function() {
-         advices.push($(this).val());
+         advices.push($(this).next(".advice_check").text());
       });
       $('#result_advice').text(advices);
 
