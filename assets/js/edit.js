@@ -6,6 +6,7 @@ $(function() {
 $( 'input[name="input_career"]:radio').change(function() {
       let radioval = $(this).val();
       let hoge = $( 'input[name="input_job_offer"]:radio').checked;
+      console.log(hoge);
       if(radioval == 2){
          $('#company_name').removeAttr('required');
          $('.step2_form').prop('disabled' , true);
@@ -22,18 +23,22 @@ $( 'input[name="input_career"]:radio').change(function() {
          $('.parsley-required').removeClass('hidden');
          $('#company_name').addClass('parsley-error');
 
-         
          if (hoge == 2) {
             $('#company_name').removeAttr('required');
             $('.step2_form').prop('disabled' , true);
             $('.step2_label').addClass('disabled');
             $('.parsley-required').addClass('hidden');
             $('#company_name').removeClass('parsley-error');
+         // }else{
+         //    $("#company_name").prop('required' , true);
+         //    $('.step2_form').removeProp('disabled' , true);
+         //    $('.step2_label').removeClass('disabled');
+         //    $('.parsley-required').removeClass('hidden');
+         //    $('#company_name').addClass('parsley-error');
          }
-         
-
       }
-      })
+   })
+   
    $('input[name="input_job_offer"]:radio').change(function() {
       let job_offer_radio = $(this).val();
       console.log(job_offer_radio);
@@ -43,6 +48,7 @@ $( 'input[name="input_career"]:radio').change(function() {
          $('#label_job_offer_contents').removeClass('disabled');
          $('.parsley-required').removeClass('hidden');
          $('#job_offer_contents').addClass('parsley-error');
+         $('#job_offer_contents').removeClass('hidden');
       }else{
          $('#job_offer_contents').removeAttr('required' , true);
          $('#job_offer_contents').prop('disabled' , true);
@@ -50,6 +56,8 @@ $( 'input[name="input_career"]:radio').change(function() {
          $('#label_job_offer_contents').addClass('disabled');
          $('.parsley-required').addClass('hidden');
          $('#job_offer_contents').removeClass('parsley-error');
+         // $('#job_offer_contents').addClass('hidden');
+
       }
    })
 
