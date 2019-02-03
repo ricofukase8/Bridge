@@ -238,7 +238,7 @@
             <div class="checkbox">
               <?php foreach ($advices as $v): ?>
                 <input type="checkbox" class="check_box step2_form" id="advice<?php echo $v['id'] ?>" name="advice[]" value="<?php echo $v['id'] ?>" 
-                <?php if ($ss[0] !== false && isset($signin_user) && $s["selected_advices"]["advices_id"] == $v["id"]): ?>
+                <?php if (isset($signin_user) && $s[0] !== false && $s["selected_advices"]["advices_id"] == $v["id"]): ?>
                   checked = "checked"
                 <?php endif; ?>
                 >
