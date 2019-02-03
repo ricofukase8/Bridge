@@ -71,6 +71,7 @@
 
         <!-- categorie -->
         <div class="row" id="hoge">
+            <?php if ($users[0] !== false): ?>
             <?php foreach ($users as $user): ?>
               <div class="col-lg-4 col-md-6 category-item status_id_<?php echo $user['status_id']; ?>">
                 <div class="categorie-item">
@@ -240,7 +241,7 @@
                             </div>
                             <div class="col-75">
                               <p class="lead" for="advice1" id="result_advice">
-                                  <?php if(isset ($advice['advice_id'])): ?>
+                                  <?php if(isset ($signin_user['advice_id'])): ?>
                                   <?php foreach ($user['advices'] as $advice): ?>
                                   <?php echo $advice['advice_id']; ?>
                                   <?php endforeach; ?>
@@ -328,6 +329,7 @@
                 </div>
         </div>
             <?php endforeach; ?>
+            <?php endif ?>
         </div>
   </section>
 
