@@ -66,6 +66,21 @@ function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_co
 	$stmt->execute($data);
 }
 
+function upDateAdvicesUsers($dbh, $signup_user_id, $advices)
+{
+	$sql = "DELETE FROM `advices_users` WHERE `user_id` = ?";
+	$data = [$signup_user_id];
+	$stmt = $dbh->prepare($sql);
+	$stmt->execute($data);
+	// var_dump($signup_user_id);die();
+	foreach ($advices as $advice) {
+		$sql = "INSERT INTO `advices_users` SET  `user_id`=?, `advices_id` =?";
+		$data = array($signup_user_id, $advice);
+		$stmt = $dbh->prepare($sql);
+		$stmt->execute($data);
+	}
+}
+
 function upDatePortfolio($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents)
 {
 	$sql = "UPDATE `portfolios` SET `user_id`=?, `portfolio_url`=?, `portfolio_name`=?, `portfolio_status`=?, `portfolio_comments`=? WHERE `user_id` = ?";
@@ -182,4 +197,30 @@ function getLikedUsers($dbh,$signin_user_id)
 
     return mergeUserAndAdvice($users, $advices);
 }
+
+function getSearchUsers($dbh)
+{
+	$sql = 'SELECT * FROM `users` AS `u` ';
+	$sql .= 'LEFT JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
+	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
+	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
+	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
+	$sql .= 'LEFT JOIN companies c ON u.id = c.user_id ';
+	$sql .= 'WHERE `u` . `name`';
+	$sql .= 'LIKE "%"?"%"';
+	$sql .= 'GROUP BY u.id';
+
+	$data=[$_GET["search"]];
+	$stmt = $dbh->prepare($sql);
+	$stmt->execute($data);
+
+	$users = $stmt->fetchAll();
+
+    $advices = getAdvices($dbh);
+
+    return mergeUserAndAdvice($users, $advices);
+}
+
+
+
 

@@ -20,17 +20,23 @@ $sql = 'SELECT * FROM `advices_users`';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $selected_advices = $stmt->fetchAll();
-
-foreach ($selected_advices as $s) {
-    $sql = 'SELECT `advices_id` FROM `advices_users` WHERE `user_id` = ? AND `advices_id` = ?;';
-    $data = [$signin_user_id , $signin_user["advices_id"]];
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute($data);
-    $selected_advices = $stmt->fetch(PDO::FETCH_ASSOC);
-    $s['selected_advices'] = $selected_advices;
-    $ss[] = $s;
-// var_dump($s["selected_advices"]);die();
+// var_dump($selected_advices); die();
+if (!empty($selected_advices)) {
+    foreach ($selected_advices as $s) {
+        $sql = 'SELECT `advices_id` FROM `advices_users` WHERE `user_id` = ? AND `advices_id` = ?;';
+        $data = [$signin_user_id , $signin_user["advices_id"]];
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+        $selected_advices = $stmt->fetch(PDO::FETCH_ASSOC);
+        $s['selected_advices'] = $selected_advices;
+        $ss[] = $s;
+      }
+}else{
+    $ss[] = false;
 }
+
+
+// var_dump($ss[0]);die();
 
 // var_dump($signin_user_id);die();
 
