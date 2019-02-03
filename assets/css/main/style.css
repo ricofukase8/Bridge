@@ -6,9 +6,10 @@ html {
   letter-spacing: 2px;
   font-size: 10px;
   text-align: center;
+  background-color: #F7F7F7 !important;
   /*font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  */
 
-}
+}ss
 
 /*固定する背景*/
 div,a {
@@ -22,27 +23,54 @@ div,a {
   padding: 5%;
   text-align: center;
 }
+
 .parallax-bg {
   background-image: url('../../img/bridgemain.png');
-  font-family: 'Montserrat Subrayada', sans-serif;
-  height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+  height: 430px;
+  padding-top: 80px;
   background-repeat: no-repeat;
-  font-size: 100px !important;
-  color: #00AFE5 !important;
+  background-size: cover;
+  background-position: top center;
+  /*background-attachment: fixed;*/
   display: list-item;
   text-align: -webkit-match-parent;
+  /*animation-iteration-count: infinite;*/
+}
+
+.parallax-bg-title {
+  font-family: 'Montserrat Subrayada', sans-serif;
+	animation-name: fadein;
+  animation-duration: 3s;
+  font-size: 100px !important;
+  color: #00AFE5 !important;
+}
+
+@keyframes fadein {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
 }
 
 /*スクロールするコンテンツ*/
 .scrollbox {
+	font-family: 'Raleway', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	height: 45%;
+	padding-top: 70px;
   background-color: #F7F7F7;
   color: #7DC7F4;
   font-size: 20px;
   display: list-item;
   text-align: -webkit-match-parent;
+  /*animation-name: fadein;
+  animation-duration: 3s;
+  animation-delay: 3s;*/
 }
 
 /*パララックスend*/
@@ -61,14 +89,17 @@ p {
 }
 
 .index-btn-group-1 {
-	padding-left: 56px;
-  padding-right: 56px;
+	height: 40px;
+	padding: 76px 56px;
   font-size: 16px;
 }
 
 .index-btn-group-2 {
 	color: rgb(147, 150, 185);
   background: transparent;
+  height: 40px;
+	padding: 16px 56px;
+  font-size: 16px;
   /*border-width: 1px;
   border-style: solid;
   border-color: rgb(198, 204, 209);
@@ -81,6 +112,7 @@ p {
 .modal-body {
 	width: 402px !important;
 }
+
 
 /*button*/
 
