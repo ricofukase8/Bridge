@@ -106,7 +106,7 @@ if (!empty($selected_advices)) {
                         <label for="password">password</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_password"></p>
+                        <p class="lead" id="result_password">●●●●●●●</p>
                       </div>
                     </div>
                     <div class="row">
