@@ -13,8 +13,11 @@ if (!empty($_POST)) {
         if ($signin_user == false) {
             $errors["signin"]="failed";
         }else{
+
             if (password_verify($password,$signin_user["password"])) {
-                $_SESSION["bridge"]["id"]=$signin_user["user_id"];
+                $_SESSION["bridge"]["id"] = $signin_user["user_id"];
+                // echo '<pre>';
+                // var_dump($signin_user["user_id"]);die();
                 header("Location: home.php");
                 exit();
             }else{

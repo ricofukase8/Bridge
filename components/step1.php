@@ -110,7 +110,7 @@
           <label for="facebook">FaceBookアカウント</label>
         </div>
         <div class="col-75">
-          <input type="text" id="fb" name="input_fb" placeholder="Your FBaccount.." value="<?php echo isset($signin_user) ? $signin_user["fb_account"] : ''; ?>" required pattern="https://www.facebook.com/.+">
+          <input type="text" id="fb" name="input_fb" placeholder="https://www.facebook.com/" value="<?php echo isset($signin_user) ? $signin_user["fb_account"] : ''; ?>" required pattern="https://www.facebook.com/.+">
         </div>
       </div>
   </div>

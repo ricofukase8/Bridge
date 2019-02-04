@@ -33,19 +33,19 @@ if (isset($_POST["input_career"])) {
 	$career=$_POST["input_career"];
 }
 
-if ($career == 2) {
-	$job_status="";
-	$company_name="";
-	$position="";
-	$term_company_year="";
-	$term_company_month="";
-	$term_company_year_end="";
-	$term_company_month_end="";
-	$job_contents="";
-	$offer_contents="";
-	$job_offer="";
-	$advices="";
-}else{
+// if ($career == 2) {
+// 	$job_status="";
+// 	$company_name="";
+// 	$position="";
+// 	$term_company_year="";
+// 	$term_company_month="";
+// 	$term_company_year_end="";
+// 	$term_company_month_end="";
+// 	$job_contents="";
+// 	$offer_contents="";
+// 	$job_offer="";
+// 	$advices="";
+// }else{
 	
 	$job_status="";
 	if (isset($_POST["input_job_status"])) {
@@ -79,7 +79,7 @@ if ($career == 2) {
 	if (isset($_POST["advice"])) {
 		$advices = $_POST['advice'];
 	}
-}
+
 
 
 
@@ -99,12 +99,16 @@ createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$
 
 $signup_user_id = intval($dbh->query("SELECT max(id) FROM users")->fetchColumn());
 
-createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
- $term_company_year_end, $term_company_month_end, $job_contents,$job_offer,$offer_contents);
+if ($career == 1) {
+	createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
+	 $term_company_year_end, $term_company_month_end, $job_contents,$job_offer,$offer_contents);
 
-createAdvicesUsers($dbh, $signup_user_id, $advices);
+	createAdvicesUsers($dbh, $signup_user_id, $advices);
+}
 
-createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
+if($portfolio = "" || $portfolio_name = ""){
+	createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
+}
 
 $dbh=null;
 header("Location:thanks.php");

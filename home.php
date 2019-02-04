@@ -1,5 +1,6 @@
 <?php
 session_start();
+var_dump($_SESSION["bridge"]["id"]);
 require('dbconnect.php');
 require('function.php');
 require('transition.php');

@@ -11,10 +11,12 @@ $stmt->execute();
 $advices = $stmt->fetchAll();
 
 $signin_user_id = $_SESSION["bridge"]["id"];
+// var_dump($signin_user_id);
 
 if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
     $signin_user = getSigninUser($dbh , $signin_user_id);
 }
+// var_dump($signin_user);die();
 
 $sql = 'SELECT * FROM `advices_users`';
 $stmt = $dbh->prepare($sql);
@@ -38,7 +40,6 @@ if (!empty($selected_advices)) {
 
 // var_dump($ss[0]);die();
 
-// var_dump($signin_user_id);die();
 
 ?>
 

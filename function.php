@@ -11,6 +11,7 @@ function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,
 function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
  $term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents)
 {
+// var_dump($signup_user_id);die();
 	$sql = "INSERT INTO `companies` SET `user_id`=?, `company_name` = ?, `position` = ?, `term_company_year` = ?, `term_company_month`= ?, `term_company_year_end` = ?, `term_company_month_end` = ?, `job_contents` = ?, `job_offer` = ?,`offer_contents` =?";
 	$data = array($signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
 		$term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents);
@@ -72,7 +73,6 @@ function upDateAdvicesUsers($dbh, $signup_user_id, $advices)
 	$data = [$signup_user_id];
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
-	// var_dump($signup_user_id);die();
 	foreach ($advices as $advice) {
 		$sql = "INSERT INTO `advices_users` SET  `user_id`=?, `advices_id` =?";
 		$data = array($signup_user_id, $advice);
@@ -137,7 +137,7 @@ function mergeUserAndAdvice($users, $advices)
 
 function getUser($dbh,$email)
 {
-	$sql = 'SELECT * FROM `users` AS `u` ';
+	$sql = 'SELECT *, u.id as user_id FROM `users` AS `u` ';
 	$sql .= 'LEFT JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
 	$sql .= 'LEFT JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
 	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
