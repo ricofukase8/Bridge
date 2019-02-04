@@ -71,7 +71,7 @@ $advices = $stmt->fetchAll();
                         <label for="password">password</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" id="result_password"></p>
+                        <p class="lead" id="result_password">●●●●●●●</p>
                       </div>
                     </div>
                     <div class="row">
@@ -287,7 +287,7 @@ $advices = $stmt->fetchAll();
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="portfolio_status">開発環境</label>
+                        <label for="portfolio_status">開発体制</label>
                       </div>
                       <div class="col-75">
                         <p class="lead" id="result_portfolio_status"></p>
@@ -319,42 +319,6 @@ $advices = $stmt->fetchAll();
       </section>
     </div>
   </div>
-
-<!-- Java script -->
-<script type="text/javascript">
-$(document).ready(function () {
-    $('.nav-tabs > li a[title]').tooltip();
-
-    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-
-        var $target = $(e.target);
-
-        if ($target.parent().hasClass('disabled')) {
-            return false;
-        }
-    });
-
-    $(".next-step").click(function (e) {
-
-        var $active = $('.wizard .nav-tabs li.active');
-        $active.next().removeClass('disabled');
-        nextTab($active);
-    });
-
-    $(".prev-step").click(function (e) {
-
-        var $active = $('.wizard .nav-tabs li.active');
-        prevTab($active);
-    });
-});
-
-function nextTab(elem) {
-    $(elem).next().find('a[data-toggle="tab"]').click();
-}
-function prevTab(elem) {
-    $(elem).prev().find('a[data-toggle="tab"]').click();
-}
-</script>
 
 <!-- <script src="assets/jquery/jquery.min.js"></script> -->
 <script src="assets/js/parsley.min.js"></script>

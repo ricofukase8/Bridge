@@ -115,7 +115,7 @@
       </div>
   </div>
   <ul class="list-inline pull-right">
-    <li><button type="button" class="btn btn-primary next-step" id="next-btn" value="Save and continue">Save and continue</button></li>
+    <li><button type="button" class="btn btn-primary next-step" id="next-btn" value="Save and continue">Continue</button></li>
   </ul>
 </div>
 
@@ -124,5 +124,3 @@ $(document).on('click', '#select_img_button', function() {
      $("#img_button").click();
     });
 </script>
-
-<!-- <script src="assets/js/signup.js"></script> -->

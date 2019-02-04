@@ -7,21 +7,26 @@ html {
   font-size: 10px;
   text-align: center;
   background-color: #F7F7F7 !important;
-  /*font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  */
-
-}ss
+}
 
 /*固定する背景*/
 div,a {
   box-sizing: border-box;
   color: #FFF;
-  font-size: 50px;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
   height: 100%;
   padding: 5%;
   text-align: center;
+}
+
+p {
+	font-size: 60px;
+	margin-top: 0px !important;
+	text-align: center !important;
+	color: #00AFE5 !important;
+	font-family: 'Montserrat Subrayada', sans-serif;
 }
 
 .parallax-bg {
@@ -31,10 +36,8 @@ div,a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  /*background-attachment: fixed;*/
   display: list-item;
   text-align: -webkit-match-parent;
-  /*animation-iteration-count: infinite;*/
 }
 
 .parallax-bg-title {
@@ -43,6 +46,10 @@ div,a {
   animation-duration: 3s;
   font-size: 100px !important;
   color: #00AFE5 !important;
+}
+
+.parallax-bg-title h1 {
+	font-size: 100px !importants;
 }
 
 @keyframes fadein {
@@ -58,39 +65,38 @@ to {
 
 /*スクロールするコンテンツ*/
 .scrollbox {
+  flex-direction: column;
+	height: 40%;
+}
+
+
+.scrollbox h3{
 	font-family: 'Raleway', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
-	height: 45%;
-	padding-top: 70px;
+	padding-top: 50px;
+	padding-bottom: 20px;
   background-color: #F7F7F7;
   color: #7DC7F4;
   font-size: 20px;
   display: list-item;
   text-align: -webkit-match-parent;
-  /*animation-name: fadein;
-  animation-duration: 3s;
-  animation-delay: 3s;*/
+  list-style: none;
 }
-
 /*パララックスend*/
 
-p {
-	font-size: 60px;
-	margin-top: 0px !important;
-	text-align: center !important;
-	font-family: 'Montserrat Subrayada', sans-serif;
-	/*font-family: 'Roboto Condensed', sans-serif !important;*/
-}
-
 .index-btn-group {
+	font-family: 'Raleway', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
   display: inline-block;
-  height: 200px !important;
+  height: 150px !important;
+  padding: 0px;
 }
 
 .index-btn-group-1 {
 	height: 40px;
-	padding: 76px 56px;
+	padding: 54px 56px;
   font-size: 16px;
 }
 
@@ -100,13 +106,7 @@ p {
   height: 40px;
 	padding: 16px 56px;
   font-size: 16px;
-  /*border-width: 1px;
-  border-style: solid;
-  border-color: rgb(198, 204, 209);
-  border-image: initial;*/
-	/*padding-left: 56px;
-    padding-right: 56px;
-    font-size: 16px;*/
+  font-size: 16px;
 }
 
 .modal-body {
@@ -365,7 +365,7 @@ p {
 	BUTTON CIRCLE
 ***********************************************************/
 .btn-circle { width: 50px;height: 50px;text-align: center;padding: 6px 0;font-size: 12px;line-height: 1.428571429;  border-radius: 25px;}
-	
+
 
 /******************************************************
 	BUTTON SIZING
