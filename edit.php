@@ -314,7 +314,7 @@ $selected_advices = $stmt->fetchAll();
                     </div>
                     <div class="row">
                       <div class="col-25">
-                        <label for="portfolio_status">開発環境</label>
+                        <label for="portfolio_status">開発体制</label>
                       </div>
                       <div class="col-75">
                         <p class="lead" id="result_portfolio_status">個人開発 or チーム開発</p>
