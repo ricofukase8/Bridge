@@ -13,11 +13,9 @@ $advices = $stmt->fetchAll();
 $signin_user_id=$_SESSION["bridge"]["id"];
 
 $signin_user = getSigninUser($dbh,$signin_user_id);
-// var_dump($signin_user);
 
 if (isset($_GET["search"])) {
 	$tmp_users = getSearchUsers($dbh);
-	// var_dump($tmp_users);die();
 	if (!empty($tmp_users)) {
 
 		foreach ($tmp_users as $user) {

@@ -2,11 +2,9 @@
 <div class="tab-pane" role="tabpanel" id="step2">
 <h3>Job Infomation</h3>
   <p>This is step 2</p>
-<!-- <form role="form"> -->
   <div class="tab-content">
     <div class="tab-pane active" role="tabpanel" id="step2">
       <div class="container">
-        <!-- <form action="/action_page.php"> -->
           <div class="row">
             <div class="col-25">
               <label for="career">職歴</label>
@@ -70,7 +68,7 @@
               <select id="select_box_month_end" name="input_career_month_end" class="step2_form">
                 <option value="" selected="selected">-</option>
                 <?php foreach(range(1,12) as $month_end): ?>
-                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>" <?php if (isset($signin_user) && $month_end == 
+                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>" <?php if (isset($signin_user) && $month_end ==
                 $signin_user["term_company_month_end"]){echo "selected";}?>><?=$month_end?></option>
                 <?php endforeach; ?>
               </select>月
@@ -81,7 +79,7 @@
               <label for="job_status" class="step2_label">現在働いている</label>
             </div>
             <div class="col-75">
-              <label><input class="radio-career step2_form" type="radio" id="job_status_yes" name="input_job_status" value="1" 
+              <label><input class="radio-career step2_form" type="radio" id="job_status_yes" name="input_job_status" value="1"
               <?php if (!isset($signin_user)) :?>
                 checked
               <?php endif;?>
@@ -201,10 +199,10 @@
               checked="checked"
               <?php endif; ?>
               >Yes</label>
-              <label><input class="radio-career step2_form" type="radio" id="job_offer_no" name="input_job_offer" value="2" 
+              <label><input class="radio-career step2_form" type="radio" id="job_offer_no" name="input_job_offer" value="2"
                <?php if (!isset($signin_user)): ?>
                  checked
-               <?php endif; ?>  
+               <?php endif; ?>
               <?php if (isset($signin_user) && $signin_user["job_offer"]=="2"): ?>
               checked="checked"
               <?php endif; ?>
@@ -224,7 +222,7 @@
               >求人情報</label>
             </div>
             <div class="col-75">
-              <textarea id="job_offer_contents" name="input_job_offer_contents" placeholder="Write job offer contents..." 
+              <textarea id="job_offer_contents" name="input_job_offer_contents" placeholder="Write job offer contents..."
               <?php if (isset($signin_user) && $signin_user["job_offer"] == "2"): ?>
               disabled
               <?php endif; ?>
@@ -237,7 +235,7 @@
             </div>
             <div class="checkbox">
               <?php foreach ($advices as $v): ?>
-                <input type="checkbox" class="check_box step2_form" id="advice<?php echo $v['id'] ?>" name="advice[]" value="<?php echo $v['id'] ?>" 
+                <input type="checkbox" class="check_box step2_form" id="advice<?php echo $v['id'] ?>" name="advice[]" value="<?php echo $v['id'] ?>"
                 <?php if (isset($signin_user) && $s[0] !== false && $s["selected_advices"]["advices_id"] == $v["id"]): ?>
                   checked = "checked"
                 <?php endif; ?>
@@ -246,13 +244,12 @@
               <?php endforeach; ?>
             </div>
           </div>
-        <!-- </form> -->
       </div>
     </div>
 
     <ul class="list-inline pull-right">
         <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-        <li><button type="button" class="btn btn-primary next-step" id="next-btn">Save and continue</button></li>
+        <li><button type="button" class="btn btn-primary next-step" id="next-btn">Continue</button></li>
     </ul>
   </div>
 </div>
