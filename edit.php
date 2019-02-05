@@ -11,7 +11,6 @@ $stmt->execute();
 $advices = $stmt->fetchAll();
 
 $signin_user_id = $_SESSION["bridge"]["id"];
-// var_dump($signin_user_id);
 
     if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
         $signin_user = getSigninUser($dbh , $signin_user_id);
@@ -21,7 +20,6 @@ $sql = 'SELECT * FROM `advices_users`';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $selected_advices = $stmt->fetchAll();
-
     if (!empty($selected_advices)) {
         foreach ($selected_advices as $s) {
             $sql = 'SELECT `advices_id` FROM `advices_users` WHERE `user_id` = ? AND `advices_id` = ?;';
@@ -46,10 +44,10 @@ $selected_advices = $stmt->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
 
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
     <link rel="stylesheet" type="text/css" href="assets/css/edit.css">
     <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
 
