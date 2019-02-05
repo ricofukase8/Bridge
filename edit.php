@@ -11,7 +11,6 @@ $stmt->execute();
 $advices = $stmt->fetchAll();
 
 $signin_user_id = $_SESSION["bridge"]["id"];
-// var_dump($signin_user_id);
 
     if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
         $signin_user = getSigninUser($dbh , $signin_user_id);
@@ -21,7 +20,6 @@ $sql = 'SELECT * FROM `advices_users`';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $selected_advices = $stmt->fetchAll();
-
     if (!empty($selected_advices)) {
         foreach ($selected_advices as $s) {
             $sql = 'SELECT `advices_id` FROM `advices_users` WHERE `user_id` = ? AND `advices_id` = ?;';
