@@ -6,6 +6,7 @@
       <div class="row">
         <div class="col-25">
           <label for="name">name</label>
+          <span>※必須項目</span>
         </div>
         <div class="col-75">
         <input type="text" id="name" name="input_name" placeholder="Your name.." value="<?php echo isset($signin_user) ? $signin_user["name"] : ''; ?>" required>
@@ -14,6 +15,7 @@
       <div class="row">
         <div class="col-25">
           <label for="email">email</label>
+          <span>※必須項目</span>
         </div>
         <div class="col-75">
           <input type="email" id="email" name="input_email" placeholder="Your email.." value="<?php echo isset($signin_user) ? $signin_user["email"] : ''; ?>" required>
@@ -22,6 +24,7 @@
       <div class="row">
         <div class="col-25">
           <label for="password">password</label>
+          <span>※必須項目</span>
       </div>
         <div class="col-75">
           <input type="password" id="password" name="input_password" placeholder="半角英数字4~16文字、記号は-_/.で入力してください"  required pattern="^([a-zA-Z0-9-_/.]{4,16})$" title="半角英数字4~16文字、記号は-_/.で入力してください">
@@ -50,6 +53,7 @@
       <div class="row">
         <div class="col-25">
           <label for="status">ステータス</label>
+          <span>※必須項目</span>
         </div>
         <div class="col-75">
           <select id="status" name="input_status" required>
@@ -73,6 +77,7 @@
       <div class="row">
         <div class="col-25">
           <label for="period">在籍期間</label>
+          <span>※必須項目</span>
         </div>
         <div class="col-75">
           <select id="period" name="input_period" required>
@@ -108,6 +113,7 @@
       <div class="row">
         <div class="col-25">
           <label for="facebook">FaceBookアカウント</label>
+          <span>※必須項目</span>
         </div>
         <div class="col-75">
           <input type="text" id="fb" name="input_fb" placeholder="https://www.facebook.com/" value="<?php echo isset($signin_user) ? $signin_user["fb_account"] : ''; ?>" required pattern="https://www.facebook.com/.+">
