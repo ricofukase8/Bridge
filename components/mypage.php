@@ -140,7 +140,13 @@
                         <label for="advice">相談に乗れること</label>
                       </div>
                       <div class="col-75">
-                        <p class="lead" for="advice1" id="result_advice"><?php echo $signin_user['advice_id']; ?></p>
+                        <p class="lead" for="advice1" id="result_advice">
+                          <?php if(isset($signin_user['advices'])): ?>
+                            <?php foreach ($signin_user['advices'] as $advice): ?>
+                              <?php echo $advice['advice_id']; ?>
+                            <?php endforeach; ?>
+                          <?php endif; ?>
+                        </p>
                       </div>
                     </div>
                     <div class="row">
