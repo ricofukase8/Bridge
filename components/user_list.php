@@ -241,10 +241,10 @@
                             </div>
                             <div class="col-75">
                               <p class="lead" for="advice1" id="result_advice">
-                                  <?php if(isset ($signin_user['advice_id'])): ?>
-                                  <?php foreach ($user['advices'] as $advice): ?>
-                                  <?php echo $advice['advice_id']; ?>
-                                  <?php endforeach; ?>
+                                  <?php if(isset($user['advices'])): ?>
+                                    <?php foreach ($user['advices'] as $advice): ?>
+                                      <?php echo $advice['advice_id']; ?>
+                                    <?php endforeach; ?>
                                   <?php endif; ?>
                               </p>
                             </div>
