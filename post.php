@@ -106,7 +106,7 @@ if ($career == 1) {
 	createAdvicesUsers($dbh, $signup_user_id, $advices);
 }
 
-if($portfolio = "" || $portfolio_name = ""){
+if($portfolio !== ""){
 	createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
 }
 
