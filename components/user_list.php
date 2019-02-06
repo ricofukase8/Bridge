@@ -75,8 +75,6 @@
             <?php foreach ($users as $user): ?>
               <div class="col-lg-4 col-md-6 category-item status_id_<?php echo $user['status_id']; ?>">
                 <div class="categorie-item">
-                  <div class="ci-thumb set-bg" data-setbg="assets/img/user_profile_img/<?php echo $user['img_name']; ?>">
-                  </div>
                   <a class="ci-text-link" data-toggle="modal" href="#portfolioModal<?php
                       if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false) {
                           echo $user['user_id'];
@@ -84,6 +82,8 @@
                           echo $user['id'];
                       }
                      ?>">
+                    <div class="ci-thumb set-bg" data-setbg="assets/img/user_profile_img/<?php echo $user['img_name']; ?>">
+                    </div>
                     <div class="ci-text">
                       <h5><?php echo $user['name']; ?></h5>
                       <p><?php echo $user['company_name']; ?></p>
