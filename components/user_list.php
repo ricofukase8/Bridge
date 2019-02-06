@@ -71,7 +71,7 @@
 
         <!-- categorie -->
         <div class="row" id="hoge">
-            <?php if ($users[0] !== false): ?>
+            <?php if (isset($users[0]) && $users[0] !== false): ?>
             <?php foreach ($users as $user): ?>
               <div class="col-lg-4 col-md-6 category-item status_id_<?php echo $user['status_id']; ?>">
                 <div class="categorie-item">
