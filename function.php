@@ -161,6 +161,17 @@ function mergeUserAndAdvice($users, $advices)
     return $res;
 }
 
+function mergeSigninUserAndAdvice($signin_user, $advices)
+{
+    foreach ($advices as $advice) {
+        if ($signin_user['user_id'] === $advice['user_id']) {
+            $signin_user['advices'][] = $advice;
+        }
+    }
+
+    return $signin_user;
+}
+
 function getUser($dbh,$email)
 {
 	$sql = 'SELECT *, u.id as user_id FROM `users` AS `u` ';
@@ -183,7 +194,7 @@ function getUser($dbh,$email)
 
 function getSigninUser($dbh,$signin_user_id)
 {
-	$sql = 'SELECT * FROM `users` AS `u` ';
+	$sql = 'SELECT *, u.id as user_id FROM `users` AS `u` ';
 	$sql .= 'LEFT JOIN `companies` AS `c` ON `u`.`id` = `c`.`user_id` ';
 	$sql .= 'LEFT JOIN `advices_users` AS `a` ON `u`.`id` = `a`.`user_id` ';
 	$sql .= 'LEFT JOIN advices ad ON a.advices_id = ad.id ';
@@ -197,8 +208,10 @@ function getSigninUser($dbh,$signin_user_id)
     $stmt->execute($data);
 
     $signin_user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $advices = getAdvices($dbh);
 
-    return $signin_user;
+    return mergeSigninUserAndAdvice($signin_user, $advices);
+
 }
 
 

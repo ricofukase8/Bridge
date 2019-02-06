@@ -44,7 +44,8 @@ if (isset($_GET["search"])) {
 		$users[] = $user;
 	}
 }
-
+// echo '<pre>';
+// var_dump($signin_user);
 
 ?>
 <?php include('components/user_list.php'); ?>
