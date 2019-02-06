@@ -102,93 +102,6 @@
              <textarea id="job_contents" name="input_job_content" placeholder="Write your job contents..." class="step2_form"><?php echo isset($signin_user) ? $signin_user["job_contents"] : ''; ?></textarea>
             </div>
           </div>
-          <!-- 職歴2 -->
-         <!--  <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false): ?>
-            <div id="icon">
-              <a id="panel-btn"><span id="panel-btn-icon"></span></a>
-            </div>
-
-             <div id="company-toggle">
-              <div class="row">
-              <div class="col-25">
-                <label for="career">職歴2</label>
-              </div>
-              <div class="col-75">
-                <input class="radio-career" type="radio" id="career_yes_2" name="input_career_2" value="1">Yes &emsp;
-                <input class="radio-career" type="radio" id="career_no_2" name="input_career_2" value="2">No
-              </div>
-              </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="company_name">会社名</label>
-              </div>
-              <div class="col-75">
-                <input type="text" id="company_name_2" name="input_company_name_2" placeholder="Your company name..">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="position">役職</label>
-              </div>
-              <div class="col-75">
-                <input type="text" id="position_2" name="input_position_2" placeholder="Your position..">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="career_period">在籍期間</label>
-              </div>
-              <div class="col-75">
-              <select id="select_box_year_2" name="input_career_year_2" >
-                  <option value="" selected="selected">-</option>
-                  <?php foreach(range(2000,2030) as $year): ?>
-                  <option value="<?=$year?>"><?=$year?></option>
-                  <?php endforeach; ?>
-              </select>年&thinsp;
-
-              <select id="select_box_month_2" name="input_career_month_2">
-                <option value="" selected="selected">-</option>
-                <?php foreach(range(1,12) as $month): ?>
-                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>"><?=$month?></option>
-                <?php endforeach; ?>
-              </select>月~
-
-              <select id="select_box_year_end_2" name="input_career_year_end_2">
-                  <option value="" selected="selected">-</option>
-                  <?php foreach(range(2000,2030) as $year_end): ?>
-                  <option value="<?=$year_end?>"></option>
-                  <?php endforeach; ?>
-              </select>年　&thinsp;
-
-              <select id="select_box_month_end_2" name="input_career_month_end_2">
-                <option value="" selected="selected">-</option>
-                <?php foreach(range(1,12) as $month_end): ?>
-                <option value="<?=str_pad($month,2,0,STR_PAD_LEFT)?>"><?=$month_end?></option>
-                <?php endforeach; ?>
-              </select>月
-            </div>
-          </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="job_status">現在働いている</label>
-              </div>
-              <div class="col-75">
-                <input class="radio-career" type="radio" id="job_status_yes_2" name="input_job_status_2" value="1">Yes &emsp;
-                <input class="radio-career" type="radio" id="job_status_no_2" name="input_job_status_2" value="2">No
-              </div>
-            </div>
-              <div class="row">
-                <div class="col-25">
-                  <label for="job_contents">仕事内容</label>
-                </div>
-                <div class="col-75">
-                 <textarea id="job_contents_2" name="input_job_content_2" placeholder="Write your job contents..."></textarea>
-                </div>
-              </div>
-              <hr>
-        </div>
-          <?php endif; ?>
- -->
           <div class="row">
             <div class="col-25">
               <label for="job_offer" class="step2_label">求人の有無</label>
@@ -236,7 +149,7 @@
             <div class="checkbox">
               <?php foreach ($advices as $v): ?>
                 <input type="checkbox" class="check_box step2_form" id="advice<?php echo $v['id'] ?>" name="advice[]" value="<?php echo $v['id'] ?>"
-                <?php if (isset($signin_user) && $s[0] !== false && $s["selected_advices"]["advices_id"] == $v["id"]): ?>
+                <?php if (isset($signin_user) && array_search($v["id"], $selected_advices) !== false): ?>
                   checked = "checked"
                 <?php endif; ?>
                 >

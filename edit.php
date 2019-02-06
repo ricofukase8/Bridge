@@ -17,23 +17,17 @@ $signin_user_id = $_SESSION["bridge"]["id"];
         // var_dump($signin_user["portfolio_url"]);die();
     }
 
-$sql = 'SELECT * FROM `advices_users`';
+$sql = 'SELECT `advices_id` FROM `advices_users` WHERE `user_id` = ?';
+$data = [$signin_user_id];
 $stmt = $dbh->prepare($sql);
-$stmt->execute();
-$selected_advices = $stmt->fetchAll();
-    if (!empty($selected_advices)) {
-        foreach ($selected_advices as $s) {
-            $sql = 'SELECT `advices_id` FROM `advices_users` WHERE `user_id` = ? AND `advices_id` = ?;';
-            $data = [$signin_user_id , $signin_user["advices_id"]];
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute($data);
-            $selected_advices = $stmt->fetch(PDO::FETCH_ASSOC);
-            $s['selected_advices'] = $selected_advices;
-            $ss[] = $s;
-        }
-    }else{
-        $ss[] = false;
-    }
+$stmt->execute($data);
+// var_dump($stmt);die();
+$selected_advices = [];
+while ($ex_advices = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  $selected_advices[] = $ex_advices['advices_id'];
+}
+  // var_dump($selected_advices);die();
+
 ?>
 
 
