@@ -234,10 +234,11 @@ function getSearchUsers($dbh)
 	$sql .= 'LEFT JOIN companies c ON u.id = c.user_id ';
 	$sql .= 'WHERE `u` . `name`';
 	$sql .= 'LIKE "%"?"%"';
-	// $sql .= ' OR  `c` . `name`';
+	$sql .= ' OR  `c` . `company_name`';
+	$sql .= 'LIKE "%"?"%"';
 	$sql .= 'GROUP BY u.id';
 
-	$data=[$_GET["search"]];
+	$data=[$_GET["search"],$_GET["search"]];
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute($data);
 
