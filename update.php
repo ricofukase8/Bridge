@@ -112,20 +112,24 @@ if($career == 1 && isset($signin_user["company_name"])) {
 }elseif ($career == 1 && !isset($signin_user["company_name"])){
 	createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
 	 $term_company_year_end, $term_company_month_end, $job_contents,$job_offer,$offer_contents);
-// }elseif(){
-
+}elseif($career == 2 && isset($signin_user["company_name"])){
+	deleteCompany($dbh, $signup_user_id);
 }
 
 if(!empty($advices) && isset($signin_user["advices_id"])) {
 	upDateAdvicesUsers($dbh, $signup_user_id, $advices);
 }elseif (!empty($advices) && !isset($signin_user["advices_id"])){
 	createAdvicesUsers($dbh, $signup_user_id, $advices);
+}elseif($career == 2 && isset($signin_user["advices_id"])){
+	deleteAdvices($dbh, $signup_user_id);
 }
 
 if (!empty($portfolio) && isset($signin_user["portfolio_url"])) {
 	upDatePortfolio($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
 }elseif(!empty($portfolio) && !isset($signin_user["portfolio_url"])){
 	createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $portfolio_status, $portfolio_contents);
+}elseif(empty($portfolio) && isset($signin_user["portfolio_url"])){
+	deletePortfolios($dbh, $signup_user_id);
 }
 
 $dbh=null;

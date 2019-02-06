@@ -15,6 +15,7 @@ $signin_user_id = $_SESSION["bridge"]["id"];
 
     if(strpos($_SERVER['REQUEST_URI'], 'edit.php') !== false) {
         $signin_user = getSigninUser($dbh , $signin_user_id);
+        // var_dump($signin_user["portfolio_url"]);die();
     }
 
 $sql = 'SELECT * FROM `advices_users`';

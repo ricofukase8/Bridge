@@ -67,6 +67,32 @@ function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_co
 	$stmt->execute($data);
 }
 
+function deleteCompany($dbh, $signup_user_id)
+{
+	$sql = "DELETE FROM `companies` WHERE `user_id` = ?";
+	$data = [$signup_user_id];
+	$stmt = $dbh->prepare($sql);
+	$stmt->execute($data);
+}
+
+function deleteAdvices($dbh, $signup_user_id)
+{
+	$sql = "DELETE FROM `advices_users` WHERE `user_id` = ?";
+	$data = [$signup_user_id];
+	$stmt = $dbh->prepare($sql);
+	$stmt->execute($data);
+}
+
+
+function deletePortfolios($dbh, $signup_user_id)
+{
+	$sql = "DELETE FROM `portfolios` WHERE `user_id` = ?";
+	$data = [$signup_user_id];
+	$stmt = $dbh->prepare($sql);
+	$stmt->execute($data);
+}
+
+
 function upDateAdvicesUsers($dbh, $signup_user_id, $advices)
 {
 	$sql = "DELETE FROM `advices_users` WHERE `user_id` = ?";
