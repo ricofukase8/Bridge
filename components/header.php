@@ -12,7 +12,9 @@
           </div>
         </div>
         <div class="col-lg-9 col-md-9">
+          <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') === false): ?>
           <a href="#mypage" class="site-btn header-btn" data-toggle="modal" >MYPAGE</a>
+          <?php endif; ?>
           <nav class="main-menu">
             <ul>
                 <?php if(strpos($_SERVER['REQUEST_URI'], 'home.php') === false): ?>
