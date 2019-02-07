@@ -9,7 +9,7 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute();
 $advices = $stmt->fetchAll();
 
-$signin_user_id=$_SESSION["bridge"]["id"];
+$signin_user_id = $_SESSION["bridge"]["id"];
 
 $signin_user = getSigninUser($dbh,$signin_user_id);
 
@@ -44,11 +44,8 @@ if (isset($_GET["search"])) {
 		$users[] = $user;
 	}
 }
-// echo '<pre>';
-// var_dump($signin_user);
 
-?>
-<?php include('components/user_list.php'); ?>
+include('components/user_list.php');
 
 
 
