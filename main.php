@@ -12,7 +12,7 @@
 <body>
 	<div class="parallax-bg">
 		<div class="parallax-bg-title">
-		<h1">BRIDGE</h1>
+		<h1>BRIDGE</h1>
 		<p>NexSeed</p>
 		</div>
 	</div>

@@ -19,6 +19,4 @@ foreach ($tmp_users as $user) {
     $users[] = $user;
 }
 
-?>
-
-<?php include('components/user_list.php'); ?>
+include('components/user_list.php');
