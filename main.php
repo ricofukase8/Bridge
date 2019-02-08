@@ -10,9 +10,9 @@
 </head>
 
 <body>
-	<div class="parallax-bg">
+	<div class="parallax-bg" style="padding-top: 35px;">
 		<div class="parallax-bg-title">
-		<h1>BRIDGE</h1>
+		<h1 style="font-size: 100px;">BRIDGE</h1>
 		<p>NexSeed</p>
 		</div>
 	</div>

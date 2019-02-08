@@ -1,3 +1,7 @@
+.parallax-bg-title{
+	display: inline-block;
+}
+
 /*パララックス*/
 body,
 html {
