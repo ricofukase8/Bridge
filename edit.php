@@ -40,11 +40,10 @@ while ($ex_advices = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
 
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
     <link rel="stylesheet" type="text/css" href="assets/css/edit.css">
     <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/signup/parsley.css">
 
 </head>
 <body>
@@ -337,10 +336,11 @@ while ($ex_advices = $stmt->fetch(PDO::FETCH_ASSOC)) {
   </div>
   </div>
 
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="assets/js/parsley.min.js"></script>
 <script src="assets/js/ja.js"></script>
 <script src="assets/js/ja.extra.js"></script>
-<link rel="stylesheet" type="text/css" href="assets/css/signup/parsley.css">
 <script src="assets/js/edit.js"></script>
 </body>
 </html>
