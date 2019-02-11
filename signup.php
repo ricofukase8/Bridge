@@ -16,12 +16,10 @@ $advices = $stmt->fetchAll();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
   <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
   <link rel="stylesheet" type="text/css" href="navbar.css">
-
+  <link rel="stylesheet" type="text/css" href="assets/css/signup/parsley.css">
 </head>
 <body>
   <div id="top" class="jumbotron" style="background-image: url(assets/img/bridgemain.png);">
@@ -321,10 +319,11 @@ $advices = $stmt->fetchAll();
   </div>
 
 <!-- <script src="assets/jquery/jquery.min.js"></script> -->
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="assets/js/parsley.min.js"></script>
 <script src="assets/js/ja.js"></script>
 <script src="assets/js/ja.extra.js"></script>
-<link rel="stylesheet" type="text/css" href="assets/css/signup/parsley.css">
 <script src="assets/js/signup.js"></script>
 
 </body>
