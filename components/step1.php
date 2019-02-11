@@ -5,7 +5,7 @@
     <!-- <form action="/action_page.php"> -->
       <div class="row">
         <div class="col-25">
-          <label for="name">name</label>
+          <label for="name"></label>
           <span>※必須項目</span>
         </div>
         <div class="col-75">
