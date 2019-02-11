@@ -321,10 +321,10 @@ $advices = $stmt->fetchAll();
 <!-- <script src="assets/jquery/jquery.min.js"></script> -->
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="assets/js/signup.js"></script>
 <script src="assets/js/parsley.min.js"></script>
 <script src="assets/js/ja.js"></script>
 <script src="assets/js/ja.extra.js"></script>
-<script src="assets/js/signup.js"></script>
 
 </body>
 </html>
