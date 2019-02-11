@@ -23,6 +23,7 @@ $(function() {
         var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');
         nextTab($active);
+        console.log(123);
     });
 
     $(".prev-step").click(function (e) {
