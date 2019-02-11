@@ -125,8 +125,8 @@
   </ul>
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(document).on('click', '#select_img_button', function() {
      $("#img_button").click();
     });
-</script>
+</script> -->
