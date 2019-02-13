@@ -13,13 +13,6 @@ $advices = $stmt->fetchAll();
   <meta charset="utf-8">
   <title>BRIDGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="assets/jquery/jquery.min.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="assets/js/signup.js"></script>
-  <script src="assets/js/parsley.min.js"></script>
-  <script src="assets/js/ja.js"></script>
-  <script src="assets/js/ja.extra.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
@@ -262,13 +255,13 @@ $advices = $stmt->fetchAll();
     </div>
   </div>
 
-<!-- <script src="assets/jquery/jquery.min.js"></script> -->
-<!-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
-<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="assets/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="assets/js/signup.js"></script>
 <script src="assets/js/parsley.min.js"></script>
 <script src="assets/js/ja.js"></script>
-<script src="assets/js/ja.extra.js"></script> -->
+<script src="assets/js/ja.extra.js"></script>
 
 </body>
 </html>
