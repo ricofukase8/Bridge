@@ -34,7 +34,7 @@
   <section class="hero-section set-bg" data-setbg="assets/img/bridgemain.png">
     <div class="container">
     <div class="hero-text text-white">
-        <?php if(strpos($_SERVER['REQUEST_URI'], 'like.php') !== false): ?>
+        <?php if (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false) : ?>
         <div class="section-title text-white">
           <h2>Your LIKE</h2>
         </div>
@@ -42,7 +42,7 @@
     <div class="row">
     <div class="col-md-10 offset-md-1">
       <span hidden class="signin-user"><?php echo $signin_user_id; ?></span>
-      <?php if(strpos($_SERVER['REQUEST_URI'], 'home.php') !== false): ?>
+      <?php if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false) : ?>
       <?php include('components/search.php'); ?>
       <?php endif; ?>
     </div>
@@ -59,7 +59,7 @@
     padding-top: 150px;
   " <?php endif; ?>>
     <div class="container">
-        <?php if(strpos($_SERVER['REQUEST_URI'], 'home.php') !== false): ?>
+        <?php if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false) : ?>
         <nav>
           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
             <a class="nav-item nav-link graduates" id="nav-graduates-tab" data-toggle="tab" href="#nav-graduates" role="tab" aria-controls="nav-graduates" aria-selected="true">Graduates</a>
@@ -71,14 +71,14 @@
 
         <!-- categorie -->
         <div class="row" id="hoge">
-            <?php if (isset($users[0]) && $users[0] !== false): ?>
-            <?php foreach ($users as $user): ?>
+            <?php if (isset($users[0]) && $users[0] !== false) : ?>
+            <?php foreach ($users as $user) : ?>
               <div class="col-lg-4 col-md-6 category-item status_id_<?php echo $user['status_id']; ?>">
                 <div class="categorie-item">
                   <a class="ci-text-link" data-toggle="modal" href="#portfolioModal<?php
                       if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false) {
                           echo $user['user_id'];
-                      }elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false){
+                      } elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false) {
                           echo $user['id'];
                       }
                      ?>">
@@ -96,7 +96,7 @@
               <div class="portfolio-modal modal fade" id="portfolioModal<?php
                       if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false) {
                           echo $user['user_id'];
-                      }elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false){
+                      } elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false) {
                           echo $user['id'];
                       }
                      ?>" tabindex="-1" role="dialog" aria-hidden="true">
@@ -159,9 +159,9 @@
                               <label for="career">職歴</label>
                             </div>
                             <div class="col-75">
-                                <?php if ($user['career'] == 1): ?>
+                                <?php if ($user['career'] == 1) : ?>
                                 <p class="lead" id="result_career">Yes</p>
-                                <?php elseif ($user['career'] == 2): ?>
+                                <?php elseif ($user['career'] == 2) : ?>
                                 <p class="lead" id="result_career">No</p>
                                 <?php endif; ?>
                             </div>
@@ -200,9 +200,9 @@
                               <label for="job_status">現在働いている</label>
                             </div>
                             <div class="col-75">
-                                <?php if ($user['job_status'] == 1): ?>
+                                <?php if ($user['job_status'] == 1) : ?>
                                 <p class="lead" id="result_job_status">Yes</p>
-                                <?php elseif ($user['job_status'] == 2): ?>
+                                <?php elseif ($user['job_status'] == 2) : ?>
                                 <p class="lead" id="result_job_status">No</p>
                                 <?php endif; ?>
                             </div>
@@ -220,9 +220,9 @@
                               <label for="job_offer">求人の有無</label>
                             </div>
                             <div class="col-75">
-                                <?php if ($user['job_offer'] == 1): ?>
+                                <?php if ($user['job_offer'] == 1) : ?>
                                 <p class="lead" id="result_job_offer">Yes</p>
-                                <?php elseif ($user['job_offer'] == 2): ?>
+                                <?php elseif ($user['job_offer'] == 2) : ?>
                                 <p class="lead" id="result_job_offer">No</p>
                                 <?php endif; ?>
                             </div>
@@ -241,8 +241,8 @@
                             </div>
                             <div class="col-75">
                               <p class="lead" for="advice1" id="result_advice">
-                                  <?php if(isset($user['advices'])): ?>
-                                    <?php foreach ($user['advices'] as $advice): ?>
+                                  <?php if (isset($user['advices'])) : ?>
+                                    <?php foreach ($user['advices'] as $advice) : ?>
                                       <?php echo $advice['advice_id']; ?>
                                     <?php endforeach; ?>
                                   <?php endif; ?>
@@ -270,9 +270,9 @@
                               <label for="portfolio_status">開発環境</label>
                             </div>
                             <div class="col-75">
-                                <?php if ($user['portfolio_status'] == 1): ?>
+                                <?php if ($user['portfolio_status'] == 1) : ?>
                                 <p class="lead" id="result_portfolio_status">チーム開発</p>
-                                <?php elseif ($user['portfolio_status'] == 2): ?>
+                                <?php elseif ($user['portfolio_status'] == 2) : ?>
                                 <p class="lead" id="result_portfolio_status">個人開発</p>
                                 <?php endif; ?>
                             </div>
@@ -291,22 +291,22 @@
                               <li>
                                 <?php if(strpos($_SERVER['REQUEST_URI'], 'home.php') !== false && $user['user_id'] !== $signin_user_id): ?>
                                   <span hidden class="user-id"><?php echo $user['user_id']; ?></span>
-                                    <?php if ($user['is_liked']): ?>
+                                    <?php if ($user['is_liked']) : ?>
                                       <button class="btn btn-like js-unlike" id="like-btn" style="border-bottom-width: 2px; margin-bottom: 30px; margin-right: 20px;">
                                         <span>LIKEを取り消す</span>
                                       </button>
-                                    <?php else: ?>
+                                    <?php else : ?>
                                       <button class="btn btn-like js-like" id="like-btn" style="border-bottom-width: 2px; margin-bottom: 30px; margin-right: 20px;">
                                         <span>LIKE</span>
                                       </button>
                                     <?php endif;?>
                                 <?php elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false && $user['id'] !== $signin_user_id): ?>
                                   <span hidden class="user-id"><?php echo $user['liked_id']; ?></span>
-                                    <?php if ($user['is_liked']): ?>
+                                    <?php if ($user['is_liked']) : ?>
                                       <button class="btn btn-like js-unlike" id="like-btn" style="border-bottom-width: 2px; margin-bottom: 30px; margin-right: 20px;">
                                         <span>LIKEを取り消す</span>
                                       </button>
-                                    <?php else: ?>
+                                    <?php else : ?>
                                       <button class="btn btn-like js-like" id="like-btn" style="border-bottom-width: 2px; margin-bottom: 30px; margin-right: 20px;">
                                         <span>LIKE</span>
                                       </button>
@@ -337,9 +337,9 @@
   <footer class="footer-section spad pb-0" style="padding-top: 50px">
     <div class="footer-top">
       <div class="footer-warp">
-          <?php if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false): ?>
+          <?php if (strpos($_SERVER['REQUEST_URI'], 'home.php') !== false) : ?>
           <a href="home.php">
-          <?php elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false): ?>
+          <?php elseif (strpos($_SERVER['REQUEST_URI'], 'like.php') !== false) : ?>
           <a href="like.php">
           <?php endif; ?>
           <h3 style="color: #474747">☝︎TOP</h3>
@@ -349,7 +349,7 @@
     <div class="footer-bottom">
       <div class="footer-warp">
           <ul class="footer-menu">
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="withdraw.php">退会</a></li>
             <li><a href="#">Register</a></li>
             <li><a href="#">Privacy</a></li>
           </ul>

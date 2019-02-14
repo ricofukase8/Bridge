@@ -39,7 +39,6 @@ while ($ex_advices = $stmt->fetch(PDO::FETCH_ASSOC)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
-
     <link rel="stylesheet" type="text/css" href="assets/css/signup/step1.css">
     <link rel="stylesheet" type="text/css" href="assets/css/edit.css">
     <link rel="stylesheet" type="text/css" href="assets/css/signup/signup.css">
