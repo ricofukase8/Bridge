@@ -335,7 +335,7 @@ while ($ex_advices = $stmt->fetch(PDO::FETCH_ASSOC)) {
     </section>
   </div>
   </div>
-
+ほげ
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="assets/js/parsley.min.js"></script>
