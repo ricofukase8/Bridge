@@ -486,7 +486,8 @@ ol {
 }
 
 .course-search-form-2 {
-	padding: 44px 38px;
+	padding: 64px 38px;
+	height: 168px;
 	/*display: flex;*/
 	justify-content: space-between;
 }
