@@ -12,18 +12,18 @@
           </div>
         </div>
         <div class="col-lg-9 col-md-9">
-          <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') === false): ?>
+          <?php if (strpos($_SERVER['REQUEST_URI'], 'edit.php') === false) : ?>
           <a href="#mypage" class="site-btn header-btn" data-toggle="modal" >MYPAGE</a>
           <?php endif; ?>
           <nav class="main-menu">
             <ul>
-                <?php if(strpos($_SERVER['REQUEST_URI'], 'home.php') === false): ?>
+                <?php if (strpos($_SERVER['REQUEST_URI'], 'home.php') === false) : ?>
                 <li><a href="home.php" id="link">HOME</a></li>
                 <?php endif; ?>
-                <?php if(strpos($_SERVER['REQUEST_URI'], 'like.php') === false): ?>
+                <?php if (strpos($_SERVER['REQUEST_URI'], 'like.php') === false) : ?>
                 <li><a href="like.php" id="link">LIKE</a></li>
                 <?php endif; ?>
-                <?php if(strpos($_SERVER['REQUEST_URI'], 'edit.php') === false): ?>
+                <?php if (strpos($_SERVER['REQUEST_URI'], 'edit.php') === false) : ?>
                 <li><a href="edit.php" id="link">EDIT</a></li>
                 <?php endif; ?>
                 <li><a href="main.php" id="link">LOG OUT</a></li>

@@ -1,0 +1,21 @@
+
+.col-xs-8 {
+    margin-top: 60px;
+}
+
+#title{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 30px;
+    color: #00AFE5;
+    font-weight: bolder;
+}
+
+.content_header {
+    color: rgb(228, 10, 10);
+}
+
+#next-btn{
+    width: 80px;
+    font-size: 15px;
+}
