@@ -2,7 +2,7 @@
 <form class="course-search-form" method="get" action="home.php">
   <div class="course-search-form-1">
     <a class="course-search-form-1-button">
-    <button type="button" class="btn btn-info sharp">新着順</button>
+    <a href="home.php?news" class="btn btn-info sharp">新着順</a>
     <button type="button" class="btn btn-info sharp">人気順</button>
     </a>
     <span style="color:black" class="course-search-form-select">インターン採用</span>
