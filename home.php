@@ -1,8 +1,8 @@
 <?php
 session_start();
-require('dbconnect.php');
-require('function.php');
-require('transition.php');
+require 'dbconnect.php';
+require 'function.php';
+require 'transition.php';
 
 $sql = 'SELECT * FROM `advices`';
 $stmt = $dbh->prepare($sql);
@@ -10,8 +10,9 @@ $stmt->execute();
 $advices = $stmt->fetchAll();
 
 $signin_user_id = $_SESSION["bridge"]["id"];
+var_dump($signin_user_id);
 
-$signin_user = getSigninUser($dbh,$signin_user_id);
+$signin_user = getSigninUser($dbh, $signin_user_id);
 
 if(isset($_GET["news"])) {
 	$tmp_users = getAllUsersNews($dbh);
@@ -55,7 +56,6 @@ if(isset($_GET["news"])) {
 
 
 include('components/user_list.php');
-
 
 
 
