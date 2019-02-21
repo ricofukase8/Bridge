@@ -62,6 +62,12 @@ if (isset($_GET["search"])) {
         $user['is_liked'] = $is_liked ? true : false;
         $users[] = $user;
     }
+
 }
 
-require 'components/user_list.php';
+
+
+include('components/user_list.php');
+
+
+
