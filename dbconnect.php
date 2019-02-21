@@ -9,7 +9,7 @@
 $db_name = getenv(DB_NAME);
 $host_name = getenv(HOST_NAME);
 $user = getenv(USER_NAME);
-$password = getenv(PASSWORD)
+$password = getenv(PASSWORD);
 
 $dsn = 'mysql:dbname='.$db_name.';host=' . $host_name;
 $dbh = new PDO($dsn, $user, $password);
