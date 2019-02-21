@@ -1,6 +1,7 @@
 <?php
 
-function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb, $career, $job_status)
+function createUser($dbh, $name, $email, $password, $file_name, $status, $batchnumber, $period, $course, $profile, $fb, $career, $job_status
+)
 {
     $sql = "INSERT INTO `users` SET `name` = ?, `email` = ?, `password` = ?, `img_name` = ?, `status_id` = ?, `batch_number` = ?, `term_nexseed_id` = ?, `course_id` = ?, `profile` = ?, `fb_account` = ?, `career` = ?, `job_status` = ?, `created` = NOW()";
     $data = array($name , $email , password_hash($password, PASSWORD_DEFAULT) , $file_name , $status , $batchnumber , $period , $course , $profile , $fb, $career, $job_status);
@@ -8,9 +9,9 @@ function createUser($dbh,$name,$email,$password,$file_name,$status,$batchnumber,
     $stmt->execute($data);
 }
 
-function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
-    $term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents
-) {
+function createCompanies($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month, $term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents
+)
+{
     // var_dump($signup_user_id);die();
     $sql = "INSERT INTO `companies` SET `user_id`=?, `company_name` = ?, `position` = ?, `term_company_year` = ?, `term_company_month`= ?, `term_company_year_end` = ?, `term_company_month_end` = ?, `job_contents` = ?, `job_offer` = ?,`offer_contents` =?";
     $data = array($signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
@@ -47,7 +48,7 @@ function createPortfolios($dbh, $signup_user_id, $portfolio, $portfolio_name, $p
     $stmt->execute($data);
 }
 
-function upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$status,$batchnumber,$period,$course,$profile,$fb,$career, $job_status)
+function upDateUser($dbh, $signup_user_id, $name, $email, $password, $file_name, $status, $batchnumber, $period, $course, $profile, $fb, $career, $job_status)
 {
     $sql = "UPDATE `users` SET `name` = ?, `email` = ?, `password` = ?, `img_name` = ?, `status_id` = ?, `batch_number` = ?, `term_nexseed_id` = ?, `course_id` = ?, `profile` = ?, `fb_account` = ?, `career` = ?, `job_status` = ?, `updated` = NOW() WHERE`id`=?";
 
@@ -56,11 +57,11 @@ function upDateUser($dbh,$signup_user_id,$name,$email,$password,$file_name,$stat
     $stmt->execute($data);
 }
 
-function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
-    $term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents
-) {
-    $sql = "UPDATE `companies` SET `user_id`=?, `company_name` = ?, `position` = ?, `term_company_year` = ?, `term_company_month`= ?, `term_company_year_end` = ?, `term_company_month_end` = ?, `job_contents` = ?, `job_offer` = ?,`offer_contents` =?
-	     WHERE `user_id` = ?";
+function upDateCompany($dbh, $signup_user_id, $company_name, $position, $term_company_year, $term_company_month, $term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents
+)
+{
+    $sql = "UPDATE `companies` SET `user_id`=?, `company_name` = ?, `position` = ?, `term_company_year` = ?, `term_company_month`= ?, `term_company_year_end` = ?, `term_company_month_end` = ?, `job_contents` = ?, `job_offer` = ?,`offer_contents` =? 
+    WHERE `user_id` = ?";
     $data = array($signup_user_id, $company_name, $position, $term_company_year, $term_company_month,
     $term_company_year_end, $term_company_month_end, $job_contents, $job_offer, $offer_contents, $signup_user_id);
     $stmt = $dbh->prepare($sql);
@@ -211,9 +212,7 @@ function getSigninUser($dbh, $signin_user_id)
     $advices = getAdvices($dbh);
 
     return mergeSigninUserAndAdvice($signin_user, $advices);
-
 }
-
 
 function getLikedUsers($dbh, $signin_user_id)
 {
@@ -265,23 +264,24 @@ function getSearchUsers($dbh)
 
 function getAllUsersNews($dbh)
 {
-	$sql = 'SELECT * FROM `users` AS `u` ';
-	$sql .= 'LEFT JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
-	$sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
-	$sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
-	$sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
-	$sql .= 'LEFT JOIN companies c ON u.id = c.user_id ';
-	$sql .= 'GROUP BY u.id ';
-	$sql .= 'ORDER BY u.created DESC';
+    $sql = 'SELECT * FROM `users` AS `u` ';
+    $sql .= 'LEFT JOIN `portfolios` AS `p` ON `u`.`id` = `p`.`user_id` ';
+    $sql .= 'LEFT JOIN status s ON u.status_id = s.id ';
+    $sql .= 'LEFT JOIN term_nexseed t ON u.term_nexseed_id = t.id ';
+    $sql .= 'LEFT JOIN courses co ON u.course_id = co.id ';
+    $sql .= 'LEFT JOIN companies c ON u.id = c.user_id ';
+    $sql .= 'GROUP BY u.id ';
+    $sql .= 'ORDER BY u.created DESC';
 
-	$stmt = $dbh->prepare($sql);
-	$stmt->execute();
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
 
-	$users = $stmt->fetchAll();
+    $users = $stmt->fetchAll();
 
     $advices = getAdvices($dbh);
 
     return mergeUserAndAdvice($users, $advices);
+}
 
 function deleteUser($dbh, $signup_user_id)
 {
@@ -335,6 +335,5 @@ function countLiked($dbh, $user)
     $data = [$user["user_id"]];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
-    $like = $stmt->fetch(PDO::FETCH_ASSOC);
-    var_dump($like);die();
+    $likes_cnt = $stmt->fetch(PDO::FETCH_ASSOC);
 }
